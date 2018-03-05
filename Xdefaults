@@ -1,0 +1,56 @@
+! Every shell is a login shell by default (for inclusion of all necessary
+! environment variables)
+xterm*loginshell: true
+*visualBell: on
+
+! HiDPI (via Arch Wiki)
+! Xft.dpi: 180
+! Xft.autohint: 0
+! Xft.lcdfilter:  lcddefault
+! Xft.hintstyle:  hintfull
+! Xft.hinting: 1
+! Xft.antialias: 1
+! Xft.rgba: rgb
+
+XTerm*background: black
+XTerm*foreground: white
+
+! UTF-8
+XTerm*locale: true
+XTerm*utf8: 1
+
+! Get the Alt meta key working
+XTerm*metaSendsEscape: true
+
+! Write to CLIPBOARD instead of PRIMARY
+XTerm*selectToClipboard: true
+
+! Turn off bold mode, set bold on uncolored text to white
+! http://unix4lyfe.org/xterm/
+! XTerm*boldMode: false
+! XTerm*colorBDMode: true
+! XTerm*colorBD: rgb:fc/fc/fc
+
+! Font
+XTerm.VT100.faceName: Noto Mono
+
+! Font size
+! Default
+XTerm.VT100.faceSize: 24
+! Unreadable
+XTerm.VT100.faceSize1: 16
+! Tiny
+XTerm.VT100.faceSize2: 20
+! Small
+XTerm.VT100.faceSize3: 22
+! Medium
+XTerm.VT100.faceSize4: 24
+! Large
+XTerm.VT100.faceSize5: 28
+! Huge
+XTerm.VT100.faceSize6: 32
+
+! Increase / decrease the font-size
+XTerm.VT100.translations: #override \
+Meta <Key> minus: smaller-vt-font() \n\
+Meta <Key> plus: larger-vt-font() \n\

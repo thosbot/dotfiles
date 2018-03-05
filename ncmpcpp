@@ -1,0 +1,17 @@
+# Song Format
+
+
+# Various Settings
+playlist_display_mode = columns
+media_library_primary_tag = album_artist
+external_editor = vim
+
+# Visualizer
+visualizer_fifo_path = /tmp/mpd.fifo
+visualizer_output_name = my_fifo
+visualizer_sync_interval = 30
+visualizer_in_stereo = yes
+visualizer_type = spectrum
+visualizer_color = blue, cyan, green, yellow, magenta, red
+# visualizer_color = 41, 83, 119, 155, 185, 215, 209, 203, 197, 161
+visualizer_look = +|

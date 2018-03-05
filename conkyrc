@@ -1,0 +1,96 @@
+# Conky
+
+conky.config = {
+    background = true,
+    update_interval = 1.0,
+    update_interval_on_battery = 5.0,
+    cpu_avg_samples = 2,
+    net_avg_samples = 2,
+    no_buffers = true,
+    temperature_unit = 'fahrenheit',
+
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=12',
+
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    own_window_hints = 'undecorated',
+
+    double_buffer = true,
+    draw_shades = true,
+    draw_outline = false,
+    draw_borders = false,
+    stippled_borders = 0,
+    border_width = 0,
+    alignment = 'middle_right',
+
+    maximum_width = 600,
+
+    use_spacer = 'none',
+
+    default_color = 'white',
+    default_shade_color = 'black',
+    default_outline_color = 'white',
+}
+
+conky.text = [[
+# Date and time
+${font :size=18}${alignc}${time %a} ${time %e %b %G}${font}
+${font :size=36}${alignc}${time %H:%M}${font}
+
+# Kernel
+${color slate grey}${alignc}.:${color} $kernel ${color slate grey}:.${color}
+# Uptime
+${alignc}$uptime
+
+# Battery
+${battery_short BAT1}${alignr}${battery_bar 3,160 BAT1}
+
+# CPU
+${color slate grey}CPU: ${color}${alignr}$cpu% ${freq_g}GHz ${acpitemp}°F
+$loadavg${alignr}$running_processes/$processes
+${cpugraph 24,240 ffffff ffffff}
+${color #ddaa00}${top name 1}${alignr}${top cpu 1}${color}
+${top name 2}${alignr}${top cpu 2}
+${top name 3}${alignr}${top cpu 3}
+${top name 4}${alignr}${top cpu 4}
+
+# Memory
+${color slate grey}Mem: ${color}$memperc%${alignr}${color slate grey}Swap: ${color}$swapperc%
+${membar 3,240}
+# $mem${alignr}$memmax
+${color #ddaa00}${top_mem name 1}${alignr}${top_mem mem 1}${color}
+${top_mem name 2}${alignr}${top_mem mem 2}
+${top_mem name 3}${alignr}${top_mem mem 3}
+${top_mem name 4}${alignr}${top_mem mem 4}
+
+# Network
+${color slate grey}Net: ${color}${alignr}${wireless_essid wlp1s0}
+${addr wlp1s0}${alignr}${wireless_bitrate wlp1s0}
+# ${wireless_link_bar 3,240 wlp1s0}
+${upspeedgraph wlp1s0 24,115 ffffff ffffff} ${alignr}${downspeedgraph wlp1s0 24,115 ffffff ffffff}
+${color slate grey}U: ${color}${upspeed wlp1s0}${alignr}${color slate grey}D: ${color}${downspeed wlp1s0}
+# ${totalup wlp1s0}${alignr}${totaldown wlp1s0}
+
+# National Weather Service
+# also avails: relative_humidity, dewpoint_[f|c], pressure_[in|mb], visibility_mi
+${execi 1800 curl -s "http://w1.weather.gov/xml/current_obs/KPHL.xml" -o ~/.cache/nws.xml}${font :size=18}${alignc}${execi 1800 xmllint --xpath '//current_observation/temp_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 1800 xmllint --xpath '//current_observation/temp_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C${font}
+${alignc}${execi 1800 xmllint --xpath '//current_observation/weather/text()' ~/.cache/nws.xml}
+${alignc}${color slate grey}${execi 1800 xmllint --xpath '//current_observation/location/text()' ~/.cache/nws.xml}
+${alignc}${color slate grey}${execi 1800 xmllint --xpath '//current_observation/station_id/text()' ~/.cache/nws.xml} ${execi 1800 xmllint --xpath '//current_observation/latitude/text()' ~/.cache/nws.xml}°N ${execi 1800 xmllint --xpath '//current_observation/longitude/text()' ~/.cache/nws.xml | grep -P -o "\d+\.\d+"}°W${color}
+# heat_index_[f|c], windchill_[f|c]
+Windchill:${alignr}${execi 1800 xmllint --xpath '//current_observation/windchill_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 1800 xmllint --xpath '//current_observation/windchill_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C
+# Heat Idx:${alignr}${execi 1800 xmllint --xpath '//current_observation/heat_index_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 1800 xmllint --xpath '//current_observation/heat_index_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C
+Dewpoint:${alignr}${execi 1800 xmllint --xpath '//current_observation/dewpoint_f/text()' ~/.cache/nws.xml | grep -P -o "^\d+"}°F / ${execi 1800 xmllint --xpath '//current_observation/dewpoint_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C
+Humidity:${alignr}${execi 1800 xmllint --xpath '//current_observation/relative_humidity/text()' ~/.cache/nws.xml}%
+Wind:${alignr}${execi 1800 xmllint --xpath '//current_observation/wind_dir/text()' ~/.cache/nws.xml} ${execi 1800 xmllint --xpath '//current_observation/wind_mph/text()' ~/.cache/nws.xml | grep -P -o "^\d+"} MPH
+# Gust:${alignr}${execi 1800 xmllint --xpath '//current_observation/wind_gust_mph/text()' ~/.cache/nws.xml | grep -P -o "^\d+"} MPH
+
+# Music Player Daemon
+${if_mpd_playing}${font :size=12}${alignc}${exec mpc current -f '%title%'}${font}
+${alignc}${exec mpc current -f '%artist%'}
+${font :italic:size=12}${alignc}${exec mpc current -f "%album%"}${font}
+${alignc}${mpd_elapsed} ${alignc}${mpd_bar} ${mpd_length}
+${endif}
+]]
