@@ -31,7 +31,7 @@ source $HOME/.config/todo/todo_completion
 alias todo='todo -tn -d $HOME/.config/todo/todo.cfg'
 
 # Parameterized ack
-alias gack='ack --sort-files --smart-case --color-match=RED --pager="less -RFX"'
+alias ack='ack --sort-files --smart-case --color-match=RED --pager="less -RFX"'
 
 # Better directory traversing
 source ~/.config/up/up.sh
