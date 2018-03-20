@@ -2,7 +2,7 @@ eval `dircolors -b`
 alias ls='ls --color=auto'
 
 # List only dot files and dot directories
-alias lsd='ls -d $( echo $( ls -a | egrep "^\." ) )'
+alias lsdot='ls -d $( echo $( ls -a | egrep "^\." ) )'
 
 alias free='free -h'
 
