@@ -35,3 +35,9 @@ alias gack='ack --sort-files --smart-case --color-match=RED --pager="less -RFX"'
 
 # Better directory traversing
 source ~/.config/up/up.sh
+
+# Check a command run as sudo for alias expansion (courtesy jellingwood)
+# From the bash manual:
+#   > If the last character of the alias value is a blank, then the next
+#   > command word following the alias is also checked for alias expansion.
+alias sudo='sudo '
