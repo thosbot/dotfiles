@@ -14,14 +14,16 @@ alias free='free -h'
 # 3-month calendar
 alias cal3='cal -3'
 
-# rm and mv aliases
+# Prompt before removing or overwriting a file
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
 
+# Display ANSI color escape sequences, quit if one screen, disable sending the
+# termcap initialization and deinitialization strings
 alias less='less -RFX'
 
-# Create parents and print each created directory
+# Create parent dirs and print a message for each created directory
 alias mkdir='mkdir -pv'
 
 # https://major.io/icanhazip-com-faq/
