@@ -4,11 +4,6 @@ alias ls='ls --color=auto'
 # List only dot files and dot directories
 alias lsd='ls -d $( echo $( ls -a | egrep "^\." ) )'
 
-# List directories
-function lsdir () {
-    ls -d ${1}*
-}
-
 alias free='free -h'
 
 # 3-month calendar

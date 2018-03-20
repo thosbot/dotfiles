@@ -19,3 +19,9 @@ function lesscode {
 function readmarkdown {
     pandoc --from markdown --to html5 "$1" | lynx -stdin
 }
+
+# List only directories that begin with the arg provided
+# E.g. `ls a` lists all directories that begin with "a"
+function lsdir () {
+    ls -d $1*/
+}
