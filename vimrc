@@ -371,7 +371,7 @@ set pastetoggle=<F11>
 
 " SCREEN
 " Autoset screen window title (vimtip 1126), resets to xterm title on close
-" NOTE: Can't get the old window title back yet -- defaults to xterm title
+" FIXME: Can't get the old window title back yet -- defaults to xterm title
 autocmd vimrc BufEnter * let &titlestring=expand("%:t")
 
 " DRAGVISUALS Damian Conway
