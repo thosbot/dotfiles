@@ -24,14 +24,14 @@ alias mkdir='mkdir -pv'
 # https://major.io/icanhazip-com-faq/
 alias lsip='curl icanhazip.com'
 
-alias lscodetags='ack -A 5 --color-match=RED --pager="less -RFX" "TODO|XXX|FIXME|HACK|OMG|LOL"'
+alias lscodetags='ack -A 5 --color-match=RED --pager="less -RSFX" "TODO|XXX|FIXME|HACK|OMG|LOL"'
 
 # todo.sh
 source $HOME/.config/todo/todo_completion
 alias todo='todo -tn -d $HOME/.config/todo/todo.cfg'
 
 # Parameterized ack
-alias ack='ack --sort-files --smart-case --color-match=RED --pager="less -RFX"'
+alias ack='ack --sort-files --smart-case --color-match=RED --pager="less -RSFX"'
 
 # Better directory traversing
 source ~/.config/up/up.sh
