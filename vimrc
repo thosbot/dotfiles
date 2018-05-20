@@ -386,8 +386,8 @@ endfunction
 """""""
 let anyfold_activate=1
 let anyfold_fold_comments=1
-set foldlevel=0
-hi Folded term=NONE cterm=NONE
+set foldlevel=3
+highlight Folded term=NONE cterm=NONE ctermbg=NONE guibg=NONE
 
 """""""
 " Environment
