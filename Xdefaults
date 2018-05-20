@@ -25,6 +25,11 @@ XTerm*metaSendsEscape: true
 ! Write to CLIPBOARD instead of PRIMARY
 XTerm*selectToClipboard: true
 
+! Only select text
+xterm*highlightSelection: true
+! Remove trailing spaces
+xterm*trimSelection: true
+
 ! Turn off bold mode, set bold on uncolored text to white
 ! http://unix4lyfe.org/xterm/
 ! XTerm*boldMode: false
