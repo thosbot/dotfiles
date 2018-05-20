@@ -386,7 +386,7 @@ endfunction
 """""""
 let anyfold_activate=1
 let anyfold_fold_comments=1
-set foldlevel=3
+set foldlevel=11
 highlight Folded term=NONE cterm=NONE ctermbg=NONE guibg=NONE
 
 """""""
