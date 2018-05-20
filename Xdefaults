@@ -32,23 +32,23 @@ XTerm*selectToClipboard: true
 ! XTerm*colorBD: rgb:fc/fc/fc
 
 ! Font
-XTerm.VT100.faceName: Noto Mono
+XTerm*faceName: Noto Mono for Powerline
+XTerm*faceSize: 21
+xterm*renderFont: true
 
 ! Font size
-! Default
-XTerm.VT100.faceSize: 24
 ! Unreadable
-XTerm.VT100.faceSize1: 16
+XTerm*faceSize1: 11
 ! Tiny
-XTerm.VT100.faceSize2: 20
+XTerm*faceSize2: 12
 ! Small
-XTerm.VT100.faceSize3: 22
+XTerm*faceSize3: 16
 ! Medium
-XTerm.VT100.faceSize4: 24
+XTerm*faceSize4: 18
 ! Large
-XTerm.VT100.faceSize5: 28
+XTerm*faceSize5: 24
 ! Huge
-XTerm.VT100.faceSize6: 32
+XTerm*faceSize6: 36
 
 ! Increase / decrease the font-size
 XTerm.VT100.translations: #override \

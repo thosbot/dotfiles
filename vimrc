@@ -311,12 +311,9 @@ let g:SuperTabDefaultCompletionType = "context"
 " Airline / powerline
 set laststatus=2
 let g:airline_powerline_fonts = 1
-
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-" blanking out unsupported unicode chars in 'hacker' font
-let g:airline_symbols.maxlinenr = ''
 
 " TODO
 set noshowmode
