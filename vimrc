@@ -187,7 +187,8 @@ runtime macros/matchit.vim
 
 " Define and initialize an autocmd group `vimrc`
 augroup vimrc
-  autocmd!
+    " Vim won't clear out the group if it already existed, so do that here.
+    autocmd!
 augroup END
 
 let g:mapleader = '\'
