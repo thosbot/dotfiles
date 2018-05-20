@@ -97,6 +97,8 @@ Plugin 'tpope/vim-surround'
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
 " works in much the same way as the MatchParen plugin.
 Plugin 'gregsexton/MatchTag'
+" Indent-based folding
+Plugin 'pseewald/vim-anyfold'
 
 " CTags
 " automated tag file generation and syntax highlighting of tags in Vim
@@ -366,6 +368,15 @@ function! HLNext (blinktime)
     redraw
 endfunction
 
+"""""""
+" Folding
+"
+"""""""
+let anyfold_activate=1
+let anyfold_fold_comments=1
+set foldlevel=0
+colorscheme solarized
+hi Folded term=NONE cterm=NONE
 
 
 " INDENTATION / TAB STOPS / HOLY WAR
