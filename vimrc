@@ -122,6 +122,11 @@ Plugin 'tpope/vim-fugitive'
 " mustache.js
 Plugin 'mustache/vim-mustache-handlebars'
 
+" Golang
+Plugin 'fatih/vim-go'
+" Golang code completion daemon
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
+
 " Chuck audio programming language
 " http://www.vim.org/scripts/script.php?script_id=1880
 Plugin 'vim-scripts/ck.vim'
@@ -235,12 +240,11 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " http://vim.wikia.com/wiki/Configuring_the_cursor
 
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
-let g:markdown_fenced_languages = ['caml=mustache', 'css', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'vim', 'xml']
 
 " Map dd to the black hole register
 " nnoremap d "_d
 " vnoremap d "_d
-
+let g:markdown_fenced_languages = ['caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'vim', 'xml']
 
 """""""
 " Files & buffers
