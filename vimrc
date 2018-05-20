@@ -1,13 +1,22 @@
+"""""""
+" Vim
+"
+"""""""
+
 set encoding=utf8
 set nocompatible " non vi-compatible
 
-" VUNDLE - GITHUB-BASED EXTENSION MANAGER
+"""""""
+" Vundle - Github-based extension manager
+"
+"""""""
 filetype off " required by vundle
 set runtimepath+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
-" BASE UTIL PLUGINS
+" Base utility plugins
+
 " Let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -22,7 +31,7 @@ Plugin 'tomtom/tlib_vim'
 " xolox-required utils
 Plugin 'xolox/vim-misc'
 
-" add "." repeating for plugin maps (supports vim-surround)
+" Add "." repeating for plugin maps (supports vim-surround)
 " https://github.com/tpope/vim-repeat
 Plugin 'tpope/vim-repeat'
 
@@ -41,14 +50,14 @@ Plugin 'tpope/vim-unimpaired'
 " Unicode character metadata
 Plugin 'tpope/vim-characterize'
 
-" BEHAVIOUR PLUGINS
+" Behaviour Plugins
+
 " Commenting out lines of code
 " Also check out: https://github.com/tomtom/tcomment_vim
 Plugin 'tpope/vim-commentary'
 
 " Insert or delete brackets, parens, quotes in pairs
 " Alt: https://github.com/ervandew/matchem
-" http://www.terminally-incoherent.com/blog/2014/04/02/3-tiny-vim-plugins-that-will-make-your-life-easier/
 Plugin 'jiangmiao/auto-pairs'
 
 " SnipMate.vim aims to be a concise vim script that implements some of
@@ -107,9 +116,9 @@ Plugin 'majutsushi/tagbar'
 
 " Git wrapper
 Plugin 'tpope/vim-fugitive'
+" Language-specific syntax and development plugins
 
 
-" SYNTAX PLUGINS
 " mustache.js
 Plugin 'mustache/vim-mustache-handlebars'
 
@@ -141,7 +150,11 @@ Plugin 'othree/html5.vim'
 call vundle#end()            " required
 
 
-" BUILTIN BEHAVIORS
+
+"""""""
+" Built-in behaviors
+"
+"""""""
 set noerrorbells
 set visualbell
 
@@ -179,8 +192,15 @@ let g:mapleader = '\'
 :nnoremap <leader>ev :split $MYVIMRC<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
+"""""""
+" Indentation / tab stops / holy war
+"
+"""""""
 
-" SYNTAX HIGHLIGHTING / COLORS
+"""""""
+" Syntax highlighting / colors
+"
+"""""""
 " 256: http://vim.wikia.com/wiki/256_colors_in_vim
 set t_Co=256
 " not necessary
@@ -204,6 +224,7 @@ highlight LineNr ctermfg=darkgray " line numbers
 
 " Highlight EOL whitespace
 set list
+" Replace trailing whitespace chars with '.'
 set listchars=trail:.
 nmap <leader>l :set list!<CR>
 
@@ -221,7 +242,10 @@ let g:markdown_fenced_languages = ['caml=mustache', 'css', 'html', 'javascript',
 " vnoremap d "_d
 
 
-" FILE & BUFFERS
+"""""""
+" Files & buffers
+"
+"""""""
 " Write changes to buffers before ! or changing the active buffer
 " 'autowrite' could be conflicting with 'hidden'
 " set autowrite
@@ -264,7 +288,7 @@ set backspace=indent,eol,start
 :map <F7> :setlocal spell! spelllang=en_us<CR>
 
 
-" AIRLINE
+" Airline / powerline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 
@@ -274,18 +298,20 @@ endif
 " blanking out unsupported unicode chars in 'hacker' font
 let g:airline_symbols.maxlinenr = ''
 
+" TODO
 set noshowmode
 set noruler
 set noshowcmd
 
-
-" CTAGS
+" Ctags
 " set tags+=~/tags
 " Tagbar : http://usevim.com/2013/02/01/vim-101-fancy-ctags/
 nmap <F8> :TagbarToggle<CR>
 
-
-" MOVING
+"""""""
+" Movement / motion
+"
+"""""""
 " Move through display lines in normal mode, rather than numbered lines
 vnoremap <C-j> gj
 vnoremap <C-k> gk
@@ -299,8 +325,10 @@ nnoremap <C-4> g$
 nnoremap <C-6> g^
 nnoremap <C-0> g^
 
-
-" SEARCHING
+"""""""
+" Searching
+"
+"""""""
 " Highlighting for searches - turn off with spacebar
 set hlsearch
 :noremap <Leader> <Space> :silent noh<Bar>echo<CR>
@@ -367,9 +395,12 @@ vnoremap <Leader>a> :Tabularize /=><CR>
 
 " Keep vim's smart indenter from messing up pasted in text
 set pastetoggle=<F11>
+"""""""
+" Environment
+"
+"""""""
 
-
-" SCREEN
+" Screen
 " Autoset screen window title (vimtip 1126), resets to xterm title on close
 " FIXME: Can't get the old window title back yet -- defaults to xterm title
 autocmd vimrc BufEnter * let &titlestring=expand("%:t")
@@ -381,7 +412,7 @@ vnoremap <expr> J DVB_Drag('down')
 vnoremap <expr> K DVB_Drag('up')
 let g:DVB_TrimWS = 1 " remove any introduced trailing whitespace after move
 
-" LOCAL VIMRC
+" Source a local, machine-specific Vim RC
 if filereadable($HOME.'/.config/vim/local.vim')
     :source $HOME/.config/vim/local.vim
 endif
@@ -393,3 +424,11 @@ endif
 " if (filereadable(b:vim))
 "     execute "source ".b:vim
 " endif
+
+"""""""
+" References
+"
+"""""""
+" https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
+" https://github.com/tpope
+" https://github.com/thoughtbot/dotfiles
