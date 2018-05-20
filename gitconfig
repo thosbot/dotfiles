@@ -1,0 +1,25 @@
+[user]
+    email = thomas@em7b5.net
+    name = thosbot
+[push]
+    default = simple
+[alias]
+    codegrep = !sh -c 'git grep "$1" $( git rev-list --all )'
+    deadbranch = !sh -c \"git remote prune origin && git branch -vv | grep ': gone]' | awk '{print \\$1}'\" -
+    lshist = !sh -c 'git log --pretty=format: --name-only --diff-filter=A "$1" | sort -u' -
+    svnshow = !sh -c \"git log --grep=\\\"@$1\\$\\\" -p\" -
+    tree = log --oneline --graph --all --decorate
+[core]
+    autocrlf = input
+    excludesfile = /home/thomas/.config/git/gitignore
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[color "status"]
+    branch = green
+[merge]
+    renamelimit = 20000
