@@ -203,6 +203,15 @@ let g:mapleader = '\'
 " Indentation / tab stops / holy war
 "
 """""""
+set smartindent     " let braces affect autoindentation
+set tabstop=4       " make tab stops 4 spaces wide
+set shiftwidth=4
+set smarttab        " Insert blanks using shiftwidth, not tabstop/softtabstop
+set softtabstop=4   " make 4 spaces behave as tab (single backspace to delete)
+set expandtab       " insert tabs as sets of spaces, not tab characters
+
+" Keep vim's smart indenter from messing up pasted in text
+set pastetoggle=<F11>
 
 """""""
 " Syntax highlighting / colors
@@ -242,10 +251,6 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " http://vim.wikia.com/wiki/Configuring_the_cursor
 
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
-
-" Map dd to the black hole register
-" nnoremap d "_d
-" vnoremap d "_d
 let g:markdown_fenced_languages = ['caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'vim', 'xml']
 
 """""""
@@ -264,6 +269,10 @@ autocmd vimrc BufNewFile,BufRead *.md set filetype=markdown
 
 " Allow bkgd of curr buffer w/o writing to disk, restore marks, and undo hist
 set hidden
+
+" Map dd to the black hole register
+" nnoremap d "_d
+" vnoremap d "_d
 
 " Remember marks, registers, searches, buffer list when quitting
 set viminfo='50,\"100,:100,%,n~/.viminfo
@@ -381,16 +390,6 @@ set foldlevel=0
 colorscheme solarized
 hi Folded term=NONE cterm=NONE
 
-
-" INDENTATION / TAB STOPS / HOLY WAR
-set smartindent     " let braces affect autoindentation
-set tabstop=4       " make tab stops 4 spaces wide
-set shiftwidth=4
-set softtabstop=4   " make 4 spaces behave as tab (single backspace to delete)
-set expandtab       " insert tabs as sets of spaces, not tab characters
-
-" Keep vim's smart indenter from messing up pasted in text
-set pastetoggle=<F11>
 """""""
 " Environment
 "
