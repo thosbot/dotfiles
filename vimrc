@@ -259,11 +259,6 @@ autocmd vimrc BufNewFile,BufRead *.ck set filetype=ck         " ChucK (audio pro
 autocmd vimrc BufNewFile,BufRead *.tt set filetype=tt2html    " Perl Template Toolkit + HTML
 autocmd vimrc BufNewFile,BufRead *.caml set filetype=html.mustache
 
-" The BDS
-autocmd vimrc BufNewFile,BufRead *.bds setf bds
-" Include dashes in word names for component ctags (FM000-000-001)
-autocmd vimrc FileType bds set iskeyword+=-,:
-
 " Allow bkgd of curr buffer w/o writing to disk, restore marks, and undo hist
 set hidden
 
