@@ -363,20 +363,6 @@ function! HLNext (blinktime)
 endfunction
 
 
-" PERL
-" My perl includes pod
-let perl_include_pod=1
-
-" Syntax color complex things like @{${"foo"}}
-let perl_extended_vars=1
-
-" Hook "K" to perldoc instead of man within perl files
-autocmd vimrc FileType perl setlocal keywordprg=perldoc
-
-" Compile perl with make
-autocmd vimrc FileType perl set makeprg=perl\ -Ilib\ -c\ %\ $*
-autocmd vimrc FileType perl set errorformat=%f:%l:%m
-
 
 " INDENTATION / TAB STOPS / HOLY WAR
 set smartindent     " let braces affect autoindentation
@@ -384,13 +370,6 @@ set tabstop=4       " make tab stops 4 spaces wide
 set shiftwidth=4
 set softtabstop=4   " make 4 spaces behave as tab (single backspace to delete)
 set expandtab       " insert tabs as sets of spaces, not tab characters
-
-" TABULARIZE
-" https://github.com/godlygeek/tabular
-nnoremap <Leader>a= :Tabularize /=<CR>
-vnoremap <Leader>a= :Tabularize /=<CR>
-nnoremap <Leader>a> :Tabularize /=><CR>
-vnoremap <Leader>a> :Tabularize /=><CR>
 
 " Keep vim's smart indenter from messing up pasted in text
 set pastetoggle=<F11>
