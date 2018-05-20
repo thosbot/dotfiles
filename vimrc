@@ -78,6 +78,10 @@ Plugin 'omega/vim-covered'
 " vim-covered)
 Plugin 'tyru/current-func-info.vim'
 
+" Surround with quotes, parens, HTML/XML elements, etc.
+" http://www.vim.org/scripts/script.php?script_id=1697
+Plugin 'tpope/vim-surround'
+
 " Provides facilities to integrate Vim with the pandoc document converter and
 " work with documents written in its markdown variant
 " vim-pandoc doesn't provide syntax support. The user needs to install
@@ -86,17 +90,6 @@ Plugin 'tyru/current-func-info.vim'
 " Plugin 'vim-pandoc/vim-pandoc'
 " Plugin 'vim-pandoc/vim-pandoc-syntax'
 
-" HTML/XML mappings
-" http://www.vim.org/scripts/script.php?script_id=1896
-Plugin 'tpope/vim-ragtag'
-
-" Surround with quotes, parens, HTML/XML elements, etc.
-" http://www.vim.org/scripts/script.php?script_id=1697
-Plugin 'tpope/vim-surround'
-
-" Highlights the matching HTML tag when the cursor is positioned on a tag. It
-" works in much the same way as the MatchParen plugin.
-Plugin 'gregsexton/MatchTag'
 " Indent-based folding
 Plugin 'pseewald/vim-anyfold'
 
@@ -116,8 +109,6 @@ Plugin 'majutsushi/tagbar'
 " http://www.vim.org/scripts/script.php?script_id=90
 " Plugin 'git://repo.or.cz/vcscommand'
 
-" Git wrapper
-Plugin 'tpope/vim-fugitive'
 " Language-specific syntax and development plugins
 
 
@@ -154,9 +145,18 @@ Plugin 'othree/html5.vim'
 " Asynchronous markdown preview
 " Plugin 'euclio/vim-markdown-composer'
 
+" Git wrapper
+Plugin 'tpope/vim-fugitive'
+
+" HTML/XML mappings
+" http://www.vim.org/scripts/script.php?script_id=1896
+Plugin 'tpope/vim-ragtag'
+
+" Highlights the matching HTML tag when the cursor is positioned on a tag. It
+" works in much the same way as the MatchParen plugin.
+Plugin 'gregsexton/MatchTag'
+
 call vundle#end()            " required
-
-
 
 """""""
 " Built-in behaviors
