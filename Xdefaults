@@ -55,7 +55,8 @@ XTerm*faceSize5: 24
 ! Huge
 XTerm*faceSize6: 36
 
-! Increase / decrease the font-size
+! Increase / decrease the font-size, ctrl-click to open files and URLs
 XTerm.VT100.translations: #override \
-Meta <Key> minus: smaller-vt-font() \n\
-Meta <Key> plus: larger-vt-font() \n\
+    Meta <Key> minus: smaller-vt-font() \n\
+    Meta <Key> plus: larger-vt-font() \n\
+    Ctrl <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY)
