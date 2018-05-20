@@ -104,11 +104,6 @@ Plugin 'pseewald/vim-anyfold'
 Plugin 'majutsushi/tagbar'
 
 
-" VCS PLUGINS
-" CVS/SVN/SVK/git/hg/bzr integration plugin
-" http://www.vim.org/scripts/script.php?script_id=90
-" Plugin 'git://repo.or.cz/vcscommand'
-
 " Language-specific syntax and development plugins
 
 
