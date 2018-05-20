@@ -286,6 +286,9 @@ set backspace=indent,eol,start
 
 " Spellcheck mimics MS Word F7
 :map <F7> :setlocal spell! spelllang=en_us<CR>
+" Underline and bold mis-spelled words and color red
+highlight clear SpellBad
+highlight SpellBad cterm=undercurl,bold ctermfg=red
 
 
 " Airline / powerline
