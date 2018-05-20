@@ -187,6 +187,9 @@ filetype plugin on      " enable settings from plug-ins (ftplugin)
 filetype indent on      " load filetype-specific indent files
 runtime macros/matchit.vim
 
+" Set to auto read when a file is changed from the outside
+set autoread
+
 " Define and initialize an autocmd group `vimrc`
 augroup vimrc
     " Vim won't clear out the group if it already existed, so do that here.
