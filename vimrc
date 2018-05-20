@@ -398,13 +398,6 @@ set pastetoggle=<F11>
 " FIXME: Can't get the old window title back yet -- defaults to xterm title
 autocmd vimrc BufEnter * let &titlestring=expand("%:t")
 
-" DRAGVISUALS Damian Conway
-vnoremap <expr> H DVB_Drag('left')
-vnoremap <expr> L DVB_Drag('right')
-vnoremap <expr> J DVB_Drag('down')
-vnoremap <expr> K DVB_Drag('up')
-let g:DVB_TrimWS = 1 " remove any introduced trailing whitespace after move
-
 " Source a local, machine-specific Vim RC
 if filereadable($HOME.'/.config/vim/local.vim')
     :source $HOME/.config/vim/local.vim
