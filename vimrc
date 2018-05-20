@@ -108,6 +108,8 @@ Plugin 'ervandew/supertab'
 
 " Language-specific syntax and development plugins
 
+" Syntax checking plugin
+" Plugin 'vim-syntastic/syntastic'
 
 " mustache.js
 Plugin 'mustache/vim-mustache-handlebars'
