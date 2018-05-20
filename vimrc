@@ -63,7 +63,7 @@ Plugin 'jiangmiao/auto-pairs'
 " SnipMate.vim aims to be a concise vim script that implements some of
 " TextMate's snippets features in Vim.
 " http://www.vim.org/scripts/script.php?script_id=2540
-Plugin 'msanders/snipmate.vim'
+Plugin 'garbas/vim-snipmate'
 
 " Aligning regions of text
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
