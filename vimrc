@@ -103,6 +103,8 @@ Plugin 'pseewald/vim-anyfold'
 " ordered by their scope.
 Plugin 'majutsushi/tagbar'
 
+" Tab completion FTW
+Plugin 'ervandew/supertab'
 
 " Language-specific syntax and development plugins
 
@@ -287,6 +289,9 @@ set backspace=indent,eol,start
 highlight clear SpellBad
 highlight SpellBad cterm=undercurl,bold ctermfg=red
 
+" Set SuperTab default behavior to omni-completion
+" TODO: Add a fallback for "completion chaining"
+let g:SuperTabDefaultCompletionType = "context"
 
 " Airline / powerline
 set laststatus=2
