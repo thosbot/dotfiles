@@ -10,7 +10,7 @@
              apply -->
         <focusNew>yes</focusNew>
         <!-- Move focus to a window when you move the mouse into it -->
-        <followMouse>no</followMouse>
+        <followMouse>yes</followMouse>
         <!-- Focus the last used window when changing desktops, instead of the
              one under the mouse pointer. when followMouse is enabled -->
         <focusLast>yes</focusLast>
