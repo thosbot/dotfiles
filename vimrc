@@ -119,8 +119,9 @@ Plugin 'mustache/vim-mustache-handlebars'
 
 " Golang
 Plugin 'fatih/vim-go'
+
 " Golang code completion daemon
-Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
+" Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 
 " Chuck audio programming language
 " http://www.vim.org/scripts/script.php?script_id=1880
