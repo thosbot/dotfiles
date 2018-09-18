@@ -178,7 +178,7 @@ set scrolloff=5         " min number of line above/below cursor
 set sidescrolloff=10    " min number of columns (nowrap) l/r of cursor
 set showmatch           " show matching paren/brace/bracket
 set number              " line numbers w/ toggle (double C-n)
-:nnoremap <C-n><C-n> :set invnumber<CR>
+:nnoremap <C-i><C-i> :set invnumber<CR>
 
 set wildmenu                " file/command tab completion -- show all opts
 set wildmode=list:longest   " tab complete to ambiguity
@@ -337,7 +337,7 @@ set noshowcmd
 " Ctags
 " set tags+=~/tags
 " Tagbar : http://usevim.com/2013/02/01/vim-101-fancy-ctags/
-nmap <F8> :TagbarToggle<CR>
+nmap <F10> :TagbarToggle<CR><C-w>l
 
 """""""
 " Movement / motion
