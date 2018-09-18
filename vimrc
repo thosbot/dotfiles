@@ -107,7 +107,7 @@ Plugin 'pseewald/vim-anyfold'
 Plugin 'majutsushi/tagbar'
 
 " Tab completion FTW
-Plugin 'ervandew/supertab'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Language-specific syntax and development plugins
 
@@ -319,9 +319,6 @@ set backspace=indent,eol,start
 highlight clear SpellBad
 highlight SpellBad cterm=undercurl,bold ctermfg=red
 
-" Set SuperTab default behavior to omni-completion
-" TODO: Add a fallback for "completion chaining"
-let g:SuperTabDefaultCompletionType = "context"
 " Improve dropdown highlighting
 :highlight Pmenu ctermbg=238 gui=bold
 
