@@ -38,6 +38,9 @@ Plugin 'tpope/vim-repeat'
 " Filesystem explorer
 " Plugin 'scrooloose/nerdtree'
 
+" Color / theme
+Plugin 'morhetz/gruvbox'
+
 " Airline statusline
 Plugin 'bling/vim-airline'
 
@@ -226,6 +229,18 @@ set t_Co=256
 " set t_AB=^[[48;5;%dm
 " set t_AF=^[[38;5;%dm
 
+" Italics and true colors
+" https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be
+" https://github.com/morhetz/gruvbox
+" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors
+
+" https://github.com/morhetz/gruvbox/wiki/Configuration
+" colorscheme gruvbox
+" set background=dark
+" let g:gruvbox_contrast_dark='hard'
+
 colorscheme peachpuff
 syntax on
 highlight comment ctermfg=darkgreen
@@ -307,6 +322,8 @@ highlight SpellBad cterm=undercurl,bold ctermfg=red
 " Set SuperTab default behavior to omni-completion
 " TODO: Add a fallback for "completion chaining"
 let g:SuperTabDefaultCompletionType = "context"
+" Improve dropdown highlighting
+:highlight Pmenu ctermbg=238 gui=bold
 
 " Airline / powerline
 set laststatus=2
