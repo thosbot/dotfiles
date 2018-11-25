@@ -4,7 +4,7 @@ alias ls='ls --color=auto'
 # List only dot files and dot directories
 alias lsdot='ls -d $( echo $( ls -a | egrep "^\." ) )'
 
-alias free='free -h'
+alias free='free --wide --human'
 
 # 3-month calendar
 alias cal3='cal -3'
