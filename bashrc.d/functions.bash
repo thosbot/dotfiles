@@ -24,6 +24,14 @@ readmarkdown() {
     pandoc --from markdown --to html5 "$1" --self-contained | lynx -stdin
 }
 
+# Convert Markdown file to HTML and open in Firefox
+openmarkdown() {
+    filename=$(basename -- ${1%.*})
+    htmlfile="/tmp/${filename}_${RANDOM}.html"
+    pandoc --from markdown --to html5 $1 --css $HOME/.pandoc/css/md.css --self-contained > $htmlfile
+    firefox $htmlfile
+}
+
 # List only directory names that begin with the arg provided
 # E.g. `ls a` lists all directories that begin with "a"
 lsdir() {
