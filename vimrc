@@ -277,6 +277,21 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
 let g:markdown_fenced_languages = ['caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'vim', 'xml', 'yaml', 'yml=yaml']
 
+" Toggle background
+" TODO: Light background doesn't appear to completely reset everything that
+"       dark changed.
+function! ToggleBG()
+    let s:tbg = &background
+    " Inversion
+    if s:tbg == "dark"
+        set background=light
+    else
+        set background=dark
+    endif
+endfunction
+noremap <leader>bg :call ToggleBG()<CR>
+
+
 """""""
 " Files & buffers
 "
