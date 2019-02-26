@@ -172,11 +172,14 @@ set history=1000        " command line history
 set complete=.,w,b,u,t  " word completion (C-n, C-p) settings
 set showcmd             " show command in bottom bar
 set lazyredraw          " redraw only when we need to
+set viewoptions=folds,options,cursor,unix,slash
 
 set ruler               " cursor position and percentage through file
 set scrolloff=5         " min number of line above/below cursor
 set sidescrolloff=10    " min number of columns (nowrap) l/r of cursor
 set showmatch           " show matching paren/brace/bracket
+set nojoinspaces        " Prevents inserting two spaces after punctuation on a join
+set virtualedit=onemore " Allow for cursor beyond last character
 set number              " line numbers w/ toggle (double C-n)
 :nnoremap <C-i><C-i> :set invnumber<CR>
 
@@ -185,6 +188,9 @@ set wildmode=list:longest   " tab complete to ambiguity
 if exists("+wildignorecase")
     set wildignorecase      " tab completions should ignore case
 endif
+
+" set mouse=a                 " Automatically enable mouse usage
+" set mousehide               " Hide the mouse cursor while typing
 
 filetype plugin on      " enable settings from plug-ins (ftplugin)
 filetype indent on      " load filetype-specific indent files
@@ -269,7 +275,7 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " http://vim.wikia.com/wiki/Configuring_the_cursor
 
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
-let g:markdown_fenced_languages = ['caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'vim', 'xml']
+let g:markdown_fenced_languages = ['caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'vim', 'xml', 'yaml', 'yml=yaml']
 
 """""""
 " Files & buffers
