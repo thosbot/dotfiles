@@ -31,7 +31,7 @@ Plugin 'tomtom/tlib_vim'
 " xolox-required utils
 Plugin 'xolox/vim-misc'
 
-" Add "." repeating for plugin maps (supports vim-surround)
+" Add dot (.) repeating for plugin maps (supports vim-surround)
 " https://github.com/tpope/vim-repeat
 Plugin 'tpope/vim-repeat'
 
@@ -119,7 +119,6 @@ Plugin 'mustache/vim-mustache-handlebars'
 
 " Golang
 Plugin 'fatih/vim-go'
-
 " Golang code completion daemon
 " Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 
@@ -268,7 +267,7 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
 let g:markdown_fenced_languages = ['caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'vim', 'xml', 'yaml', 'yml=yaml']
 
-" Toggle background
+" Allow to trigger background
 " TODO: Light background doesn't appear to completely reset everything that
 "       dark changed.
 function! ToggleBG()
@@ -428,7 +427,6 @@ autocmd vimrc BufEnter * let &titlestring=expand("%:t")
 " Tmux
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
 autocmd VimLeave * call system("tmux rename-window bash")
-
 
 " Source a local, machine-specific Vim RC
 if filereadable($HOME.'/.config/vim/local.vim')
