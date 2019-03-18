@@ -75,7 +75,7 @@ ${color slate grey}U: ${color}${upspeed wlp1s0}${alignr}${color slate grey}D: ${
 
 # National Weather Service
 # also avails: relative_humidity, dewpoint_[f|c], pressure_[in|mb], visibility_mi
-${execi 1800 curl -s "http://w1.weather.gov/xml/current_obs/KPHL.xml" -o ~/.cache/nws.xml}${font :size=18}${alignc}${execi 1800 xmllint --xpath '//current_observation/temp_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 1800 xmllint --xpath '//current_observation/temp_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C${font}
+${execi 1800 curl -s "https://w1.weather.gov/xml/current_obs/KPHL.xml" -o ~/.cache/nws.xml}${font :size=18}${alignc}${execi 1800 xmllint --xpath '//current_observation/temp_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 1800 xmllint --xpath '//current_observation/temp_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C${font}
 ${alignc}${execi 1800 xmllint --xpath '//current_observation/weather/text()' ~/.cache/nws.xml}
 ${alignc}${color slate grey}${execi 1800 xmllint --xpath '//current_observation/location/text()' ~/.cache/nws.xml}
 ${alignc}${color slate grey}${execi 1800 xmllint --xpath '//current_observation/station_id/text()' ~/.cache/nws.xml} ${execi 1800 xmllint --xpath '//current_observation/latitude/text()' ~/.cache/nws.xml}°N ${execi 1800 xmllint --xpath '//current_observation/longitude/text()' ~/.cache/nws.xml | grep -P -o "\d+\.\d+"}°W${color}
