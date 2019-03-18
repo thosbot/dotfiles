@@ -262,7 +262,7 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " http://vim.wikia.com/wiki/Configuring_the_cursor
 
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
-let g:markdown_fenced_languages = ['caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'vim', 'xml', 'yaml', 'yml=yaml']
+let g:markdown_fenced_languages = [ 'caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'sql', 'vim', 'xml', 'yaml', 'yml=yaml' ]
 
 " Allow to trigger background
 " TODO: Light background doesn't appear to completely reset everything that
