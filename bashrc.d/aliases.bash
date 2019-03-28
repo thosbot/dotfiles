@@ -30,6 +30,8 @@ alias grep-codetags='ack -A 5 --color-match=RED --pager="less -RSFX" "TODO|XXX|F
 # Parameterized ack
 alias ack='ack --sort-files --smart-case --color-match=RED --pager="less -RSFX"'
 
+# Audio only MPV
+alias aud='mpv --vid=no'
 
 # Check a command run as sudo for alias expansion (courtesy jellingwood)
 # From the bash manual:
