@@ -4,11 +4,19 @@
 [push]
     default = simple
 [alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    hist = log --pretty=format:'%h %ad %s%d [%an]' --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
     codegrep = !sh -c 'git grep "$1" $( git rev-list --all )'
     deadbranch = !sh -c \"git remote prune origin && git branch -vv | grep ': gone]' | awk '{print \\$1}'\" -
     lshist = !sh -c 'git log --pretty=format: --name-only --diff-filter=A "$1" | sort -u' -
     svnshow = !sh -c \"git log --grep=\\\"@$1\\$\\\" -p\" -
-    tree = log --oneline --graph --all --decorate
+    tree = log --graph --all --oneline --decorate
+    status = status --untracked-files
 [core]
     autocrlf = input
     excludesfile = /home/thomas/.config/git/gitignore
