@@ -31,3 +31,5 @@
     branch = green
 [merge]
     renamelimit = 20000
+[diff]
+    tool = vimdiff
