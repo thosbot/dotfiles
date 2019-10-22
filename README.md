@@ -10,3 +10,7 @@
 
 [Better Bash history](http://blog.sanctum.geek.nz/better-bash-history/)  
 [Shell config subfiles](http://blog.sanctum.geek.nz/shell-config-subfiles/)  
+
+### URxvt
+
+[URxvt Perl extension for resizing the font](https://github.com/simmel/urxvt-resize-font)
