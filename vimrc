@@ -7,131 +7,121 @@ set encoding=utf8
 set nocompatible " non vi-compatible
 
 """""""
-" Vundle - Github-based extension manager
+" Plugins
 "
 """""""
+" TODO: Verify this is necessary for vim-plug
 filetype off " required by vundle
-set runtimepath+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " Base utility plugins
 
-" Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
 " Vim utils used by many scripts
 " http://www.vim.org/scripts/script.php?script_id=2940
-Plugin 'vim-scripts/vim-addon-mw-utils'
+Plug 'vim-scripts/vim-addon-mw-utils'
 
 " Even more utils
 " http://www.vim.org/scripts/script.php?script_id=1863
-Plugin 'tomtom/tlib_vim'
+Plug 'tomtom/tlib_vim'
 
 " Add dot (.) repeating for plugin maps (supports vim-surround)
 " https://github.com/tpope/vim-repeat
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " Filesystem explorer
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " Airline statusline
-Plugin 'bling/vim-airline'
+Plug 'bling/vim-airline'
 
 " Mapping pairs for ex commands, linewise, opt toggling, encoding/decoding
-Plugin 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'
 
 " Unicode character metadata
-Plugin 'tpope/vim-characterize'
+Plug 'tpope/vim-characterize'
 
 " Behaviour Plugins
 
 " Commenting out lines of code
 " Also check out: https://github.com/tomtom/tcomment_vim
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 " Insert or delete brackets, parens, quotes in pairs
 " Alt: https://github.com/ervandew/matchem
-Plugin 'jiangmiao/auto-pairs'
-
-" TODO: Add Emmet web-dev toolkit (https://docs.emmet.io/)
+Plug 'jiangmiao/auto-pairs'
 
 " Aligning regions of text
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular'
 
 " Get the current function name which your cursor is located at (supports
 " vim-covered)
-Plugin 'tyru/current-func-info.vim'
+Plug 'tyru/current-func-info.vim'
 
 " Surround with quotes, parens, HTML/XML elements, etc.
 " http://www.vim.org/scripts/script.php?script_id=1697
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Provides facilities to integrate Vim with the pandoc document converter and
 " work with documents written in its markdown variant
 " vim-pandoc doesn't provide syntax support. The user needs to install
 " vim-pandoc/vim-pandoc-syntax
 " http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown
-" Plugin 'vim-pandoc/vim-pandoc'
-" Plugin 'vim-pandoc/vim-pandoc-syntax'
-
-" Indent-based folding
-Plugin 'pseewald/vim-anyfold'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " CTags
-Plugin 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 
 " Browse the tags of the current file and get an overview of its structure
 " via sidebar that displays the ctags-generated tags of the current file
 " ordered by their scope.
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
 " Fuzzy filenames
-Plugin 'junegunn/fzf'
+Plug 'junegunn/fzf'
 
 " Git wrapper
-Plugin 'tpope/vim-fugitive'
-
-" Code completion FTW
-Plugin 'ycm-core/YouCompleteMe'
+Plug 'tpope/vim-fugitive'
 
 " Language-specific syntax and development plugins
 
 " Asynchronous Lint Engine
-Plugin 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 
-Plugin 'fatih/vim-go'
-Plugin 'vim-scripts/ck.vim' " Chuck audio programming language
+" Code autocompletion
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 
-Plugin 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
-Plugin 'amiorin/vim-fenced-code-blocks'
-
-Plugin 'vim-perl/vim-perl' " http://groups.google.com/group/vim-perl
-Plugin 'pjcj/vim-hl-var'   " Highlight perl variables
+Plug 'fatih/vim-go' " Go Vim IDE
+Plug 'vim-scripts/ck.vim' " Chuck audio programming language
+Plug 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
+Plug 'amiorin/vim-fenced-code-blocks'
+Plug 'vim-perl/vim-perl' " http://groups.google.com/group/vim-perl
 
 " JavaScript, et al.
-Plugin 'pangloss/vim-javascript'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'leafOfTree/vim-vue-plugin'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'leafOfTree/vim-vue-plugin'
 
-Plugin 'othree/html5.vim'
-Plugin 'wgwoods/vim-systemd-syntax'
-Plugin 'vim-latex/vim-latex'
+Plug 'othree/html5.vim'
+Plug 'wgwoods/vim-systemd-syntax'
+Plug 'vim-latex/vim-latex'
 
 " HTML/XML mappings
 " http://www.vim.org/scripts/script.php?script_id=1896
-" TODO:  This should be replaceable with Emmet
-Plugin 'tpope/vim-ragtag'
+Plug 'tpope/vim-ragtag'
 
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
 " works in much the same way as the MatchParen plugin.
-Plugin 'gregsexton/MatchTag'
+Plug 'gregsexton/MatchTag'
 
-Plugin 'https://gitlab.com/gi1242/vim-emoji-ab'
+Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 
-call vundle#end()            " required
+call plug#end()
 
 """""""
 " Builtin behaviors
