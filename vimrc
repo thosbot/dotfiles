@@ -254,9 +254,6 @@ noremap <leader>bg :call ToggleBG()<CR>
 " Files & buffers
 "
 """""""
-" Write changes to buffers before ! or changing the active buffer
-" 'autowrite' could be conflicting with 'hidden'
-" set autowrite
 
 " Fuzzy file match
 nnoremap <C-p> :<C-u>FZF<CR>
@@ -276,10 +273,6 @@ set hidden
 
 " Remember marks, registers, searches, buffer list when quitting
 set viminfo='50,\"100,:100,%,n~/.viminfo
-
-" Move dir where swaps are stored
-" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-" set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 
 " Jump to the last position when reopening a file
 autocmd vimrc BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -316,8 +309,6 @@ set noshowmode
 set noruler
 set noshowcmd
 
-" Ctags
-" set tags+=~/tags
 " Tagbar : http://usevim.com/2013/02/01/vim-101-fancy-ctags/
 nmap <F10> :TagbarToggle<CR><C-w>l
 
@@ -391,11 +382,6 @@ endfunction
 " Environment
 "
 """""""
-
-" Screen
-" Autoset screen window title (vimtip 1126), resets to xterm title on close
-" FIXME: Can't get the old window title back yet -- defaults to xterm title
-autocmd vimrc BufEnter * let &titlestring=expand("%:t")
 
 " Tmux
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
