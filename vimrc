@@ -226,10 +226,10 @@ set list
 set listchars=trail:.
 nmap <leader>l :set list!<CR>
 
-" Softwrapping: linebreak won't split words, but doesn't work with list
+" Softwrapping - linebreak won't split words, but doesn't work with list
 command! -nargs=* Wrap set wrap linebreak nolist
 
-" TODO: Mess with cursor color per vim docs
+" TODO:  Mess with cursor color per vim docs
 " http://vim.wikia.com/wiki/Configuring_the_cursor
 
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
@@ -338,16 +338,18 @@ nnoremap <C-4> g$
 nnoremap <C-6> g^
 nnoremap <C-0> g^
 
+
 """""""
 " Searching
 "
 """""""
+
 " Highlighting for searches - turn off with spacebar
 set hlsearch
 :noremap <Leader> <Space> :silent noh<Bar>echo<CR>
-" Don't immediately begin searching (reverse w/ set incsearch),
-" ignorecase - case insensitive searching
-" smartcase - turn off ignorecase when search term includes uppercase char
+" noincsearch - don't immediately begin searching (reverse w/ set incsearch),
+" ignorecase  - case insensitive searching
+" smartcase   - turn off ignorecase when search term includes uppercase char
 set noincsearch ignorecase smartcase
 
 if executable("ack")
