@@ -6,10 +6,12 @@
 set encoding=utf8
 set nocompatible " non vi-compatible
 
+
 """""""
 " Plugins
 "
 """""""
+
 " TODO: Verify this is necessary for vim-plug
 filetype off " required by vundle
 
@@ -100,16 +102,15 @@ Plug 'vim-scripts/ck.vim' " Chuck audio programming language
 Plug 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
 Plug 'amiorin/vim-fenced-code-blocks'
 Plug 'vim-perl/vim-perl' " http://groups.google.com/group/vim-perl
+Plug 'othree/html5.vim'
+Plug 'wgwoods/vim-systemd-syntax'
+Plug 'vim-latex/vim-latex'
 
 " JavaScript, et al.
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'leafOfTree/vim-vue-plugin'
-
-Plug 'othree/html5.vim'
-Plug 'wgwoods/vim-systemd-syntax'
-Plug 'vim-latex/vim-latex'
 
 " HTML/XML mappings
 " http://www.vim.org/scripts/script.php?script_id=1896
@@ -123,10 +124,12 @@ Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 
 call plug#end()
 
+
 """""""
 " Builtin behaviors
 "
 """""""
+
 set noerrorbells
 set visualbell
 
@@ -174,6 +177,7 @@ let g:mapleader = '\'
 :nnoremap <leader>ev :split $MYVIMRC<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
+
 """""""
 " Indentation / tab stops / holy war
 "
@@ -188,13 +192,13 @@ set expandtab       " insert tabs as sets of spaces, not tab characters
 " Keep vim's smart indenter from messing up pasted in text
 set pastetoggle=<F11>
 
+
 """""""
 " Syntax highlighting / colors
 "
 """""""
-" 256: http://vim.wikia.com/wiki/256_colors_in_vim
-set t_Co=256
 
+set t_Co=256 " 256 colors
 colorscheme peachpuff
 syntax on
 highlight comment ctermfg=darkgreen
@@ -203,17 +207,15 @@ highlight Search cterm=NONE ctermfg=grey ctermbg=blue
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermfg=darkgray " line numbers
 
-" set colorcolumn=79
-" highlight ColorColumn ctermbg=magenta
+set colorcolumn=81
+highlight ColorColumn ctermbg=darkgray
 
 " Highlight the line of cursor -- will make screen redrawing slower
-" set cursorline
-" highlight CursorLine term=bold cterm=bold guibg=Grey40
+set cursorline
+highlight CursorLine term=bold cterm=bold guibg=Grey40
 
-" Highlight EOL whitespace
 set list
-" Replace trailing whitespace chars with '.'
-set listchars=trail:.
+set listchars=trail:. " Replace trailing whitespace chars with '.'
 nmap <leader>l :set list!<CR>
 
 " Softwrapping - linebreak won't split words, but doesn't work with list
@@ -226,8 +228,8 @@ command! -nargs=* Wrap set wrap linebreak nolist
 let g:markdown_fenced_languages = [ 'caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'sql', 'vim', 'xml', 'yaml', 'yml=yaml' ]
 
 " Allow to trigger background
-" TODO: Light background doesn't appear to completely reset everything that
-"       dark changed.
+" FIXME: Light background doesn't appear to completely reset everything that
+"        dark changed.
 function! ToggleBG()
     let s:tbg = &background
     " Inversion
@@ -294,18 +296,14 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-" TODO
-set noshowmode
-set noruler
-set noshowcmd
-
-" Tagbar : http://usevim.com/2013/02/01/vim-101-fancy-ctags/
 nmap <F10> :TagbarToggle<CR><C-w>l
+
 
 """""""
 " Movement / motion
 "
 """""""
+
 " Move through display lines in normal mode, rather than numbered lines
 vnoremap <C-j> gj
 vnoremap <C-k> gk
@@ -390,13 +388,9 @@ endif
 "     execute "source ".b:vim
 " endif
 
-"""""""
-" References
-"
-"""""""
-" https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
-" https://github.com/tpope
-" https://github.com/thoughtbot/dotfiles
+let g:tex_flavor='latex'
+let g:deoplete#enable_at_startup = 1
+let g:ragtag_global_maps = 1 " Set default ragtag key mappings
 
 
 """""""
