@@ -180,8 +180,10 @@ highlight Search cterm=NONE ctermfg=grey ctermbg=blue
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermfg=darkgray " line numbers
 
-set colorcolumn=81
+" Toggle color column via command or F2
 highlight ColorColumn ctermbg=darkgray
+command! ToggleCC :let &cc = &cc == '' ? '120' : ''
+nnoremap <F2> :let &cc = &cc == '' ? '120' : ''<CR>
 
 " Highlight the line of cursor -- will make screen redrawing slower
 set cursorline
