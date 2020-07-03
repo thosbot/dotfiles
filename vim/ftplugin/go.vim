@@ -1,12 +1,7 @@
 setlocal tabstop=4 noexpandtab
 setlocal nolist
 let g:go_disable_autoinstall = 0
-
-"""""""
-" Vim-Go settings
-" https://github.com/fatih/vim-go
-"
-"""""""
+let g:ale_completion_enabled = 0
 
 call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
