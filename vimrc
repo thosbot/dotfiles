@@ -128,8 +128,9 @@ if exists("+wildignorecase")
     set wildignorecase      " tab completions should ignore case
 endif
 
-" set mouse=a                 " Automatically enable mouse usage
-" set mousehide               " Hide the mouse cursor while typing
+set mouse=a                 " Automatically enable mouse usage
+set ttymouse=xterm
+set mousehide               " Hide the mouse cursor while typing
 
 filetype plugin on      " enable settings from plug-ins (ftplugin)
 filetype indent on      " load filetype-specific indent files
