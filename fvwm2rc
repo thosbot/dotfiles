@@ -264,8 +264,8 @@ AddToFunc   FvwmDesktopScreenshot
 
 # Program functions
 DestroyFunc FvwmXTerm
-AddToFunc   FvwmXTerm
-+ I Exec exec xterm -j -s -vb +sf +dc -cr darkgreen -u8 -geometry 86x28 $@
+AddToFunc FvwmXTerm
++ I Exec exec xfce4-terminal
 
 #---------
 # Menu
