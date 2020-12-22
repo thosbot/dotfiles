@@ -36,6 +36,7 @@ Plug 'bling/vim-airline'      " Airline statusline
 Plug 'tpope/vim-unimpaired'   " Mapping pairs for ex commands, linewise,
                               " opt toggling, encoding/decoding
 Plug 'tpope/vim-characterize' " Unicode character metadata
+Plug 'junegunn/vim-emoji'
 
 " Behaviour Plugins
 
@@ -63,15 +64,12 @@ Plug 'tpope/vim-fugitive'           " Git wrapper
 " ordered by their scope.
 Plug 'majutsushi/tagbar'
 
-" Language-specific syntax and development plugins
-
-Plug 'dense-analysis/ale'   " Asynchronous Lint Engine
-
 " Code autocompletion
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
+" Language-specific
 Plug 'fatih/vim-go'         " Go Vim IDE
 Plug 'vim-scripts/ck.vim'   " Chuck audio programming language
 Plug 'vim-perl/vim-perl'
@@ -79,6 +77,7 @@ Plug 'tpope/vim-ragtag'     " HTML/XML mappings
 Plug 'othree/html5.vim'
 Plug 'wgwoods/vim-systemd-syntax'
 Plug 'vim-latex/vim-latex'
+Plug 'dense-analysis/ale'   " Asynchronous Lint Engine
 
 Plug 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
 Plug 'amiorin/vim-fenced-code-blocks'
@@ -92,8 +91,6 @@ Plug 'leafOfTree/vim-vue-plugin'
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
 " works in much the same way as the MatchParen plugin.
 Plug 'gregsexton/MatchTag'
-
-Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 
 call plug#end()
 
