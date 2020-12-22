@@ -1,14 +1,4 @@
-*.foreground: white
-*.background: black
-*.cursorColor: #afbfbf
 URxvt.font: xft:Noto Mono for Powerline:style=Regular:size=16, xft:Noto Sans Mono CJK JP:style=Regular:size=16, xft:Noto Color Emoji:style=Regular:size=12, xft:DejaVu Sans Mono:style=Regular:size=16
-
-Xft.dpi: 96
-Xft.antialias: true
-Xft.rgba: rgb
-Xft.hinting: true
-Xft.hintstyle: hintslight
-Xft.lcdfilter: ldcdefault
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
