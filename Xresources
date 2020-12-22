@@ -1,6 +1,7 @@
 *.foreground: white
 *.background: black
 *.cursorColor: #afbfbf
+URxvt.font: xft:Noto Mono for Powerline:style=Regular:size=16, xft:Noto Sans Mono CJK JP:style=Regular:size=16, xft:Noto Color Emoji:style=Regular:size=12, xft:DejaVu Sans Mono:style=Regular:size=16
 
 Xft.dpi: 96
 Xft.antialias: true
@@ -9,9 +10,6 @@ Xft.hinting: true
 Xft.hintstyle: hintslight
 Xft.lcdfilter: ldcdefault
 
-URxvt.iconFile:    /usr/share/icons/Humanity/apps/128/terminal.svg
-
-URxvt.font: xft:Noto Mono for Powerline:style=Regular:size=14, xft:Noto Sans Mono CJK JP:style=Regular:size=16, xft:Symbola:style=Regular:size=16
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 
@@ -34,10 +32,6 @@ URxvt.loginShell: true
 URxvt.insecure: false
 URxvt.saveline: 65536
 
-! Switch $TERM from rxvt-unicode-256color for greater
-! application compatibility
-! URxvt.termName: rxvt-256color
-
 ! Common Keybinds for Navigations
 URxvt.keysym.Shift-Up: command:\033]720;1\007
 URxvt.keysym.Shift-Down: command:\033]721;1\007
@@ -48,5 +42,5 @@ URxvt.keysym.Control-Left: \033[1;5D
 
 URxvt.clipboard.autocopy: true
 
-URxvt.perl-ext-common: default,fullscreen,selection-to-clipboard,font-size
+URxvt.perl-ext-common: default,fullscreen,selection-to-clipboard,resize-font
 URxvt.keysym.Meta-F11: perl:fullscreen:switch
