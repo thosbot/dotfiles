@@ -76,4 +76,9 @@ Dewpoint${alignr}${execi 30 xmllint --xpath '//current_observation/dewpoint_f/te
 Humidity${alignr}${execi 30 xmllint --xpath '//current_observation/relative_humidity/text()' ~/.cache/nws.xml}%
 Wind${alignr}${execi 30 xmllint --xpath '//current_observation/wind_dir/text()' ~/.cache/nws.xml} ${execi 30 xmllint --xpath '//current_observation/wind_mph/text()' ~/.cache/nws.xml | grep -P -o "^\d+\.\d"} MPH
 Gust${alignr}${execi 30 xmllint --xpath '//current_observation/wind_gust_mph/text()' ~/.cache/nws.xml | grep -P -o "^\d+\.\d"} MPH
+
+# Sun and moon
+${color slate grey}Astro ${goto 208}Rise${goto 272}Set${color}
+Sun${goto 64}len: ${execi 1 cat ~/.cache/astro.json | jq -r '.daylength'}${goto 208}${execi 1 cat ~/.cache/astro.json | jq -r '.sunrise'}${goto 272}${execi 1 cat ~/.cache/astro.json | jq -r '.sunset'}
+Moon${goto 64}${execi 1 cat ~/.cache/astro.json | jq -r '.moonphase'}${goto 208}${execi 1 cat ~/.cache/astro.json | jq -r '.moonrise'}${goto 272}${execi 1 cat ~/.cache/astro.json | jq -r '.moonset'}
 ]]
