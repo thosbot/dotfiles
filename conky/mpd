@@ -1,0 +1,6 @@
+# Music Player Daemon
+${if_mpd_playing}${font :size=12}${alignc}${exec mpc current -f '%title%'}${font}
+${alignc}${exec mpc current -f '%artist%'}
+${font :italic:size=12}${alignc}${exec mpc current -f "%album%"}${font}
+${alignc}${mpd_elapsed} ${alignc}${mpd_bar} ${mpd_length}
+${endif}

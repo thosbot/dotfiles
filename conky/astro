@@ -1,0 +1,5 @@
+# Sun and moon
+${color slate grey}Astro ${goto 208}Rise${goto 272}Set${color}
+Sun${goto 64}len: ${execi 1 cat ~/.cache/astro.json | jq -r '.daylength'}${goto 208}${execi 1 cat ~/.cache/astro.json | jq -r '.sunrise'}${goto 272}${execi 1 cat ~/.cache/astro.json | jq -r '.sunset'}
+Moon${goto 64}${execi 1 cat ~/.cache/astro.json | jq -r '.moonphase'}${goto 208}${execi 1 cat ~/.cache/astro.json | jq -r '.moonrise'}${goto 272}${execi 1 cat ~/.cache/astro.json | jq -r '.moonset'}
+
