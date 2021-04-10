@@ -55,10 +55,10 @@ ${top name 4}${alignr}${top cpu 4}
 ${color slate grey}Mem ${color}$memperc%${alignr}${color slate grey}Swap ${color}$swapperc%
 ${membar 3,320}
 $mem${alignr}$memmax
-${color #ddaa00}${top_mem name 1}${alignr}${top_mem mem 1}${color}
-${top_mem name 2}${alignr}${top_mem mem 2}
-${top_mem name 3}${alignr}${top_mem mem 3}
-${top_mem name 4}${alignr}${top_mem mem 4}
+${color #ddaa00}${top_mem name 1}${alignr}${top_mem mem_res 1}${color}
+${top_mem name 2}${alignr}${top_mem mem_res 2}
+${top_mem name 3}${alignr}${top_mem mem_res 3}
+${top_mem name 4}${alignr}${top_mem mem_res 4}
 
 # Network
 ${color slate grey}Net ${color}${alignr}${addr eno1}
