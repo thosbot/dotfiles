@@ -40,3 +40,5 @@ alias aud='mpv --vid=no'
 alias sudo='sudo '
 
 alias pretty='python -m json.tool | pager'
+
+alias youtube-dl='youtube-dl --add-metadata'
