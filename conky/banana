@@ -74,18 +74,16 @@ ${color slate grey}Up ${color}${upspeed enx70886b89fb75}${alignr}${color slate g
 ${totalup enx70886b89fb75}${alignr}${totaldown enx70886b89fb75}
 
 # National Weather Service
-# also avails: relative_humidity, dewpoint_[f|c], pressure_[in|mb], visibility_mi
-${execi 1800 curl -s "https://w1.weather.gov/xml/current_obs/KPHL.xml" -o ~/.cache/nws.xml}${font :size=18}${alignc}${execi 5 xmllint --xpath '//current_observation/temp_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 5 xmllint --xpath '//current_observation/temp_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C${font}
-${alignc}${execi 5 xmllint --xpath '//current_observation/weather/text()' ~/.cache/nws.xml}
-${alignc}${color slate grey}${execi 5 xmllint --xpath '//current_observation/location/text()' ~/.cache/nws.xml}
-${alignc}${color slate grey}${execi 5 xmllint --xpath '//current_observation/station_id/text()' ~/.cache/nws.xml} ${execi 5 xmllint --xpath '//current_observation/latitude/text()' ~/.cache/nws.xml}°N ${execi 5 xmllint --xpath '//current_observation/longitude/text()' ~/.cache/nws.xml | grep -P -o "\d+\.\d+"}°W${color}
-# heat_index_[f|c], windchill_[f|c]
-Windchill${alignr}${execi 5 xmllint --xpath '//current_observation/windchill_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 5 xmllint --xpath '//current_observation/windchill_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C
-# Heat Idx${alignr}${execi 5 xmllint --xpath '//current_observation/heat_index_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 5 xmllint --xpath '//current_observation/heat_index_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C
-Dewpoint${alignr}${execi 5 xmllint --xpath '//current_observation/dewpoint_f/text()' ~/.cache/nws.xml | grep -P -o "^\d+"}°F / ${execi 5 xmllint --xpath '//current_observation/dewpoint_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C
-Humidity${alignr}${execi 5 xmllint --xpath '//current_observation/relative_humidity/text()' ~/.cache/nws.xml}%
-Wind${alignr}${execi 5 xmllint --xpath '//current_observation/wind_dir/text()' ~/.cache/nws.xml} ${execi 5 xmllint --xpath '//current_observation/wind_mph/text()' ~/.cache/nws.xml | grep -P -o "^\d+"} MPH
-# Gust${alignr}${execi 5 xmllint --xpath '//current_observation/wind_gust_mph/text()' ~/.cache/nws.xml | grep -P -o "^\d+"} MPH
+${execi 1800 curl -s "https://w1.weather.gov/xml/current_obs/KPHL.xml" -o ~/.cache/nws.xml}${font :size=18}${alignc}${execi 30 xmllint --xpath '//current_observation/temp_f/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°F / ${execi 30 xmllint --xpath '//current_observation/temp_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C${font}
+${alignc}${execi 30 xmllint --xpath '//current_observation/weather/text()' ~/.cache/nws.xml}
+${alignc}${color slate grey}${execi 30 xmllint --xpath '//current_observation/location/text()' ~/.cache/nws.xml}
+${alignc}${color slate grey}${execi 30 xmllint --xpath '//current_observation/station_id/text()' ~/.cache/nws.xml} ${execi 30 xmllint --xpath '//current_observation/latitude/text()' ~/.cache/nws.xml}°N ${execi 30 xmllint --xpath '//current_observation/longitude/text()' ~/.cache/nws.xml | grep -P -o "\d+\.\d+"}°W${color}
+Windchill${alignr}${execi 30 xmllint --xpath '//current_observation/windchill_f/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°F / ${execi 30 xmllint --xpath '//current_observation/windchill_c/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°C
+Heat Idx${alignr}${execi 30 xmllint --xpath '//current_observation/heat_index_f/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°F / ${execi 30 xmllint --xpath '//current_observation/heat_index_c/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°C
+Dewpoint${alignr}${execi 30 xmllint --xpath '//current_observation/dewpoint_f/text()' ~/.cache/nws.xml | grep -P -o "^\d+"}°F / ${execi 30 xmllint --xpath '//current_observation/dewpoint_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C
+Humidity${alignr}${execi 30 xmllint --xpath '//current_observation/relative_humidity/text()' ~/.cache/nws.xml}%
+Wind${alignr}${execi 30 xmllint --xpath '//current_observation/wind_dir/text()' ~/.cache/nws.xml} ${execi 30 xmllint --xpath '//current_observation/wind_mph/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^\d+\.\d"} MPH
+Gust${alignr}${execi 30 xmllint --xpath '//current_observation/wind_gust_mph/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^\d+\.\d"} MPH
 
 # Music Player Daemon
 ${if_mpd_playing}${font :size=12}${alignc}${exec mpc current -f '%title%'}${font}
