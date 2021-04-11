@@ -167,6 +167,10 @@ set expandtab       " insert tabs as sets of spaces, not tab characters
 " Keep vim's smart indenter from messing up pasted in text
 set pastetoggle=<F11>
 
+" Tabularize
+" https://github.com/godlygeek/tabular
+nnoremap <Leader>a= :Tabularize /=<CR>
+vnoremap <Leader>a= :Tabularize /=<CR>
 
 """""""
 " Syntax highlighting / colors
@@ -273,6 +277,7 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+nmap <F9> :NERDTreeToggle<CR>
 nmap <F10> :TagbarToggle<CR><C-w>l
 
 let g:ale_completion_enabled = 1
@@ -385,6 +390,15 @@ endif
 let g:tex_flavor='latex'
 let g:deoplete#enable_at_startup = 1
 let g:ragtag_global_maps = 1 " Set default ragtag key mappings
+
+function! s:ToggleBlame()
+    if &l:filetype ==# 'fugitiveblame'
+        close
+    else
+        Git blame
+    endif
+endfunction
+nnoremap <leader>gb :call <SID>ToggleBlame()<CR>
 
 
 """""""
