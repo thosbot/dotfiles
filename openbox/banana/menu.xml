@@ -4,9 +4,9 @@
         xsi:schemaLocation="http://openbox.org/
                 file:///usr/share/openbox/menu.xsd">
     <menu id="root-menu" label="Openbox 3">
-        <item label="UR_xvt" icon="/usr/local/share/icons/hicolor/16x16/apps/xterm-mini.png">
+        <item label="_Xfce Terminal">
             <action name="Execute">
-                <execute>urxvt -geometry 135x45</execute>
+                <execute>xfce4-terminal</execute>
             </action>
         </item>
         <item label="_IntelliJ Idea">
@@ -35,8 +35,8 @@
 
         <separator />
 
-        <item label="_Chromium" icon="/usr/local/share/icons/hicolor/16x16/apps/chromium.png">
-            <action name="Execute"><execute>chromium</execute></action>
+        <item label="Google _Chrome" icon="/usr/share/icons/hicolor/16x16/apps/google-chrome.png">
+            <action name="Execute"><execute>google-chrome</execute></action>
         </item>
         <item label="_Firefox" icon="/usr/share/icons/hicolor/16x16/apps/firefox.png">
             <action name="Execute"><execute>firefox</execute></action>
@@ -56,17 +56,14 @@
 
         <separator />
 
-        <item label="Spotif_y">
+        <item label="Spotif_y" icon="/usr/share/icons/hicolor/16x16/apps/spotify-client.png">
             <action name="Execute"><execute>spotify</execute></action>
         </item>
-        <item label="_VLC">
+        <item label="_VLC" icon="/usr/share/icons/hicolor/16x16/apps/vlc.png">
             <action name="Execute"><execute>vlc</execute></action>
         </item>
-        <item label="_Keybase">
-            <action name="Execute"><execute>run_keybase</execute></action>
-        </item>
-        <item label="Si_gnal">
-            <action name="Execute"><execute>signal-desktop</execute></action>
+        <item label="Si_gnal" icon="/usr/share/icons/hicolor/16x16/apps/signal-desktop.png">
+            <action name="Execute"><execute>signal-desktop --no-sandbox</execute></action>
         </item>
 
         <separator />
