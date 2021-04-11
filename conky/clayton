@@ -46,7 +46,7 @@ ${alignc}$uptime
 ${battery_short BAT1}${alignr}${battery_bar 3,240 BAT1}
 
 # CPU
-${color slate grey}CPU: ${color}${alignr}$cpu% ${freq_g}GHz ${acpitemp}°F
+${color slate grey}CPU${color}${alignr}$cpu% ${freq_g}GHz ${acpitemp}°F
 $loadavg${alignr}$running_processes/$processes
 ${cpugraph 24,320 ffffff ffffff}
 ${color #ddaa00}${top name 1}${alignr}${top cpu 1}${color}
@@ -55,7 +55,7 @@ ${top name 3}${alignr}${top cpu 3}
 ${top name 4}${alignr}${top cpu 4}
 
 # Memory
-${color slate grey}Mem: ${color}$memperc%${alignr}${color slate grey}Swap: ${color}$swapperc%
+${color slate grey}Mem ${color}$memperc%${alignr}${color slate grey}Swap ${color}$swapperc%
 ${membar 3,320}
 # $mem${alignr}$memmax
 ${color #ddaa00}${top_mem name 1}${alignr}${top_mem mem 1}${color}
@@ -64,11 +64,11 @@ ${top_mem name 3}${alignr}${top_mem mem 3}
 ${top_mem name 4}${alignr}${top_mem mem 4}
 
 # Network
-${color slate grey}Net: ${color}${alignr}${wireless_essid wlp1s0}
+${color slate grey}Net${color}${alignr}${wireless_essid wlp1s0}
 ${addr wlp1s0}${alignr}${wireless_bitrate wlp1s0}
 # ${wireless_link_bar 3,320 wlp1s0}
 ${upspeedgraph wlp1s0 24,155 ffffff ffffff} ${alignr}${downspeedgraph wlp1s0 24,155 ffffff ffffff}
-${color slate grey}U: ${color}${upspeed wlp1s0}${alignr}${color slate grey}D: ${color}${downspeed wlp1s0}
+${color slate grey}U ${color}${upspeed wlp1s0}${alignr}${color slate grey}D ${color}${downspeed wlp1s0}
 # ${totalup wlp1s0}${alignr}${totaldown wlp1s0}
 
 # National Weather Service
