@@ -180,9 +180,8 @@ vnoremap <Leader>a= :Tabularize /=<CR>
 set t_Co=256 " 256 colors
 colorscheme peachpuff
 syntax on
-highlight comment ctermfg=darkgreen
 highlight comment cterm=italic ctermfg=darkgreen
-highlight Search cterm=NONE ctermfg=grey ctermbg=blue
+highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermfg=darkgray " line numbers
 
@@ -284,7 +283,7 @@ let g:ale_completion_enabled = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_set_balloons = 1
-let g:ale_sign_error = '●'
+let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '.'
 
 
@@ -361,7 +360,10 @@ set foldlevel=0
 set fillchars=fold:\  " Replace annoying fold chars with space
 set foldtext=MyFoldText()
 function! MyFoldText()
-    return ' ... '
+    " TODO: Could you calculate indentation?
+    " let spaces = indent(v.foldend) / &shiftwidth
+    " return repeat(' ', spaces) . '•••'
+    return '  •••'
 endfunction
 
 
