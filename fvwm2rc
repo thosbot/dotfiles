@@ -169,7 +169,8 @@ Style "*" Icon 48x48/x.png, \
           PositionPlacement
 
 Style "Audacity" Icon 48x48/audacity.png MiniIcon menu/audacity.png
-Style "Chromium" Icon 48x48/google-chrome.png MiniIcon menu/google-chrome.png
+Style "Firefox" Icon NoActiveIconOverride MiniIcon menu/firefox-esr.png
+Style "Google Chrome" Icon NoActiveIconOverride MiniIcon menu/google-chrome.png
 Style "Conky" NoActiveIconOverride, MiniIcon menu/conky.png
 Style "TODO" Icon 48x48/todo.png, NoActiveIconOverride, MiniIcon menu/todo.png
 Style "Excel" Icon 48x48/excel.png, MiniIcon menu/excel.png
@@ -287,7 +288,8 @@ AddToMenu   FvwmRootMenu "Root Menu" Title
 + "&Thunar%menu/folder.png%" Exec exec thunar
 + "XCa&lc%menu/xcalc.png%" Exec exec xcalc
 + "" Nop
-+ "&Chromium%menu/google-chrome.png%" Exec exec chromium --force-device-scale-factor=1.5
++ "&Firefox%menu/firefox-esr.png%" Exec exec firefox
++ "Google &Chrome%menu/google-chrome.png%" Exec exec google-chrome
 + "Si&gnal" Exec exec signal-desktop --no-sandbox
 + "&Keybase" Exec exec run_keybase
 + "" Nop
