@@ -171,7 +171,7 @@ vnoremap <Leader>a= :Tabularize /=<CR>
 set t_Co=256 " 256 colors
 colorscheme peachpuff
 syntax on
-highlight comment cterm=italic ctermfg=darkgreen
+highlight comment cterm=italic ctermfg=darkgray
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermfg=darkgray " line numbers
