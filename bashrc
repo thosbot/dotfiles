@@ -12,6 +12,11 @@ export XENVIRONMENT="${HOME}/.Xdefaults"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+if command -v batcat &> /dev/null
+then
+    export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+fi
+
 export HISTTIMEFORMAT='[%F %T] '
 export HISTCONTROL='ignorespace:erasedups:ignoredups'
 export HISTIGNORE='history'
