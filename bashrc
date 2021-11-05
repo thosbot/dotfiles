@@ -88,11 +88,11 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
             /usr/lib/command-not-found -- "$1"
             return $?
         elif [ -x /usr/share/command-not-found/command-not-found ]; then
-           /usr/share/command-not-found/command-not-found -- "$1"
+            /usr/share/command-not-found/command-not-found -- "$1"
             return $?
         else
-           printf "%s: command not found\n" "$1" >&2
-           return 127
+            printf "%s: command not found\n" "$1" >&2
+            return 127
         fi
     }
 fi
