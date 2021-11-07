@@ -59,15 +59,6 @@ screen|tmux*)
     ;;
 esac
 
-# less man page colors
-# export LESS_TERMCAP_mb=$'\E[01;31m'        # begin blinking
-# export LESS_TERMCAP_md=$'\E[01;31m'        # begin bold
-# export LESS_TERMCAP_me=$'\E[0m'            # end mode
-# export LESS_TERMCAP_se=$'\E[0m'            # end standout-mode
-# export LESS_TERMCAP_so=$'\E[01;44;33m'     # begin standout-mode - info box
-# export LESS_TERMCAP_ue=$'\E[0m'            # end underline
-# export LESS_TERMCAP_us=$'\E[01;32m'        # begin underline
-
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -97,11 +88,11 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
             /usr/lib/command-not-found -- "$1"
             return $?
         elif [ -x /usr/share/command-not-found/command-not-found ]; then
-           /usr/share/command-not-found/command-not-found -- "$1"
+            /usr/share/command-not-found/command-not-found -- "$1"
             return $?
         else
-           printf "%s: command not found\n" "$1" >&2
-           return 127
+            printf "%s: command not found\n" "$1" >&2
+            return 127
         fi
     }
 fi

@@ -121,8 +121,8 @@ if exists("+wildignorecase")
     set wildignorecase      " tab completions should ignore case
 endif
 
-set mouse=a                 " Automatically enable mouse usage
-set ttymouse=xterm
+" set mouse=a                 " Automatically enable mouse usage
+" set ttymouse=xterm
 set mousehide               " Hide the mouse cursor while typing
 
 filetype plugin on      " enable settings from plug-ins (ftplugin)
@@ -228,6 +228,9 @@ noremap <leader>bg :call ToggleBG()<CR>
 
 " Fuzzy file match
 nnoremap <C-p> :<C-u>FZF<CR>
+
+let g:fzf_preview_window = 'right:50%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  } }
 
 " set filetypes (setf)
 autocmd vimrc BufNewFile,BufRead *.ck set filetype=ck         " ChucK (audio prog. language)
