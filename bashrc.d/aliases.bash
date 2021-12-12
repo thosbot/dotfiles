@@ -17,6 +17,7 @@ alias cp='cp -i'
 # Display ANSI color escape sequences, quit if one screen, disable sending the
 # termcap initialization and deinitialization strings
 alias less='less -RFX'
+alias bat='batcat'
 
 # Create parent dirs and print a message for each created directory
 alias mkdir='mkdir -pv'
