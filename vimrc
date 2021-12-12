@@ -20,7 +20,10 @@ call plug#begin('~/.vim/plugged')
 " https://github.com/tpope/vim-repeat
 Plug 'tpope/vim-repeat'
 
-Plug 'scrooloose/nerdtree'    " Filesystem explorer
+" Filesystem explorer
+Plug 'preservim/nerdtree' |
+    \ Plug 'Xuyuanp/nerdtree-git-plugin'
+
 Plug 'bling/vim-airline'      " Airline statusline
 Plug 'tpope/vim-unimpaired'   " Mapping pairs for ex, linewise, opts, enc/dec
 Plug 'tpope/vim-characterize' " Unicode character metadata
