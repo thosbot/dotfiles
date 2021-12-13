@@ -35,5 +35,3 @@ fi
 if [ -d "$HOME/.cargo/bin" ] ; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
-
-setxkbmap -option lv3:ralt_switch_multikey
