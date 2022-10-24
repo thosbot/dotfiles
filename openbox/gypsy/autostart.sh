@@ -1,16 +1,21 @@
+# Single monitor at startup
+/home/.screenlayout/just-gypsy.sh
+
 # Set background
 xsetroot -solid "#000000" &
+
+# Turn off warning bell
+xset b off &
+
+# Set shift+right-alt to manage ligatures
+setxkbmap -option lv3:ralt_switch_multikey &
 
 xscreensaver &
 workrave &
 conky &
 signal-desktop &
 
-# Set shift+right-alt to manage ligatures
-setxkbmap -option lv3:ralt_switch_multikey &
-
-# Turn off warning bell
-xset b off &
+/home/thomas/bin/seticons.sh &
 
 # Mount network doc directory
-rclone --log-file=.local/var/log/rclone.log --log-level=INFO mount linode:thosdoc-5ab1c42c thosdoc &
+rclone mount --daemon --vfs-cache-mode=full --log-file=.local/var/log/rclone.log --log-level=INFO linode:thosdoc-5ab1c42c thosdoc
