@@ -89,6 +89,16 @@ Plug 'gregsexton/MatchTag'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 Plug 'ryanoasis/vim-devicons'
 
+
+" Colorschemes
+Plug 'sickill/vim-monokai'
+Plug 'nanotech/jellybeans.vim'
+Plug 'kdwinter/sunburst.vim'
+Plug 'scottymoon/vim-twilight'
+Plug 'altercation/vim-colors-solarized'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'ayu-theme/ayu-vim'
+
 call plug#end()
 
 
@@ -172,7 +182,7 @@ vnoremap <Leader>a= :Tabularize /=<CR>
 """""""
 
 set t_Co=256 " 256 colors
-colorscheme peachpuff
+colorscheme habamax
 syntax on
 highlight comment cterm=italic ctermfg=darkgray
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
