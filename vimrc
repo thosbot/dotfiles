@@ -193,8 +193,8 @@ highligh GitGutterAdd ctermfg=darkgray
 
 " Toggle color column via command or F2
 highlight ColorColumn ctermbg=darkgray
-command! ToggleCC :let &cc = &cc == '' ? '120' : ''
-nnoremap <F2> :let &cc = &cc == '' ? '120' : ''<CR>
+command! ToggleCC :let &cc = &cc == '' ? '80' : ''
+nnoremap <F2> :let &cc = &cc == '' ? '80' : ''<CR>
 
 " Highlight the line of cursor -- will make screen redrawing slower
 set cursorline
