@@ -1,0 +1,14 @@
+# ACK : beyondgrep.com
+
+# Always sort the files
+--sort-files
+
+--smart-case
+
+--color-match=RED
+
+--pager=less -RSFX
+
+--ignore-file=is:tags
+
+--ignore-dir=.terraform
