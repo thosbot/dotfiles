@@ -123,7 +123,7 @@ set showmatch           " show matching paren/brace/bracket
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join
 set virtualedit=onemore " Allow for cursor beyond last character
 set number              " line numbers w/ toggle (double C-n)
-:nnoremap <C-i><C-i> :set invnumber<CR>
+nnoremap <C-i><C-i> :set invnumber<CR>
 
 set wildmenu                " file/command tab completion -- show all opts
 set wildmode=list:longest   " tab complete to ambiguity
@@ -151,9 +151,8 @@ augroup END
 let g:mapleader = '\'
 
 " Opening and sourcing .vimrc
-:nnoremap <leader>ev :split $MYVIMRC<cr>
-:nnoremap <leader>sv :source $MYVIMRC<cr>
-
+nnoremap <leader>ev :split $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 """""""
 " Indentation / tab stops / holy war
@@ -276,13 +275,13 @@ endif
 set backspace=indent,eol,start
 
 " Spellcheck mimics MS Word F7
-:map <F7> :setlocal spell! spelllang=en_us<CR>
+map <F7> :setlocal spell! spelllang=en_us<CR>
 " Underline and bold mis-spelled words and color red
 highlight clear SpellBad
 highlight SpellBad cterm=undercurl,bold ctermfg=red
 
 " Improve dropdown highlighting
-:highlight Pmenu ctermbg=238 gui=bold
+highlight Pmenu ctermbg=238 gui=bold
 
 " Airline / powerline
 set laststatus=2
@@ -329,7 +328,7 @@ nnoremap <C-0> g^
 
 " Highlighting for searches - turn off with spacebar
 set hlsearch
-:noremap <Leader> <Space> :silent noh<Bar>echo<CR>
+noremap <Leader> <Space> :silent noh<Bar>echo<CR>
 " noincsearch - don't immediately begin searching (reverse w/ set incsearch),
 " ignorecase  - case insensitive searching
 " smartcase   - turn off ignorecase when search term includes uppercase char
@@ -394,7 +393,7 @@ autocmd VimLeave * call system("tmux rename-window bash")
 
 " Source a local, machine-specific Vim RC
 if filereadable($HOME.'/.config/vim/local.vim')
-    :source $HOME/.config/vim/local.vim
+    source $HOME/.config/vim/local.vim
 endif
 
 " Read a .vim file from the same directory as the file being edited
