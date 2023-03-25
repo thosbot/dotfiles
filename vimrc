@@ -123,7 +123,6 @@ set showmatch           " show matching paren/brace/bracket
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join
 set virtualedit=onemore " Allow for cursor beyond last character
 set number              " line numbers w/ toggle (double C-n)
-nnoremap <C-i><C-i> :set invnumber<CR>
 
 set wildmenu                " file/command tab completion -- show all opts
 set wildmode=list:longest   " tab complete to ambiguity
@@ -153,6 +152,19 @@ let g:mapleader = '\'
 " Opening and sourcing .vimrc
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Line number and sign column toggling
+nnoremap <C-n><C-n> :set invnumber<CR>
+nnoremap <C-s><C-s> :call ToggleSignColumn()<CR>
+function! ToggleSignColumn()
+    if !exists("b:signcolumn_on") || b:signcolumn_on
+        set signcolumn=no
+        let b:signcolumn_on=0
+    else
+        set signcolumn=number
+        let b:signcolumn_on=1
+    endif
+endfunction
 
 """""""
 " Indentation / tab stops / holy war
