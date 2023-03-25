@@ -202,6 +202,7 @@ AddToFunc    StartFunction
 + I Test (Init) Exec exec xscreensaver -no-splash
 + I Test (Init) Exec exec conky -c .config/conky/system
 + I Test (Init) Exec exec workrave
++ I Test (Init) Exec exec setxkbmap -option lv3:ralt_switch_multikey
 + I FvwmXTerm
 
 DestroyFunc UrgencyFunc
@@ -294,7 +295,7 @@ AddToMenu   FvwmRootMenu "Root Menu" Title
 + "&Keybase" Exec exec run_keybase
 + "" Nop
 + "&VLC%/usr/share/icons/hicolor/16x16/apps/vlc.png%" Exec exec vlc
-+ "&Spotify" Exec exec spotify
++ "Spotif&y" Exec exec spotify
 + "" Nop
 + "Hydrogen%/usr/share/hydrogen/data/img/gray/icon16.png%" Exec exec hydrogen
 + "Ardour%/usr/share/ardour2/icons/ardour_icon_16px.png%" Exec exec ardour2
