@@ -1,19 +1,32 @@
 [push]
     default = simple
+
 [alias]
+    # Shortcut
     co = checkout
     ci = commit
     st = status
     br = branch
+
+    # Change command default
+    status = status --untracked-files
+
+    tree = log --graph --all --oneline --decorate
     hist = log --pretty=format:'%h %ad %s%d [%an]' --graph --date=short
+    lshist = !sh -c 'git log --pretty=format: --name-only --diff-filter=A "$1" | sort -u' -
+
     type = cat-file -t
     dump = cat-file -p
-    codegrep = !sh -c 'git grep "$1" $( git rev-list --all )'
-    deadbranch = !sh -c \"git remote prune origin && git branch -vv | grep ': gone]' | awk '{print \\$1}'\" -
-    lshist = !sh -c 'git log --pretty=format: --name-only --diff-filter=A "$1" | sort -u' -
+
     svnshow = !sh -c \"git log --grep=\\\"@$1\\$\\\" -p\" -
-    tree = log --graph --all --oneline --decorate
-    status = status --untracked-files
+    codegrep = !sh -c 'git grep "$1" $( git rev-list --all )'
+
+    # List local branches whose upstream is gone
+    deadbranch = !sh -c \"git remote prune origin && git branch -vv | grep ': gone]' | awk '{print \\$1}'\" -
+
+    # Attempt a pretty blame
+    blamex = !sh -c \"git blame --date=short \\\"$1\\\"  | sed -e 's, [^(]*, ,' -e 's, [^ ]*\\( *[0-9]*)\\), \\1,'\"
+
 [core]
     autocrlf = input
 
@@ -24,13 +37,18 @@
     interactive = auto
     ui = true
     pager = true
+
 [color "status"]
     branch = green
+
 [merge]
     renamelimit = 20000
+
 [diff]
     tool = vimdiff
+
 [includeIf "gitdir:~/proj/"]
     path = ~/.config/git/thosbot.gitconfig
+
 [includeIf "gitdir:~/dev/"]
     path = ~/.config/git/work.gitconfig
