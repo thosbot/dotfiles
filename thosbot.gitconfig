@@ -1,0 +1,6 @@
+[user]
+    name = thosbot
+    email = thomas@em7b5.net
+
+[core]
+    excludesfile = /home/thomas/.config/git/gitignore
