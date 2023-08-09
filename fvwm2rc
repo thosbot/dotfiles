@@ -302,8 +302,8 @@ AddToMenu   FvwmRootMenu "Root Menu" Title
 + "&Audacity%menu/audacity.png%" Exec exec audacity
 + "GIMP%menu/gimp.png%" Exec exec gimp
 + "" Nop
-+ "File&Zilla%/usr/share/icons/hicolor/16x16/apps/filezilla.png%" Exec exec filezilla
-+ "&FVWMConsole%menu/terminal.png%" Module FvwmConsole
++ "FileZilla%/usr/share/icons/hicolor/16x16/apps/filezilla.png%" Exec exec filezilla
++ "FVWMConsole%menu/terminal.png%" Module FvwmConsole
 
 # FVWM window operation menu
 DestroyMenu FvwmWindowOpsMenu
