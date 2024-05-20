@@ -40,6 +40,4 @@ alias aud='mpv --vid=no'
 #   > command word following the alias is also checked for alias expansion.
 alias sudo='sudo '
 
-alias pretty='jq . | pager'
 alias yt-dlp='yt-dlp --add-metadata --format bestvideo[ext=mp4]+bestaudio[ext=m4a]/bv*+ba/b'
-# alias yt-dlp='yt-dlp --add-metadata --write-info-json --write-description --write-thumbnail --write-sub --format bestvideo[ext=mp4]+bestaudio[ext=m4a]/bv*+ba/b'
