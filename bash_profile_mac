@@ -1,0 +1,30 @@
+source .bashrc
+
+export HOMEBREW_NO_ANALYTICS=1
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+if [ -d "/Users/thomas/go/bin" ] ; then
+    export PATH="$PATH:/Users/thomas/go/bin/"
+fi
+
+if [ -d "/Users/thomas/.local/bin" ] ; then
+    export PATH="$PATH:/Users/thomas/.local/bin/"
+fi
+
+if type brew &>/dev/null
+then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]
+  then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*
+    do
+      [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
+    done
+  fi
+fi
+
+source /Users/thomas/.docker/init-bash.sh || true # Added by Docker Desktop
+
+source <(kustomize completion bash)
