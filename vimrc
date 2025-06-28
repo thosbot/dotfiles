@@ -401,19 +401,20 @@ endfunction
 "
 """""""
 
-highlight Folded term=NONE cterm=NONE ctermbg=NONE guibg=NONE
+highlight clear Folded
 set nofoldenable
 set foldmethod=indent
 set foldnestmax=10
 set foldlevel=0
 
-set fillchars=fold:\  " Replace annoying fold chars with space
+set foldcolumn=0
+set fillchars+=fold:\ ,foldopen:▾,foldsep:\ ,foldclose:▸
+
 set foldtext=MyFoldText()
 function! MyFoldText()
-    " TODO: Could you calculate indentation?
-    " let spaces = indent(v.foldend) / &shiftwidth
-    " return repeat(' ', spaces) . '•••'
-    return '  •••'
+    let indent_level = indent(v:foldstart)
+    let indent = repeat(' ', indent_level)
+    return repeat(' ', indent_level) . '•••'
 endfunction
 
 """""""
