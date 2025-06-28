@@ -113,6 +113,10 @@ set nojoinspaces        " Prevents inserting two spaces after punctuation on a j
 set virtualedit=onemore " Allow for cursor beyond last character
 set number              " line numbers w/ toggle (double C-n)
 
+" TODO: Look into permanently using the new NFA regex engine -- typescript and
+"       go files slow down terribly when auto (and prob old) engine is set.
+" set regexpengine=2
+
 set wildmenu                " file/command tab completion -- show all opts
 set wildmode=list:longest   " tab complete to ambiguity
 if exists("+wildignorecase")
@@ -199,8 +203,8 @@ nnoremap <F2> :let &cc = &cc == '' ? '80' : ''<CR>
 set cursorline
 highlight CursorLine term=bold cterm=bold guibg=Grey40
 
-set list
-set listchars=trail:. " Replace trailing whitespace chars with '.'
+" set list
+set listchars=trail:.,eol:¶
 nmap <leader>l :set list!<CR>
 
 " Remove trailing whitespace
@@ -233,6 +237,11 @@ function! ToggleBG()
 endfunction
 noremap <leader>bg :call ToggleBG()<CR>
 
+" Allow color schemes to do bright colors without forcing bold
+if &t_Co == 8 && $TERM !~# '^Eterm'
+  set t_Co=16
+endif
+
 """""""
 " Files & buffers
 "
@@ -254,8 +263,8 @@ autocmd vimrc BufNewFile,BufRead Jenkinsfile setf groovy
 set hidden
 
 " Map dd to the black hole register
-" nnoremap d "_d
-" vnoremap d "_d
+nnoremap d "_d
+vnoremap d "_d
 
 " Remember marks, registers, searches, buffer list when quitting
 set viminfo='50,\"100,:100,%,n~/.viminfo
@@ -433,11 +442,15 @@ function! s:ToggleBlame()
     if &l:filetype ==# 'fugitiveblame'
         close
     else
-        Git blame
+        Git blame --ignore-space-change
     endif
 endfunction
 nnoremap <leader>gb :call <SID>ToggleBlame()<CR>
 
+" Delete comment character when joining commented lines
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j
+endif
 
 scriptencoding utf-8
 
