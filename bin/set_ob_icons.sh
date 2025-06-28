@@ -18,3 +18,8 @@ if pgrep -x "workrave" >/dev/null
 then
     xseticon -name "Workrave" /usr/share/icons/hicolor/64x64/apps/workrave.png
 fi
+
+if pgrep -x "obsidian" >/dev/null
+then
+    xseticon -name "obsidian" /usr/share/icons/hicolor/64x64/apps/obsidian.png
+fi
