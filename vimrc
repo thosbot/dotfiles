@@ -147,17 +147,22 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Line number and sign column toggling
-nnoremap <C-n><C-n> :set invnumber<CR>
-nnoremap <C-s><C-s> :call ToggleSignColumn()<CR>
-function! ToggleSignColumn()
-    if !exists("b:signcolumn_on") || b:signcolumn_on
-        set signcolumn=no
-        let b:signcolumn_on=0
-    else
-        set signcolumn=number
-        let b:signcolumn_on=1
-    endif
+nnoremap ]g :call DisableGutter()<CR>
+function! DisableGutter()
+    set signcolumn=no
+    let b:signcolumn_on=0
+    let gitgutter_enabled=0
+    set invnumber
 endfunction
+
+nnoremap [g :call EnableGutter()<CR>
+function! EnableGutter()
+    set signcolumn=yes
+    let b:signcolumn_on=1
+    let gitgutter_enabled=1
+    set invnumber
+endfunction
+
 
 """""""
 " Indentation / tab stops / holy war
