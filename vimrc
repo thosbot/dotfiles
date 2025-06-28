@@ -58,7 +58,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'majutsushi/tagbar'
 
 " Language-specific syntax and development plugins
-Plug 'dense-analysis/ale'   " Asynchronous Lint Engine
+" Language Server Protocol / LSP
+Plug 'dense-analysis/ale'   " Asynchronous Lint Engine / ALE
 
 " Code autocompletion
 Plug 'juliosueiras/vim-terraform-completion'
@@ -304,13 +305,39 @@ endif
 nmap <F9> :NERDTreeToggle<CR>
 nmap <F10> :TagbarToggle<CR><C-w>l
 
-let g:ale_completion_enabled = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
-let g:ale_set_balloons = 1
-let g:ale_sign_error = 'X'
-let g:ale_sign_warning = '.'
-let g:airline#extensions#ale#enabled = 1
+"""""""
+" ALE
+"
+"""""""
+
+let g:ale_enabled=1 " Use :ALEToggle to enable
+let g:ale_completion_enabled=1
+let g:airline#extensions#ale#enabled=1
+
+let g:ale_lint_on_text_changed='never'
+let g:ale_lint_on_enter=0
+
+let g:ale_set_balloons=1
+let g:ale_floating_preview=1
+let g:ale_cursor_detail=1
+let g:ale_echo_delay=100
+" Only show lint errors at cursor
+let g:ale_virtualtext_cursor='current'
+
+let g:ale_set_signs=1
+let g:ale_sign_error='ⓧ'
+let g:ale_sign_warning='⚠'
+let g:ale_sign_info='ⓘ'
+
+highlight ALEErrorSign cterm=NONE ctermbg=NONE ctermfg=red
+highlight ALEWarningSign cterm=NONE ctermbg=NONE ctermfg=yellow
+highlight ALEInfoSign cterm=NONE ctermbg=NONE ctermfg=blue
+
+augroup ale_hover_cursor
+  autocmd!
+  autocmd CursorHold * ALEHover
+augroup END
+
 
 """""""
 " Movement / motion
