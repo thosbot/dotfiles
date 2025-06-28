@@ -16,7 +16,6 @@ call plug#begin('~/.vim/plugged')
 " Base utility plugins
 
 " Add dot (.) repeating for plugin maps (supports vim-surround)
-" https://github.com/tpope/vim-repeat
 Plug 'tpope/vim-repeat'
 
 " Filesystem explorer
@@ -55,7 +54,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Browse the tags of the current file and get an overview of its structure
 " via sidebar that displays the ctags-generated tags of the current file
 " ordered by their scope.
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 
 " Language-specific syntax and development plugins
 " Language Server Protocol / LSP
@@ -65,7 +64,6 @@ Plug 'dense-analysis/ale'   " Asynchronous Lint Engine / ALE
 Plug 'juliosueiras/vim-terraform-completion'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'vim-scripts/ck.vim'   " Chuck audio programming language
 Plug 'vim-perl/vim-perl'
 Plug 'tpope/vim-ragtag'     " HTML/XML mappings
 Plug 'othree/html5.vim'
@@ -74,14 +72,8 @@ Plug 'hashivim/vim-terraform'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'tbastos/vim-lua'
 
-Plug 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
-Plug 'amiorin/vim-fenced-code-blocks'
-
 " JavaScript, et al.
 Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'leafOfTree/vim-vue-plugin'
 
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
 " works in much the same way as the MatchParen plugin.
@@ -91,10 +83,7 @@ Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 Plug 'ryanoasis/vim-devicons'
 
 " Colorschemes
-Plug 'sainnhe/sonokai'
 Plug 'Reewr/vim-monokai-phoenix'
-Plug 'kajamite/vim-monokai2'
-Plug 'elvessousa/elf-monokai-pro'
 
 call plug#end()
 
@@ -228,7 +217,7 @@ command! -nargs=* Wrap set wrap linebreak nolist
 " http://vim.wikia.com/wiki/Configuring_the_cursor
 
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
-let g:markdown_fenced_languages = [ 'caml=mustache', 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'sql', 'vim', 'xml', 'yaml', 'yml=yaml' ]
+let g:markdown_fenced_languages = [ 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'sql', 'vim', 'xml', 'yaml', 'yml=yaml' ]
 
 " Allow to trigger background
 " FIXME: Light background doesn't appear to completely reset everything that
@@ -258,7 +247,6 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  } }
 " set filetypes (setf)
 autocmd vimrc BufNewFile,BufRead *.ck set filetype=ck         " ChucK (audio prog. language)
 autocmd vimrc BufNewFile,BufRead *.tt set filetype=tt2html    " Perl Template Toolkit + HTML
-autocmd vimrc BufNewFile,BufRead *.caml set filetype=html.mustache
 autocmd vimrc BufNewFile,BufRead *.md set filetype=markdown
 autocmd vimrc BufNewFile,BufRead Jenkinsfile setf groovy
 
@@ -288,7 +276,6 @@ set backspace=indent,eol,start
 
 " Spellcheck mimics MS Word F7
 map <F7> :setlocal spell! spelllang=en_us<CR>
-" Underline and bold mis-spelled words and color red
 highlight clear SpellBad
 highlight SpellBad cterm=undercurl,bold ctermfg=red
 
@@ -451,10 +438,6 @@ function! s:ToggleBlame()
 endfunction
 nnoremap <leader>gb :call <SID>ToggleBlame()<CR>
 
-"""""""
-" spf-13-vim : http://vim.spf13.com/
-"
-"""""""
 
 scriptencoding utf-8
 
@@ -466,5 +449,6 @@ au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 " and ask which one to jump to
 nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 
+" Pretty print JSON
 nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
 let g:vim_json_syntax_conceal = 0
