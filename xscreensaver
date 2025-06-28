@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 6.06 for thomas on Sat Mar 25 12:57:44 2023.
+# Written by xscreensaver-demo 6.09 for thomas on Mon Apr  7 13:30:42 2025.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:05:00
@@ -37,7 +37,7 @@ textFile:
 textProgram:	fortune
 textURL:	http://planet.debian.org/rss20.xml
 dialogTheme:	default
-settingsGeom:	1026,321 -1,-1
+settingsGeom:	0,0 1177,0
 
 programs:								      \
 -				maze --root				    \n\
@@ -270,7 +270,7 @@ programs:								      \
 -				filmleader --root			    \n\
 -				glitchpeg --root			    \n\
 - GL: 				handsy --root				    \n\
-  GL: 				maze3d --root				    \n\
+- GL: 				maze3d --root				    \n\
 - GL: 				peepers --root				    \n\
 - GL: 				razzledazzle --root			    \n\
 -				vfeedback --root			    \n\
@@ -281,7 +281,7 @@ programs:								      \
 - GL: 				etruscanvenus --root			    \n\
 - GL: 				gibson --root				    \n\
 - GL: 				headroom --root				    \n\
-  GL: 				sphereeversion --root			    \n\
+- GL: 				sphereeversion --root			    \n\
 -				binaryhorizon --root			    \n\
 -				marbling --root				    \n\
 - GL: 				dnalogo --root				    \n\
@@ -290,6 +290,12 @@ programs:								      \
   GL: 				mapscroller --root			    \n\
   GL: 				nakagin --root				    \n\
 - GL: 				squirtorus --root			    \n\
+  GL: 				cubocteversion --root			    \n\
+-				droste --root				    \n\
+  GL: 				papercube --root			    \n\
+- GL: 				skulloop --root				    \n\
+  GL: 				highvoltage --root --count 11		    \n\
+- GL: 				kallisti --root				    \n\
 
 
 pointerHysteresis:  10
