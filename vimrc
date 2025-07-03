@@ -403,15 +403,23 @@ nnoremap <silent> N   N:call HLNext(0.4)<cr>
 
 function! HLNext (blinktime)
     highlight RedOnRed ctermfg=red ctermbg=red
+
     let [bufnum, lnum, col, off] = getpos('.')
     let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
     echo matchlen
-    let ring_pat = (lnum > 1 ? '\%'.(lnum-1).'l\%>'.max([col-4,1]) .'v\%<'.(col+matchlen+3).'v.\|' : '')
-            \ . '\%'.lnum.'l\%>'.max([col-4,1]) .'v\%<'.col.'v.'
-            \ . '\|'
-            \ . '\%'.lnum.'l\%>'.max([col+matchlen-1,1]) .'v\%<'.(col+matchlen+3).'v.'
-            \ . '\|'
-            \ . '\%'.(lnum+1).'l\%>'.max([col-4,1]) .'v\%<'.(col+matchlen+3).'v.'
+
+    " Get virtual column from real column (byte-indexed)
+    let virt_col = virtcol([lnum, col])
+    let start_virt = max([virt_col - 4, 1])
+    let end_virt   = virt_col + matchlen + 2
+
+    let ring_pat = (lnum > 1 ? '\%'.(lnum-1).'l\%>'.start_virt .'v\%<'.(end_virt + 1).'v.\|' : '')
+        \ . '\%'.lnum.'l\%>'.start_virt.'v\%<'.virt_col.'v.'
+        \ . '\|'
+        \ . '\%'.lnum.'l\%>'.(virt_col + matchlen - 1).'v\%<'.(end_virt + 1).'v.'
+        \ . '\|'
+        \ . '\%'.(lnum+1).'l\%>'.start_virt.'v\%<'.(end_virt + 1).'v.'
+
     let ring = matchadd('RedOnRed', ring_pat, 101)
     redraw
     exec 'sleep ' . float2nr(a:blinktime * 750) . 'm'
