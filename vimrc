@@ -109,6 +109,13 @@ set nojoinspaces        " Prevents inserting two spaces after punctuation on a j
 set virtualedit=onemore " Allow for cursor beyond last character
 set number              " line numbers w/ toggle (double C-n)
 
+" Make the escape key more responsive by decreasing the wait time for an
+" escape sequence (e.g., arrow keys)
+if !has('nvim') && &ttimeoutlen == -1
+  set ttimeout
+  set ttimeoutlen=100
+endif
+
 " TODO: Look into permanently using the new NFA regex engine -- typescript and
 "       go files slow down terribly when auto (and prob old) engine is set.
 " set regexpengine=2
