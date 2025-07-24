@@ -326,17 +326,14 @@ nmap <F10> :TagbarToggle<CR><C-w>l
 " ALE
 "
 """""""
-let g:ale_fixers = {
-    \ 'go': ['goimports', 'gofmt'],
-\ }
-
-let g:ale_enabled=1 " Use :ALEToggle to enable
+let g:ale_enabled=1
 let g:ale_completion_enabled=1
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save=1
 let g:airline#extensions#ale#enabled=1
 
 let g:ale_lint_on_text_changed='never'
 let g:ale_lint_on_enter=1
+let g:ale_lint_on_insert_leave=0
 
 let g:ale_set_highlights=0
 let g:ale_set_balloons=0
@@ -358,6 +355,8 @@ highlight ALEInfoSign cterm=NONE ctermbg=NONE ctermfg=blue
 function ALELSPMappings()
     let l:lsp_found=0
     for linter in ale#linter#Get(&filetype)
+        " ale#lsp_linter#CheckWithLSP() is undocumented / not protected from
+        " future breaking changes
         if !empty(linter.lsp) && ale#lsp_linter#CheckWithLSP(bufnr(''), linter)
             let lsp_found=1
         endif
@@ -368,11 +367,12 @@ function ALELSPMappings()
         nnoremap <buffer> <C-]> :ALEGoToDefinition<CR>
         nnoremap <buffer> <C-^> :ALEFindReferences<CR>
         nnoremap <buffer> <C-h> :ALEHover<cr>
+        nnoremap <buffer> <C-i> :ALEGoToImplementation<CR>
 
-        " nnoremap <buffer> gd :ALEGoToDefinition<cr>
-        " nnoremap <buffer> gy :ALEGoToTypeDefinition<cr>
-        " nnoremap <buffer> gr :ALEFindReferences<cr>
-        " nnoremap <buffer> gh :ALEHover<cr>
+        nnoremap <buffer> gr :ALEFindReferences<cr>
+        nnoremap <buffer> gd :ALEGoToDefinition<cr>
+        nnoremap <buffer> gy :ALEGoToTypeDefinition<cr>
+        nnoremap <buffer> gh :ALEHover<cr>
 
         setlocal omnifunc=ale#completion#OmniFunc
     else
