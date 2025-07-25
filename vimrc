@@ -189,9 +189,12 @@ vnoremap <Leader>a= :Tabularize /=<CR>
 " Syntax highlighting / colors
 "
 """""""
+if has('termguicolors')
+    set termguicolors
+else
+    set t_Co=256
+endif
 
-" set t_Co=256 " 256 colors
-" set termguicolors
 colorscheme monokai-phoenix
 syntax on
 
@@ -199,11 +202,11 @@ highlight comment cterm=italic ctermfg=darkgray
 highlight todo cterm=italic ctermfg=yellow
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 highlight MatchParen ctermbg=blue
-highlight LineNr ctermfg=darkgray " line numbers
+highlight LineNr ctermbg=black ctermfg=darkgray " line numbers
 
 highlight GitGutterAdd ctermbg=black ctermfg=darkgray
-highlight SignColumn guibg=black
-highlight Normal guibg=black
+highlight SignColumn guibg=black ctermbg=black
+highlight Normal guibg=black ctermbg=black
 
 " Toggle color column
 highlight ColorColumn ctermbg=darkgray
