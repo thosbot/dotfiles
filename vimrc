@@ -57,9 +57,7 @@ Plug 'preservim/tagbar'
 
 " Language-specific syntax and development plugins
 Plug 'dense-analysis/ale'   " Asynchronous Lint Engine / ALE (LSP)
-
-" Code autocompletion
-Plug 'juliosueiras/vim-terraform-completion'
+Plug 'github/copilot.vim'
 
 Plug 'charlespascoe/vim-go-syntax'
 Plug 'vim-perl/vim-perl'
@@ -67,6 +65,7 @@ Plug 'tpope/vim-ragtag'     " HTML/XML mappings
 Plug 'othree/html5.vim'
 Plug 'wgwoods/vim-systemd-syntax'
 Plug 'hashivim/vim-terraform'
+Plug 'juliosueiras/vim-terraform-completion'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'tbastos/vim-lua'
 Plug 'pangloss/vim-javascript'
@@ -384,6 +383,33 @@ function ALELSPMappings()
     endif
 endfunction
 autocmd BufRead,FileType * call ALELSPMappings()
+
+"""""""
+" Copilot
+"
+"""""""
+
+let b:copilot_enabled=0
+
+function! ToggleCopilot()
+    if copilot#Enabled()
+        Copilot disable
+        let b:copilot_enabled=0
+        let b:ale_completion_enabled=1
+        ALEEnable
+    else
+        ALEDisable
+        let b:ale_completion_enabled=0
+        let b:copilot_enabled=1
+        Copilot enable
+    endif
+
+    Copilot status
+    sleep 750m
+endfunction
+
+inoremap <F12> <Esc>:call ToggleCopilot()<CR>a
+nnoremap <F12> :call ToggleCopilot()<CR>
 
 """""""
 " Movement / motion
