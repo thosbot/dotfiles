@@ -106,7 +106,7 @@ set sidescrolloff=10    " min number of columns (nowrap) l/r of cursor
 set showmatch           " show matching paren/brace/bracket
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join
 set virtualedit=onemore " Allow for cursor beyond last character
-set number              " line numbers w/ toggle (double C-n)
+set number              " line numbers w/ toggle
 
 " Make the escape key more responsive by decreasing the wait time for an
 " escape sequence (e.g., arrow keys)
@@ -428,13 +428,11 @@ vnoremap <C-j> gj
 vnoremap <C-k> gk
 vnoremap <C-4> g$
 vnoremap <C-6> g^
-vnoremap <C-0> g^
 
 nnoremap <C-j> gj
 nnoremap <C-k> gk
 nnoremap <C-4> g$
 nnoremap <C-6> g^
-nnoremap <C-0> g^
 
 """""""
 " Searching
@@ -497,7 +495,6 @@ set fillchars+=fold:\ ,foldopen:▾,foldsep:\ ,foldclose:▸
 set foldtext=MyFoldText()
 function! MyFoldText()
     let indent_level = indent(v:foldstart)
-    let indent = repeat(' ', indent_level)
     return repeat(' ', indent_level) . '•••'
 endfunction
 
