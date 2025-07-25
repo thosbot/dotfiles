@@ -216,6 +216,11 @@ nnoremap <F2> :let &cc = &cc == '' ? '80' : ''<CR>
 
 set cursorline
 highlight CursorLine term=bold cterm=bold
+" Set cursorline in active window only
+augroup CursorLine
+    au! VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
 
 set listchars=tab:>-,trail:•,nbsp:␣,eol:⏎
 nmap <leader>l :set list!<CR>
