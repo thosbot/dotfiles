@@ -1,9 +1,6 @@
 eval `dircolors -b`
 alias ls='ls --color=auto'
 
-# List only dot files and dot directories
-alias lsdot='ls -d $( echo $( ls -a | egrep "^\." ) )'
-
 alias free='free --wide --human'
 
 # 3-month calendar
@@ -21,9 +18,6 @@ alias bat='batcat'
 
 # Create parent dirs and print a message for each created directory
 alias mkdir='mkdir -pv'
-
-# https://major.io/icanhazip-com-faq/
-alias lsip='curl icanhazip.com'
 
 # Find all code tags
 alias codetags='ack -A 5 --color-match=RED --pager="less -RSFX" "TODO|XXX|FIXME|HACK|OMG|LOL"'
