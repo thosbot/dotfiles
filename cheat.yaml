@@ -12,7 +12,7 @@ style: monokai
 
 # Which 'chroma' "formatter" should be applied?
 # One of: "terminal", "terminal256", "terminal16m"
-formatter: terminal256
+formatter: terminal16m
 
 # Through which pager should output be piped?
 # 'less -FRX' is recommended on Unix systems
