@@ -79,6 +79,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " Colorschemes
 Plug 'Reewr/vim-monokai-phoenix'
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
@@ -196,7 +197,7 @@ else
     set t_Co=256
 endif
 
-colorscheme monokai-phoenix
+colorscheme codedark
 syntax on
 
 highlight comment cterm=italic ctermfg=darkgray
@@ -204,10 +205,6 @@ highlight todo cterm=italic ctermfg=yellow
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermbg=black ctermfg=darkgray " line numbers
-
-highlight GitGutterAdd ctermbg=black ctermfg=darkgray
-highlight SignColumn guibg=black ctermbg=black
-highlight Normal guibg=black ctermbg=black
 
 " Toggle color column
 highlight ColorColumn ctermbg=darkgray
