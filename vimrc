@@ -36,10 +36,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'tpope/vim-repeat'
 
 " Filesystem explorer
-" Plugin 'scrooloose/nerdtree'
-
-" Color / theme
-Plugin 'morhetz/gruvbox'
+Plugin 'scrooloose/nerdtree'
 
 " Airline statusline
 Plugin 'bling/vim-airline'
@@ -104,12 +101,12 @@ Plugin 'pseewald/vim-anyfold'
 Plugin 'majutsushi/tagbar'
 
 " Tab completion FTW
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " Language-specific syntax and development plugins
 
 " Syntax checking plugin
-" Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 " mustache.js
 Plugin 'mustache/vim-mustache-handlebars'
@@ -135,7 +132,8 @@ Plugin 'vim-perl/vim-perl'
 Plugin 'pjcj/vim-hl-var'
 
 " Yet Another JS Syntax
-Plugin 'othree/yajs.vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 " HTML5
 Plugin 'othree/html5.vim'
@@ -227,17 +225,11 @@ set pastetoggle=<F11>
 """""""
 " 256: http://vim.wikia.com/wiki/256_colors_in_vim
 set t_Co=256
-" set termguicolors
-
-" https://github.com/morhetz/gruvbox/wiki/Configuration
-" colorscheme gruvbox
-" set background=dark
-" let g:gruvbox_contrast_dark='hard'
 
 colorscheme peachpuff
 syntax on
 highlight comment ctermfg=darkgreen
-" highlight comment cterm=italic ctermfg=darkgreen
+highlight comment cterm=italic ctermfg=darkgreen
 highlight Search cterm=NONE ctermfg=grey ctermbg=blue
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermfg=darkgray " line numbers
@@ -406,10 +398,10 @@ endfunction
 " Folding
 "
 """""""
-let anyfold_activate=1
-let anyfold_fold_comments=1
-set foldlevel=11
-highlight Folded term=NONE cterm=NONE ctermbg=NONE guibg=NONE
+" let anyfold_activate=1
+" let anyfold_fold_comments=1
+" set foldlevel=11
+" highlight Folded term=NONE cterm=NONE ctermbg=NONE guibg=NONE
 
 """""""
 " Environment
@@ -445,3 +437,22 @@ endif
 " https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup
 " https://github.com/tpope
 " https://github.com/thoughtbot/dotfiles
+
+
+"""""""
+" spf-13-vim
+"
+"""""""
+
+scriptencoding utf-8
+
+" Instead of reverting the cursor to the last position in the buffer, we
+" set it to the first line when editing a git commit message
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+
+" Map <Leader>ff to display all lines with keyword under cursor
+" and ask which one to jump to
+nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+
+nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
+let g:vim_json_syntax_conceal = 0
