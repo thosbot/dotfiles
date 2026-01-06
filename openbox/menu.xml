@@ -7,20 +7,14 @@
         <item label="_Xfce Terminal">
             <action name="Execute"><execute>xfce4-terminal</execute></action>
         </item>
-        <item label="Xca_lc">
-            <action name="Execute"><execute>xcalc</execute></action>
-        </item>
-        <item label="File_zilla">
-            <action name="Execute"><execute>filezilla</execute></action>
-        </item>
-        <item label="_Obsidian">
-            <action name="Execute"><execute>filezilla</execute></action>
-        </item>
         <item label="Spotif_y">
             <action name="Execute"><execute>spotify.sh</execute></action>
         </item>
         <item label="_Thunar">
             <action name="Execute"><execute>thunar</execute></action>
+        </item>
+        <item label="Xca_lc">
+            <action name="Execute"><execute>xcalc</execute></action>
         </item>
 
         <separator />
@@ -31,10 +25,7 @@
         <item label="_Firefox">
             <action name="Execute"><execute>firefox</execute></action>
         </item>
-        <item label="_Vivaldi">
-            <action name="Execute"><execute>vivaldi</execute></action>
-        </item>
-        <item label="Si_gnal">
+        <item label="_Signal">
             <action name="Execute">
                 <execute>signal-desktop --no-sandbox</execute>
             </action>
