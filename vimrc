@@ -56,8 +56,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'preservim/tagbar'
 
 " Language-specific syntax and development plugins
-" Language Server Protocol / LSP
-Plug 'dense-analysis/ale'   " Asynchronous Lint Engine / ALE
+Plug 'dense-analysis/ale'   " Asynchronous Lint Engine / ALE (LSP)
 
 " Code autocompletion
 Plug 'juliosueiras/vim-terraform-completion'
@@ -310,17 +309,22 @@ nmap <F10> :TagbarToggle<CR><C-w>l
 " ALE
 "
 """""""
+let g:ale_fixers = {
+    \ 'go': ['goimports', 'gofmt'],
+\ }
 
 let g:ale_enabled=1 " Use :ALEToggle to enable
 let g:ale_completion_enabled=1
+let g:ale_fix_on_save = 1
 let g:airline#extensions#ale#enabled=1
 
 let g:ale_lint_on_text_changed='never'
-let g:ale_lint_on_enter=0
+let g:ale_lint_on_enter=1
 
-let g:ale_set_balloons=1
+let g:ale_set_highlights=0
+let g:ale_set_balloons=0
 let g:ale_floating_preview=1
-let g:ale_cursor_detail=1
+let g:ale_cursor_detail=0
 let g:ale_echo_delay=100
 let g:ale_virtualtext_cursor='current'
 
@@ -333,11 +337,33 @@ highlight ALEErrorSign cterm=NONE ctermbg=NONE ctermfg=red
 highlight ALEWarningSign cterm=NONE ctermbg=NONE ctermfg=yellow
 highlight ALEInfoSign cterm=NONE ctermbg=NONE ctermfg=blue
 
-augroup ale_hover_cursor
-  autocmd!
-  autocmd CursorHold * ALEHover
-augroup END
+" Set keymappings if a LSP is found running
+function ALELSPMappings()
+    let l:lsp_found=0
+    for linter in ale#linter#Get(&filetype)
+        if !empty(linter.lsp) && ale#lsp_linter#CheckWithLSP(bufnr(''), linter)
+            let lsp_found=1
+        endif
+    endfor
 
+    if (l:lsp_found)
+        nnoremap <buffer> K :ALEDocumentation<cr>
+        nnoremap <buffer> <C-]> :ALEGoToDefinition<CR>
+        nnoremap <buffer> <C-^> :ALEFindReferences<CR>
+        nnoremap <buffer> <C-h> :ALEHover<cr>
+
+        " nnoremap <buffer> gd :ALEGoToDefinition<cr>
+        " nnoremap <buffer> gy :ALEGoToTypeDefinition<cr>
+        " nnoremap <buffer> gr :ALEFindReferences<cr>
+        " nnoremap <buffer> gh :ALEHover<cr>
+
+        setlocal omnifunc=ale#completion#OmniFunc
+    else
+        silent! unmap <buffer> <C-]>
+        silent! unmap <buffer> <C-^>
+    endif
+endfunction
+autocmd BufRead,FileType * call ALELSPMappings()
 
 """""""
 " Movement / motion
