@@ -10,11 +10,11 @@ let perl_include_pod=1
 let perl_extended_vars=1
 
 " Hook "K" to perldoc instead of man within perl files
-autocmd vimrc FileType perl setlocal keywordprg=perldoc
+setlocal keywordprg=perldoc
 
 " Compile perl with make
-autocmd vimrc FileType perl set makeprg=perl\ -Ilib\ -c\ %\ $*
-autocmd vimrc FileType perl set errorformat=%f:%l:%m
+setlocal makeprg=perl\ -Ilib\ -c\ %\ $*
+setlocal errorformat=%f:%l:%m
 
 " Tabularize
 " https://github.com/godlygeek/tabular
