@@ -38,3 +38,5 @@ alias aud='mpv --vid=no'
 #   > If the last character of the alias value is a blank, then the next
 #   > command word following the alias is also checked for alias expansion.
 alias sudo='sudo '
+
+alias pretty='python -m json.tool | pager'
