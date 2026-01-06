@@ -1,7 +1,7 @@
 SESSION=banana
 
-new-session -s $SESSION -n alsamixer
-send-keys -t $SESSION:1 alsamixer C-m
+send-keys -t $SESSION:1 alsamixer Space --card=PCH C-m
+rename-window -t $SESSION:1 mixer
 
 new-window -t $SESSION
 new-window -t $SESSION
