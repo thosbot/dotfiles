@@ -28,9 +28,6 @@ Plugin 'vim-scripts/vim-addon-mw-utils'
 " http://www.vim.org/scripts/script.php?script_id=1863
 Plugin 'tomtom/tlib_vim'
 
-" xolox-required utils
-Plugin 'xolox/vim-misc'
-
 " Add dot (.) repeating for plugin maps (supports vim-surround)
 " https://github.com/tpope/vim-repeat
 Plugin 'tpope/vim-repeat'
@@ -57,19 +54,11 @@ Plugin 'tpope/vim-commentary'
 " Alt: https://github.com/ervandew/matchem
 Plugin 'jiangmiao/auto-pairs'
 
-" SnipMate.vim aims to be a concise vim script that implements some of
-" TextMate's snippets features in Vim.
-" http://www.vim.org/scripts/script.php?script_id=2540
-Plugin 'garbas/vim-snipmate'
+" TODO: Add Emmet web-dev toolkit (https://docs.emmet.io/)
 
 " Aligning regions of text
 " http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
 Plugin 'godlygeek/tabular'
-
-" Accessing Devel::CoverX::Covered database
-" Inspired by: http://use.perl.org/use.perl.org/_Ovid/journal/36030.html
-" https://metacpan.org/module/Devel::CoverX::Covered
-Plugin 'omega/vim-covered'
 
 " Get the current function name which your cursor is located at (supports
 " vim-covered)
@@ -91,66 +80,56 @@ Plugin 'tpope/vim-surround'
 Plugin 'pseewald/vim-anyfold'
 
 " CTags
-" automated tag file generation and syntax highlighting of tags in Vim
-" http://peterodding.com/code/vim/easytags/
-" Plugin 'xolox/vim-easytags'
+Plugin 'ludovicchabant/vim-gutentags'
 
 " Browse the tags of the current file and get an overview of its structure
 " via sidebar that displays the ctags-generated tags of the current file
 " ordered by their scope.
 Plugin 'majutsushi/tagbar'
 
-" Tab completion FTW
-Plugin 'Valloric/YouCompleteMe'
-
-" Language-specific syntax and development plugins
-
-" Syntax checking plugin
-Plugin 'vim-syntastic/syntastic'
-
-" mustache.js
-Plugin 'mustache/vim-mustache-handlebars'
-
-" Golang
-Plugin 'fatih/vim-go'
-" Golang code completion daemon
-" Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
-
-" Chuck audio programming language
-" http://www.vim.org/scripts/script.php?script_id=1880
-Plugin 'vim-scripts/ck.vim'
-
-" GitHub Flavored Markdown
-Plugin 'jtratner/vim-flavored-markdown'
-" GitHub Flavored Markdown Fenced code blocks
-Plugin 'amiorin/vim-fenced-code-blocks'
-
-" http://groups.google.com/group/vim-perl
-Plugin 'vim-perl/vim-perl'
-
-" Highlight perl variables
-Plugin 'pjcj/vim-hl-var'
-
-" Yet Another JS Syntax
-Plugin 'pangloss/vim-javascript'
-Plugin 'maxmellon/vim-jsx-pretty'
-
-" HTML5
-Plugin 'othree/html5.vim'
-
-" Asynchronous markdown preview
-" Plugin 'euclio/vim-markdown-composer'
+" Fuzzy filenames
+Plugin 'junegunn/fzf'
 
 " Git wrapper
 Plugin 'tpope/vim-fugitive'
 
+" Code completion FTW
+Plugin 'ycm-core/YouCompleteMe'
+
+" Language-specific syntax and development plugins
+
+" Asynchronous Lint Engine
+Plugin 'dense-analysis/ale'
+
+Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/ck.vim' " Chuck audio programming language
+
+Plugin 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
+Plugin 'amiorin/vim-fenced-code-blocks'
+
+Plugin 'vim-perl/vim-perl' " http://groups.google.com/group/vim-perl
+Plugin 'pjcj/vim-hl-var'   " Highlight perl variables
+
+" JavaScript, et al.
+Plugin 'pangloss/vim-javascript'
+Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'leafOfTree/vim-vue-plugin'
+
+Plugin 'othree/html5.vim'
+Plugin 'wgwoods/vim-systemd-syntax'
+Plugin 'vim-latex/vim-latex'
+
 " HTML/XML mappings
 " http://www.vim.org/scripts/script.php?script_id=1896
+" TODO:  This should be replaceable with Emmet
 Plugin 'tpope/vim-ragtag'
 
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
 " works in much the same way as the MatchParen plugin.
 Plugin 'gregsexton/MatchTag'
+
+Plugin 'https://gitlab.com/gi1242/vim-emoji-ab'
 
 call vundle#end()            " required
 
@@ -278,6 +257,9 @@ noremap <leader>bg :call ToggleBG()<CR>
 " Write changes to buffers before ! or changing the active buffer
 " 'autowrite' could be conflicting with 'hidden'
 " set autowrite
+
+" Fuzzy file match
+nnoremap <C-p> :<C-u>FZF<CR>
 
 " set filetypes (setf)
 autocmd vimrc BufNewFile,BufRead *.ck set filetype=ck         " ChucK (audio prog. language)
