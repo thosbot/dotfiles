@@ -4,6 +4,7 @@ xsetroot -solid "#000000" &
 xscreensaver &
 workrave &
 conky &
+signal-desktop &
 
 # Set shift+right-alt to manage ligatures
 setxkbmap -option lv3:ralt_switch_multikey &
