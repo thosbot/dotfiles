@@ -48,6 +48,7 @@ Plug 'tyru/current-func-info.vim'
 Plug 'ludovicchabant/vim-gutentags' " CTags
 Plug 'lervag/file-line'             " Open files using file:linenum syntax
 Plug 'tpope/vim-fugitive'           " Git wrapper
+Plug 'airblade/vim-gitgutter'       " Show git diff in sign column
 
 " Fuzzy filename search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -188,6 +189,7 @@ highlight comment cterm=italic ctermfg=darkgray
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermfg=darkgray " line numbers
+highligh GitGutterAdd ctermfg=darkgray
 
 " Toggle color column via command or F2
 highlight ColorColumn ctermbg=darkgray
