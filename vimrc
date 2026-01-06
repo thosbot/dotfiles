@@ -43,9 +43,11 @@ Plug 'tyru/current-func-info.vim'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 
 Plug 'ludovicchabant/vim-gutentags' " CTags
-Plug 'junegunn/fzf'                 " Fuzzy filenames
 Plug 'lervag/file-line'             " Open files using file:linenum syntax
 Plug 'tpope/vim-fugitive'           " Git wrapper
+
+" Fuzzy filename search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " Browse the tags of the current file and get an overview of its structure
 " via sidebar that displays the ctags-generated tags of the current file
