@@ -58,13 +58,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'majutsushi/tagbar'
 
 " Language-specific syntax and development plugins
-
 Plug 'dense-analysis/ale'   " Asynchronous Lint Engine
 
 " Code autocompletion
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'juliosueiras/vim-terraform-completion'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -398,7 +394,6 @@ endif
 " endif
 
 let g:tex_flavor='latex'
-let g:deoplete#enable_at_startup = 1
 let g:ragtag_global_maps = 1 " Set default ragtag key mappings
 
 function! s:ToggleBlame()
