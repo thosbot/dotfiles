@@ -1,6 +1,3 @@
-[user]
-    email = thomas@em7b5.net
-    name = thosbot
 [push]
     default = simple
 [alias]
@@ -19,7 +16,7 @@
     status = status --untracked-files
 [core]
     autocrlf = input
-    excludesfile = /home/thomas/.config/git/gitignore
+
 [color]
     diff = auto
     status = auto
@@ -33,3 +30,7 @@
     renamelimit = 20000
 [diff]
     tool = vimdiff
+[includeIf "gitdir:~/proj/"]
+    path = ~/.config/git/thosbot.gitconfig
+[includeIf "gitdir:~/dev/"]
+    path = ~/.config/git/work.gitconfig
