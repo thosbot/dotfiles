@@ -31,90 +31,63 @@ Plug 'tomtom/tlib_vim'
 " https://github.com/tpope/vim-repeat
 Plug 'tpope/vim-repeat'
 
-" Filesystem explorer
-Plug 'scrooloose/nerdtree'
-
-" Airline statusline
-Plug 'bling/vim-airline'
-
-" Mapping pairs for ex commands, linewise, opt toggling, encoding/decoding
-Plug 'tpope/vim-unimpaired'
-
-" Unicode character metadata
-Plug 'tpope/vim-characterize'
+Plug 'scrooloose/nerdtree'    " Filesystem explorer
+Plug 'bling/vim-airline'      " Airline statusline
+Plug 'tpope/vim-unimpaired'   " Mapping pairs for ex commands, linewise,
+                              " opt toggling, encoding/decoding
+Plug 'tpope/vim-characterize' " Unicode character metadata
 
 " Behaviour Plugins
 
-" Commenting out lines of code
-" Also check out: https://github.com/tomtom/tcomment_vim
-Plug 'tpope/vim-commentary'
-
-" Insert or delete brackets, parens, quotes in pairs
-" Alt: https://github.com/ervandew/matchem
-Plug 'jiangmiao/auto-pairs'
-
-" Aligning regions of text
-" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
-Plug 'godlygeek/tabular'
+Plug 'tpope/vim-commentary' " Commenting out lines of code
+Plug 'tpope/vim-surround'   " Surround with quotes, parens, HTML/XML elements, etc.
+Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pairs
+Plug 'godlygeek/tabular'    " Aligning regions of text
 
 " Get the current function name which your cursor is located at (supports
 " vim-covered)
 Plug 'tyru/current-func-info.vim'
 
-" Surround with quotes, parens, HTML/XML elements, etc.
-" http://www.vim.org/scripts/script.php?script_id=1697
-Plug 'tpope/vim-surround'
-
 " Provides facilities to integrate Vim with the pandoc document converter and
 " work with documents written in its markdown variant
-" vim-pandoc doesn't provide syntax support. The user needs to install
-" vim-pandoc/vim-pandoc-syntax
 " http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown
 " Plug 'vim-pandoc/vim-pandoc'
 " Plug 'vim-pandoc/vim-pandoc-syntax'
 
-" CTags
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags' " CTags
+Plug 'junegunn/fzf'                 " Fuzzy filenames
+Plug 'tpope/vim-fugitive'           " Git wrapper
 
 " Browse the tags of the current file and get an overview of its structure
 " via sidebar that displays the ctags-generated tags of the current file
 " ordered by their scope.
 Plug 'majutsushi/tagbar'
 
-" Fuzzy filenames
-Plug 'junegunn/fzf'
-
-" Git wrapper
-Plug 'tpope/vim-fugitive'
-
 " Language-specific syntax and development plugins
 
-" Asynchronous Lint Engine
-Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'   " Asynchronous Lint Engine
 
 " Code autocompletion
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
 
-Plug 'fatih/vim-go' " Go Vim IDE
-Plug 'vim-scripts/ck.vim' " Chuck audio programming language
-Plug 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
-Plug 'amiorin/vim-fenced-code-blocks'
-Plug 'vim-perl/vim-perl' " http://groups.google.com/group/vim-perl
+Plug 'fatih/vim-go'         " Go Vim IDE
+Plug 'vim-scripts/ck.vim'   " Chuck audio programming language
+Plug 'vim-perl/vim-perl'
+Plug 'tpope/vim-ragtag'     " HTML/XML mappings
 Plug 'othree/html5.vim'
 Plug 'wgwoods/vim-systemd-syntax'
 Plug 'vim-latex/vim-latex'
+
+Plug 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
+Plug 'amiorin/vim-fenced-code-blocks'
 
 " JavaScript, et al.
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'leafOfTree/vim-vue-plugin'
-
-" HTML/XML mappings
-" http://www.vim.org/scripts/script.php?script_id=1896
-Plug 'tpope/vim-ragtag'
 
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
 " works in much the same way as the MatchParen plugin.
