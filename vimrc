@@ -409,7 +409,7 @@ nnoremap <leader>gb :call <SID>ToggleBlame()<CR>
 
 
 """""""
-" spf-13-vim
+" spf-13-vim : http://vim.spf13.com/
 "
 """""""
 
