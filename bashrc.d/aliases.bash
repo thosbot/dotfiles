@@ -41,3 +41,6 @@ alias aud='mpv --vid=no'
 alias sudo='sudo '
 
 alias yt-dlp='yt-dlp --add-metadata --format bestvideo[ext=mp4]+bestaudio[ext=m4a]/bv*+ba/b'
+
+alias k=kubectl
+complete -o default -F __start_kubectl k
