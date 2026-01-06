@@ -96,3 +96,5 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
         fi
     }
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
