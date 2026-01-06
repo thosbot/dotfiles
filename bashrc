@@ -12,6 +12,8 @@ shopt -s cmdhist
 
 shopt -s cdable_vars
 
+export EDITOR='vim'
+
 # Don't put duplicate lines in the history. See bash(1) for more options
 export HISTTIMEFORMAT='[%F %T] '
 export HISTCONTROL='ignorespace:erasedups:ignoredups'
