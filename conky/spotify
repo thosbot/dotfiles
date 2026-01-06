@@ -1,0 +1,17 @@
+# Spotify
+${if_running spotify}
+${exec ~/.config/conky/conky-spotify/scripts/cover.sh}
+# Wallpaper and cover
+${image ~/.config/conky/conky-spotify/current/current.jpg -p 0,0 -s 164x164}
+${image ~/.config/conky/conky-spotify/background.png}
+# Song info
+${voffset -110}
+${goto 180}${font Noto Sans:size=8}Title:
+${goto 190}${font GE Inspira:size=22}${exec ~/.config/conky/conky-spotify/scripts/title.sh}
+${voffset -46}
+${goto 180}${font Noto Sans:size=8}Artist:
+${goto 190}${font GE Inspira:size=22}${exec ~/.config/conky/conky-spotify/scripts/artist.sh}
+${voffset -46}
+${goto 180}${font Noto Sans:size=8}Album:
+${goto 190}${font GE Inspira:size=22}${exec ~/.config/conky/conky-spotify/scripts/album.sh}
+${endif}
