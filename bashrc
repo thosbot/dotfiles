@@ -12,6 +12,11 @@ export XENVIRONMENT="${HOME}/.Xdefaults"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+if command -v batcat &> /dev/null
+then
+    export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+fi
+
 export HISTTIMEFORMAT='[%F %T] '
 export HISTCONTROL='ignorespace:erasedups:ignoredups'
 export HISTIGNORE='history'
@@ -53,15 +58,6 @@ screen|tmux*)
 *)
     ;;
 esac
-
-# less man page colors
-# export LESS_TERMCAP_mb=$'\E[01;31m'        # begin blinking
-# export LESS_TERMCAP_md=$'\E[01;31m'        # begin bold
-# export LESS_TERMCAP_me=$'\E[0m'            # end mode
-# export LESS_TERMCAP_se=$'\E[0m'            # end standout-mode
-# export LESS_TERMCAP_so=$'\E[01;44;33m'     # begin standout-mode - info box
-# export LESS_TERMCAP_ue=$'\E[0m'            # end underline
-# export LESS_TERMCAP_us=$'\E[01;32m'        # begin underline
 
 # Enable bash completion in interactive shells
 if ! shopt -oq posix; then
