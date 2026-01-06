@@ -1,14 +1,14 @@
-function batt() {
+batt() {
     upower -i /org/freedesktop/UPower/devices/battery_BAT0
 }
 
-function bg-run() {
+bg-run() {
     cmd=$1; shift
     $cmd "$@" >/tmp/$cmd.out 2>/tmp/$cmd.err &
 }
 
 # Syntax highlighting in the terminal
-function lesscode {
+lesscode() {
     filename=$1
     filetype=$2
 
@@ -20,12 +20,12 @@ function lesscode {
 }
 
 # Convert Markdown file to HTML and open in Lynx
-function readmarkdown {
+readmarkdown() {
     pandoc --from markdown --to html5 "$1" --self-contained | lynx -stdin
 }
 
 # List only directory names that begin with the arg provided
 # E.g. `ls a` lists all directories that begin with "a"
-function lsdir () {
+lsdir() {
     ls -d $1*/
 }
