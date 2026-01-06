@@ -231,15 +231,6 @@ set pastetoggle=<F11>
 """""""
 " 256: http://vim.wikia.com/wiki/256_colors_in_vim
 set t_Co=256
-" not necessary
-" set t_AB=^[[48;5;%dm
-" set t_AF=^[[38;5;%dm
-
-" Italics and true colors
-" https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be
-" https://github.com/morhetz/gruvbox
-" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 " set termguicolors
 
 " https://github.com/morhetz/gruvbox/wiki/Configuration
