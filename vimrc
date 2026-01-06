@@ -22,8 +22,6 @@ call plug#begin('~/.vim/plugged')
 " Vim utils used by many scripts
 " http://www.vim.org/scripts/script.php?script_id=2940
 Plug 'vim-scripts/vim-addon-mw-utils'
-
-" Even more utils
 " http://www.vim.org/scripts/script.php?script_id=1863
 Plug 'tomtom/tlib_vim'
 
@@ -33,8 +31,7 @@ Plug 'tpope/vim-repeat'
 
 Plug 'scrooloose/nerdtree'    " Filesystem explorer
 Plug 'bling/vim-airline'      " Airline statusline
-Plug 'tpope/vim-unimpaired'   " Mapping pairs for ex commands, linewise,
-                              " opt toggling, encoding/decoding
+Plug 'tpope/vim-unimpaired'   " Mapping pairs for ex, linewise, opts, enc/dec
 Plug 'tpope/vim-characterize' " Unicode character metadata
 Plug 'junegunn/vim-emoji'
 
