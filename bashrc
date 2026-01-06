@@ -72,7 +72,7 @@ fi
 bind "set completion-ignore-case on"
 
 # Perlbrew - Manage multiple Perl installations
-source /opt/perl5/perlbrew/etc/bashrc
+[ -f /opt/perl5/perlbrew/etc/bashrc ] && source /opt/perl5/perlbrew/etc/bashrc
 
 # Load Bash-specific startup files (if they exist)
 for sh in "$HOME"/.bashrc.d/*.bash ; do
