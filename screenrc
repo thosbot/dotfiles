@@ -50,11 +50,11 @@ nonblock on
 
 # Not sure what all these do, most came default I think
 # Remove some stupid/dangerous key bindings
-bind k
+bind k  # kill window
 bind ^k
 bind .
 bind ^\
-bind \\
+bind \\ # kill all windows
 bind ^h
 bind h
 
