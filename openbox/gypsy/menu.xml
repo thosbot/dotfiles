@@ -5,9 +5,19 @@
                 file:///usr/share/openbox/menu.xsd">
     <menu id="root-menu" label="Openbox 3">
         <item label="_Xfce Terminal">
-            <action name="Execute">
-                <execute>xfce4-terminal</execute>
-            </action>
+            <action name="Execute"><execute>xfce4-terminal</execute></action>
+        </item>
+        <item label="Xca_lc">
+            <action name="Execute"><execute>xcalc</execute></action>
+        </item>
+        <item label="File_zilla">
+            <action name="Execute"><execute>filezilla</execute></action>
+        </item>
+        <item label="_Obsidian">
+            <action name="Execute"><execute>filezilla</execute></action>
+        </item>
+        <item label="Spotif_y">
+            <action name="Execute"><execute>spotify.sh</execute></action>
         </item>
         <item label="_Thunar">
             <action name="Execute"><execute>thunar</execute></action>
@@ -15,35 +25,19 @@
 
         <separator />
 
-        <item label="_Chromium" icon="/usr/share/icons/hicolor/16x16/apps/google-chrome.png">
+        <item label="Google _Chrome">
             <action name="Execute"><execute>google-chrome</execute></action>
         </item>
-        <item label="_Firefox" icon="/usr/share/icons/hicolor/16x16/apps/firefox.png">
+        <item label="_Firefox">
             <action name="Execute"><execute>firefox</execute></action>
         </item>
-
-        <separator />
-
-        <item label="_Qalculate">
-            <action name="Execute"><execute>qalculate</execute></action>
-        </item>
-        <item label="File_zilla" icon="/usr/share/icons/hicolor/16x16/apps/filezilla.png">
-            <action name="Execute"><execute>filezilla</execute></action>
-        </item>
-
-        <separator />
-
-        <item label="Spotif_y">
-            <action name="Execute"><execute>spotify</execute></action>
-        </item>
-        <item label="_VLC">
-            <action name="Execute"><execute>vlc</execute></action>
-        </item>
-        <item label="_Keybase">
-            <action name="Execute"><execute>run_keybase</execute></action>
+        <item label="_Vivaldi">
+            <action name="Execute"><execute>vivaldi</execute></action>
         </item>
         <item label="Si_gnal">
-            <action name="Execute"><execute>signal-desktop</execute></action>
+            <action name="Execute">
+                <execute>signal-desktop --no-sandbox</execute>
+            </action>
         </item>
 
         <separator />
@@ -57,9 +51,6 @@
         <item label="Restart">
             <action name="Restart" />
         </item>
-
-        <separator />
-
         <item label="Exit">
             <action name="Exit" />
         </item>
