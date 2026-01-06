@@ -419,6 +419,11 @@ highlight Folded term=NONE cterm=NONE ctermbg=NONE guibg=NONE
 " FIXME: Can't get the old window title back yet -- defaults to xterm title
 autocmd vimrc BufEnter * let &titlestring=expand("%:t")
 
+" Tmux
+autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+autocmd VimLeave * call system("tmux rename-window bash")
+
+
 " Source a local, machine-specific Vim RC
 if filereadable($HOME.'/.config/vim/local.vim')
     :source $HOME/.config/vim/local.vim
