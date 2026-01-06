@@ -1,7 +1,3 @@
-batt() {
-    upower -i /org/freedesktop/UPower/devices/battery_BAT0
-}
-
 bg-run() {
     cmd=$1; shift
     $cmd "$@" >/tmp/$cmd.out 2>/tmp/$cmd.err &
