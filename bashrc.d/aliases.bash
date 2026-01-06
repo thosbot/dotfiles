@@ -26,7 +26,7 @@ alias mkdir='mkdir -pv'
 alias lsip='curl icanhazip.com'
 
 # Find all code tags
-alias grep-codetags='ack -A 5 --color-match=RED --pager="less -RSFX" "TODO|XXX|FIXME|HACK|OMG|LOL"'
+alias codetags='ack -A 5 --color-match=RED --pager="less -RSFX" "TODO|XXX|FIXME|HACK|OMG|LOL"'
 
 # Parameterized ack
 alias ack='ack --sort-files --smart-case --color-match=RED --pager="less -RSFX"'
