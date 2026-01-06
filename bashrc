@@ -12,7 +12,6 @@ export XENVIRONMENT="${HOME}/.Xdefaults"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# Don't put duplicate lines in the history. See bash(1) for more options
 export HISTTIMEFORMAT='[%F %T] '
 export HISTCONTROL='ignorespace:erasedups:ignoredups'
 export HISTIGNORE='history'
@@ -101,7 +100,3 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
         fi
     }
 fi
-
-# REFERENCES
-# [Better Bash history](http://blog.sanctum.geek.nz/better-bash-history/)
-# [Shell config subfiles](http://blog.sanctum.geek.nz/shell-config-subfiles/)
