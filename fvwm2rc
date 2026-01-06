@@ -174,7 +174,6 @@ Style "Conky" NoActiveIconOverride, MiniIcon menu/conky.png
 Style "TODO" Icon 48x48/todo.png, NoActiveIconOverride, MiniIcon menu/todo.png
 Style "Excel" Icon 48x48/excel.png, MiniIcon menu/excel.png
 Style "FileZilla" Icon 48x48/filezilla.png, MiniIcon menu/filezilla.png
-Style "Gajim" Icon 48x48/gajim.png MiniIcon menu/gajim.png
 Style "MPlayer" Icon 48x48/mplayer.png
 Style "VLC" Icon 48x48/vlc.png, MiniIcon menu/vlc.png
 Style "Wicd" Icon 48x48/wicd.png MiniIcon menu/wicd.png
@@ -288,14 +287,9 @@ AddToMenu   FvwmRootMenu "Root Menu" Title
 + "&Thunar%menu/folder.png%" Exec exec thunar
 + "" Nop
 + "&Chromium%menu/google-chrome.png%" Exec exec chromium --force-device-scale-factor=1.5
-+ "&Gajim%menu/gajim.png%" Exec exec gajim
-+ "" Nop
-# + "Zotero%/home/thomas/vendor/releases/zotero/chrome/icons/default/default16.png%" Exec exec /home/thomas/vendor/releases/zotero/zotero
 + "XCa&lc%menu/xcalc.png%" Exec exec xcalc
 + "" Nop
 + "&VLC%/usr/share/icons/hicolor/16x16/apps/vlc.png%" Exec exec vlc
-+ "G&musicbrowser%menu/gmusicbrowser.png%" Exec exec gmusicbrowser
-+ "Clementine%menu/clementine.png%" Exec exec clementine
 + "" Nop
 + "Hydrogen%/usr/share/hydrogen/data/img/gray/icon16.png%" Exec exec hydrogen
 + "Ardour%/usr/share/ardour2/icons/ardour_icon_16px.png%" Exec exec ardour2
