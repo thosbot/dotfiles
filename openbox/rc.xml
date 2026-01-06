@@ -121,27 +121,7 @@
         <popupShow>Nonpixel</popupShow>
         <!-- Center, Top, or Fixed -->
         <popupPosition>Center</popupPosition>
-        <!-- These are used if popupPosition is set to 'Fixed' -->
-        <popupFixedPosition>
-            <!-- Positive number for distance from left edge, negative number
-                 for distance from right edge, or 'Center' -->
-            <x>10</x>
-            <!-- Positive number for distance from top edge, negative number
-                 for distance from bottom edge, or 'Center' -->
-            <y>10</y>
-        </popupFixedPosition>
     </resize>
-
-    <!-- You can reserve a portion of your screen where windows will not cover
-         when they are maximized, or when they are initially placed.
-         Many programs reserve space automatically, but you can use this in
-         other cases. -->
-    <margins>
-        <top>0</top>
-        <bottom>0</bottom>
-        <left>0</left>
-        <right>0</right>
-    </margins>
 
     <dock>
         <position>TopLeft</position>
@@ -198,19 +178,7 @@
                 <menu>client-menu</menu>
             </action>
         </keybind>
-        <!-- Take a screenshot of the current window with gnome-screenshot when
-             Alt+Print are pressed -->
-        <keybind key="A-Print">
-            <action name="Execute">
-                <command>gnome-screenshot -w</command>
-                <!-- TODO -->
-                <!--
-                <command>
-                    import -window $(xdotool getwindowfocus getwindowname) `echo screenshot-$(date +%s).png`
-                </command>
-                -->
-            </action>
-        </keybind>
+
         <!-- Keybindings for window switching -->
         <keybind key="A-Tab">
             <action name="NextWindow">
@@ -219,63 +187,6 @@
                     <action name="Raise"/>
                     <action name="Unshade"/>
                 </finalactions>
-            </action>
-        </keybind>
-        <keybind key="A-S-Tab">
-            <action name="PreviousWindow">
-                <finalactions>
-                    <action name="Focus"/>
-                    <action name="Raise"/>
-                    <action name="Unshade"/>
-                </finalactions>
-            </action>
-        </keybind>
-        <keybind key="C-A-Tab">
-            <action name="NextWindow">
-                <panels>yes</panels>
-                <desktop>yes</desktop>
-                <finalactions>
-                    <action name="Focus"/>
-                    <action name="Raise"/>
-                    <action name="Unshade"/>
-                </finalactions>
-            </action>
-        </keybind>
-        <!-- Keybindings for window switching with the arrow keys -->
-        <keybind key="W-S-Right">
-            <action name="DirectionalCycleWindows">
-                <direction>right</direction>
-            </action>
-        </keybind>
-        <keybind key="W-S-Left">
-            <action name="DirectionalCycleWindows">
-                <direction>left</direction>
-            </action>
-        </keybind>
-        <keybind key="W-S-Up">
-            <action name="DirectionalCycleWindows">
-                <direction>up</direction>
-            </action>
-        </keybind>
-        <keybind key="W-S-Down">
-            <action name="DirectionalCycleWindows">
-                <direction>down</direction>
-            </action>
-        </keybind>
-        <!-- Keybindings for running applications -->
-        <keybind key="W-e">
-            <action name="Execute">
-                <startupnotify>
-                    <enabled>true</enabled>
-                    <name>Konqueror</name>
-                </startupnotify>
-                <command>kfmclient openProfile filemanagement</command>
-            </action>
-        </keybind>
-        <!-- Launch gnome-screenshot when Print is pressed -->
-        <keybind key="Print">
-            <action name="Execute">
-                <command>gnome-screenshot</command>
             </action>
         </keybind>
     </keyboard>
