@@ -1,0 +1,103 @@
+{
+    // Workbench & Window Settings
+    "workbench.activityBar.location": "hidden",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.editorActionsLocation": "hidden",
+    "workbench.editor.showTabs": "single",
+    "workbench.startupEditor": "none",
+    "workbench.tips.enabled": false,
+    "workbench.tree.renderIndentGuides": "none",
+    "workbench.colorCustomizations": {
+        "editorCursor.background": "#000000"
+    },
+
+    "window.nativeFullScreen": false,
+    "window.restoreWindows": "none",
+    "window.zoomLevel": 1,
+
+    // Editor Settings
+    "editor.bracketPairColorization.enabled": false,
+    "editor.codeLens": false,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.fontSize": 14,
+    "editor.guides.bracketPairsHorizontal": false,
+    "editor.guides.highlightActiveBracketPair": false,
+    "editor.guides.indentation": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.hover.enabled": false,
+    "editor.matchBrackets": "near",
+    "editor.minimap.enabled": false,
+    "editor.occurrencesHighlight": "off",
+    "editor.overviewRulerBorder": false,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.selectionHighlight": false,
+    "editor.showFoldingControls": "never",
+    "editor.stickyScroll.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [ {
+            "scope": "comment",
+            "settings": { "fontStyle": "italic" }
+        } ]
+    },
+
+    // File Settings
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+
+    // Explorer Settings
+    "explorer.compactFolders": false,
+    "explorer.decorations.badges": false,
+    "explorer.enableDragAndDrop": false,
+
+    // Breadcrumbs
+    "breadcrumbs.enabled": false,
+
+    // Zen Mode
+    "zenMode.centerLayout": false,
+    "zenMode.fullScreen": false,
+    "zenMode.hideLineNumbers": false,
+    "zenMode.hideStatusBar": false,
+
+    // Git & Source Control
+    "git.blame.statusBarItem.enabled": false,
+    "scm.diffDecorations": "gutter",
+
+    // GitLens
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.currentLine.pullRequests.enabled": false,
+    "gitlens.currentLine.scrollable": false,
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.statusBar.pullRequests.enabled": false,
+
+    // GitHub Copilot
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "github.copilot.nextEditSuggestions.enabled": false,
+
+    // Extensions
+    "extensions.ignoreRecommendations": true,
+
+    // Vim Extension
+    "vim.incsearch": false,
+    "vim.joinspaces": false,
+    "vim.useSystemClipboard": true,
+
+    // Kubernetes Extension
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path-mac": "/Users/thomas/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+        "vscode-kubernetes.helm-path-mac": "/Users/thomas/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+        "vs-kubernetes.minikube-show-information-expiration": "2025-07-25T21:55:16.065Z"
+    },
+
+    // Other Extensions
+    "color-highlight.markRuler": false,
+    "redhat.telemetry.enabled": false
+}
