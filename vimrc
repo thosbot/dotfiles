@@ -129,7 +129,6 @@ Plugin 'vim-scripts/ck.vim'
 
 " GitHub Flavored Markdown
 Plugin 'jtratner/vim-flavored-markdown'
-
 " GitHub Flavored Markdown Fenced code blocks
 Plugin 'amiorin/vim-fenced-code-blocks'
 
@@ -162,7 +161,7 @@ Plugin 'gregsexton/MatchTag'
 call vundle#end()            " required
 
 """""""
-" Built-in behaviors
+" Builtin behaviors
 "
 """""""
 set noerrorbells
