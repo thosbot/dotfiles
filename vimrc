@@ -114,6 +114,7 @@ set completeopt=menu,menuone,noinsert,noselect
 set showcmd             " show command in bottom bar
 set lazyredraw          " redraw only when we need to
 set viewoptions=folds,options,cursor,unix,slash
+set updatetime=100      " default delay before updating in milliseconds
 
 set ruler               " cursor position and percentage through file
 set scrolloff=5         " min number of line above/below cursor
