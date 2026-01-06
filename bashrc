@@ -8,7 +8,9 @@ shopt -s histappend     # Append to the history file, don't overwrite it
 shopt -s cmdhist        # Save multi-line commands as one command
 shopt -s cdable_vars
 
-export EDITOR='vim'
+export XENVIRONMENT="${HOME}/.Xdefaults"
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # Don't put duplicate lines in the history. See bash(1) for more options
 export HISTTIMEFORMAT='[%F %T] '
