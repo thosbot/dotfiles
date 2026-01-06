@@ -1,11 +1,14 @@
 # Set background
 xsetroot -solid "#000000" &
+autorandr.py --change
 
 xscreensaver &
-xclock -norender -reverse -fg white &
 workrave &
 conky &
-xterm -j -s -vb +sf +dc -cr darkgreen -u8 -geometry 109x44 &
+xfce4-terminal &
+xfce4-terminal --title side-bash &
+
+/usr/lib/notification-daemon/notification-daemon start &
 
 # Turn off warning bell
 xset b off &
