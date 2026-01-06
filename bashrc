@@ -14,6 +14,7 @@ export EDITOR="$VISUAL"
 
 if command -v batcat &> /dev/null
 then
+    export MANROFFOPT="-c"
     export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
