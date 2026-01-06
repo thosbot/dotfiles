@@ -44,9 +44,6 @@ Plugin 'morhetz/gruvbox'
 " Airline statusline
 Plugin 'bling/vim-airline'
 
-" Vim sugar for the UNIX shell commands that need it the most
-Plugin 'tpope/vim-eunuch'
-
 " Mapping pairs for ex commands, linewise, opt toggling, encoding/decoding
 Plugin 'tpope/vim-unimpaired'
 
