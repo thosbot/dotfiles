@@ -15,6 +15,11 @@ lesscode() {
     fi
 }
 
+# List only dot files and dot directories
+lsdot() {
+    find . -maxdepth 1 -name '.*' | cut -c3- | xargs lsd -d
+}
+
 # Convert Markdown file to HTML and open in Lynx
 readmarkdown() {
     pandoc --from markdown --to html5 "$1" --self-contained | lynx -stdin
