@@ -352,6 +352,12 @@ set foldmethod=indent
 set foldnestmax=10
 set foldlevel=0
 
+set fillchars=fold:\  " Replace annoying fold chars with space
+set foldtext=MyFoldText()
+function! MyFoldText()
+    return ' ... '
+endfunction
+
 
 """""""
 " Environment
