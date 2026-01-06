@@ -17,7 +17,7 @@
     <focusLast>no</focusLast>
 
     <!-- Move focus under the mouse, even when the mouse is not moving -->
-    <underMouse>yes</underMouse>
+    <underMouse>no</underMouse>
 
     <!-- When followMouse is enabled, the mouse must be inside the window for
          this many milliseconds (1000 = 1 sec) before moving focus to it -->
