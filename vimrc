@@ -186,7 +186,7 @@ highlight comment cterm=italic ctermfg=darkgray
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermfg=darkgray " line numbers
-highligh GitGutterAdd ctermfg=darkgray
+highlight GitGutterAdd ctermbg=black ctermfg=darkgray
 
 " Toggle color column via command or F2
 highlight ColorColumn ctermbg=darkgray
