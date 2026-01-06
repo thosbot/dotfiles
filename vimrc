@@ -357,14 +357,18 @@ function! HLNext (blinktime)
     redraw
 endfunction
 
+
 """""""
 " Folding
 "
 """""""
-" let anyfold_activate=1
-" let anyfold_fold_comments=1
-" set foldlevel=11
-" highlight Folded term=NONE cterm=NONE ctermbg=NONE guibg=NONE
+
+highlight Folded term=NONE cterm=NONE ctermbg=NONE guibg=NONE
+set nofoldenable
+set foldmethod=indent
+set foldnestmax=10
+set foldlevel=0
+
 
 """""""
 " Environment
