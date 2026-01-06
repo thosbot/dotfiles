@@ -90,15 +90,11 @@ Plug 'gregsexton/MatchTag'
 Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 Plug 'ryanoasis/vim-devicons'
 
-
 " Colorschemes
-Plug 'sickill/vim-monokai'
-Plug 'nanotech/jellybeans.vim'
-Plug 'kdwinter/sunburst.vim'
-Plug 'scottymoon/vim-twilight'
-Plug 'altercation/vim-colors-solarized'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'ayu-theme/ayu-vim'
+Plug 'sainnhe/sonokai'
+Plug 'Reewr/vim-monokai-phoenix'
+Plug 'kajamite/vim-monokai2'
+Plug 'elvessousa/elf-monokai-pro'
 
 call plug#end()
 
@@ -182,8 +178,9 @@ vnoremap <Leader>a= :Tabularize /=<CR>
 "
 """""""
 
-set t_Co=256 " 256 colors
-colorscheme habamax
+" set t_Co=256 " 256 colors
+" set termguicolors
+colorscheme monokai-phoenix
 syntax on
 highlight comment cterm=italic ctermfg=darkgray
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
