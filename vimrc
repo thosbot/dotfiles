@@ -103,6 +103,7 @@ set visualbell
 set confirm             " use confirm instead of aborting an action
 set history=1000        " command line history
 set complete=.,w,b,u,t  " word completion (C-n, C-p) settings
+set completeopt=menu,menuone,noinsert,noselect
 set showcmd             " show command in bottom bar
 set lazyredraw          " redraw only when we need to
 set viewoptions=folds,options,cursor,unix,slash
