@@ -18,6 +18,11 @@ then
     export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 fi
 
+if command -v cheat &>/dev/null
+then
+    export CHEAT_USE_FZF=true
+fi
+
 export HISTTIMEFORMAT='[%F %T] '
 export HISTCONTROL='ignorespace:erasedups:ignoredups'
 export HISTIGNORE='history'
