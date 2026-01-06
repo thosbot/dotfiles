@@ -12,18 +12,9 @@ set nocompatible " non vi-compatible
 "
 """""""
 
-" TODO: Verify this is necessary for vim-plug
-filetype off " required by vundle
-
 call plug#begin('~/.vim/plugged')
 
 " Base utility plugins
-
-" Vim utils used by many scripts
-" http://www.vim.org/scripts/script.php?script_id=2940
-Plug 'vim-scripts/vim-addon-mw-utils'
-" http://www.vim.org/scripts/script.php?script_id=1863
-Plug 'tomtom/tlib_vim'
 
 " Add dot (.) repeating for plugin maps (supports vim-surround)
 " https://github.com/tpope/vim-repeat
