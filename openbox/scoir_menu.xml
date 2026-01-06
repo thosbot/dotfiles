@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+    <menu id="root-menu" label="Openbox 3">
+        <item label="XTerm" icon="/usr/local/share/icons/hicolor/16x16/apps/xterm-mini.png">
+            <action name="Execute">
+                <execute>xterm -j -s -vb +sf +dc -cr darkgreen -u8 -geometry 99x33</execute>
+            </action>
+        </item>
+
+        <item label="_IntelliJ Idea">
+            <action name="Execute">
+                <execute>intellij-idea-ultimate</execute>
+            </action>
+        </item>
+
+        <item label="_Postman">
+            <action name="Execute">
+                <execute>postman</execute>
+            </action>
+        </item>
+
+        <item label="_Slack" icon="/usr/local/share/icons/hicolor/16x16/apps/slack.png">
+            <action name="Execute">
+                <execute>slack</execute>
+            </action>
+        </item>
+
+        <item label="_Thunar">
+            <action name="Execute"><execute>thunar</execute></action>
+        </item>
+
+        <separator />
+
+        <item label="_Chromium" icon="/usr/local/share/icons/hicolor/16x16/apps/chromium-browser.png">
+            <action name="Execute"><execute>chromium-browser</execute></action>
+        </item>
+        <item label="_Firefox" icon="/usr/share/icons/hicolor/16x16/apps/firefox.png">
+            <action name="Execute"><execute>firefox</execute></action>
+        </item>
+
+        <separator />
+
+        <item label="XCa_lc">
+            <action name="Execute"><execute>xcalc</execute></action>
+        </item>
+        <item label="Libre_Office" icon="/usr/share/icons/hicolor/16x16/apps/libreoffice-base.png">
+            <action name="Execute"><execute>libreoffice</execute></action>
+        </item>
+        <item label="O_kular">
+            <action name="Execute"><execute>okular</execute></action>
+        </item>
+        <item label="_Filezilla">
+            <action name="Execute"><execute>filezilla</execute></action>
+        </item>
+
+        <separator />
+
+        <item label="_VLC">
+            <action name="Execute"><execute>vlc</execute></action>
+        </item>
+
+        <separator />
+
+        <item label="ObConf">
+            <action name="Execute"><execute>obconf</execute></action>
+        </item>
+        <item label="Reconfigure">
+            <action name="Reconfigure" />
+        </item>
+        <item label="Restart">
+            <action name="Restart" />
+        </item>
+
+        <separator />
+
+        <item label="Exit">
+            <action name="Exit" />
+        </item>
+    </menu>
+</openbox_menu>

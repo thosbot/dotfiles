@@ -1,3 +1,7 @@
+function batt() {
+    upower -i /org/freedesktop/UPower/devices/battery_BAT0
+}
+
 function bg-run() {
     cmd=$1; shift
     $cmd "$@" >/tmp/$cmd.out 2>/tmp/$cmd.err &
@@ -17,7 +21,7 @@ function lesscode {
 
 # Convert Markdown file to HTML and open in Lynx
 function readmarkdown {
-    pandoc --from markdown --to html5 "$1" | lynx -stdin
+    pandoc --from markdown --to html5 "$1" --self-contained | lynx -stdin
 }
 
 # List only directory names that begin with the arg provided

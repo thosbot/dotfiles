@@ -1,7 +1,9 @@
 setlocal tabstop=4 noexpandtab
 setlocal nolist
-setlocal omnifunc=gocomplete#Complete
 let g:go_disable_autoinstall = 0
+
+" GoCode autocomplete
+setlocal omnifunc=gocomplete#Complete
 
 """""""
 " Vim-Go settings
@@ -9,9 +11,19 @@ let g:go_disable_autoinstall = 0
 "
 """""""
 
+" Don't write boilerplate when opening a new Go file
+let g:go_template_autocreate = 0
+
+" Show function signature in status line (GoInfo)
+nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
+
+" Highlight all matching identifiers (GoSameIds)
+let g:go_auto_sameids = 1
+
 " Jump between errors in quickfix list
 map <C-n> :cnext<CR>
-map <C-m> :cprevious<CR>
+map <C-p> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
 " Run a go-vim command
@@ -64,3 +76,7 @@ let g:tagbar_type_go = {
 \ }
 
 " au BufWritePost *.go silent! !ctags -R &
+
+" Increase the size of the tagbar
+let g:tagbar_width=64
+

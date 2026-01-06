@@ -38,6 +38,9 @@ Plugin 'tpope/vim-repeat'
 " Filesystem explorer
 " Plugin 'scrooloose/nerdtree'
 
+" Color / theme
+Plugin 'morhetz/gruvbox'
+
 " Airline statusline
 Plugin 'bling/vim-airline'
 
@@ -104,7 +107,7 @@ Plugin 'pseewald/vim-anyfold'
 Plugin 'majutsushi/tagbar'
 
 " Tab completion FTW
-Plugin 'ervandew/supertab'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Language-specific syntax and development plugins
 
@@ -116,8 +119,9 @@ Plugin 'mustache/vim-mustache-handlebars'
 
 " Golang
 Plugin 'fatih/vim-go'
+
 " Golang code completion daemon
-Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
+" Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 
 " Chuck audio programming language
 " http://www.vim.org/scripts/script.php?script_id=1880
@@ -125,7 +129,6 @@ Plugin 'vim-scripts/ck.vim'
 
 " GitHub Flavored Markdown
 Plugin 'jtratner/vim-flavored-markdown'
-
 " GitHub Flavored Markdown Fenced code blocks
 Plugin 'amiorin/vim-fenced-code-blocks'
 
@@ -158,7 +161,7 @@ Plugin 'gregsexton/MatchTag'
 call vundle#end()            " required
 
 """""""
-" Built-in behaviors
+" Builtin behaviors
 "
 """""""
 set noerrorbells
@@ -175,7 +178,7 @@ set scrolloff=5         " min number of line above/below cursor
 set sidescrolloff=10    " min number of columns (nowrap) l/r of cursor
 set showmatch           " show matching paren/brace/bracket
 set number              " line numbers w/ toggle (double C-n)
-:nnoremap <C-n><C-n> :set invnumber<CR>
+:nnoremap <C-i><C-i> :set invnumber<CR>
 
 set wildmenu                " file/command tab completion -- show all opts
 set wildmode=list:longest   " tab complete to ambiguity
@@ -225,6 +228,18 @@ set t_Co=256
 " not necessary
 " set t_AB=^[[48;5;%dm
 " set t_AF=^[[38;5;%dm
+
+" Italics and true colors
+" https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be
+" https://github.com/morhetz/gruvbox
+" let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+" set termguicolors
+
+" https://github.com/morhetz/gruvbox/wiki/Configuration
+" colorscheme gruvbox
+" set background=dark
+" let g:gruvbox_contrast_dark='hard'
 
 colorscheme peachpuff
 syntax on
@@ -304,9 +319,8 @@ set backspace=indent,eol,start
 highlight clear SpellBad
 highlight SpellBad cterm=undercurl,bold ctermfg=red
 
-" Set SuperTab default behavior to omni-completion
-" TODO: Add a fallback for "completion chaining"
-let g:SuperTabDefaultCompletionType = "context"
+" Improve dropdown highlighting
+:highlight Pmenu ctermbg=238 gui=bold
 
 " Airline / powerline
 set laststatus=2
@@ -323,7 +337,7 @@ set noshowcmd
 " Ctags
 " set tags+=~/tags
 " Tagbar : http://usevim.com/2013/02/01/vim-101-fancy-ctags/
-nmap <F8> :TagbarToggle<CR>
+nmap <F10> :TagbarToggle<CR><C-w>l
 
 """""""
 " Movement / motion
