@@ -274,6 +274,13 @@ endif
 
 nmap <F10> :TagbarToggle<CR><C-w>l
 
+let g:ale_completion_enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+let g:ale_set_balloons = 1
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+
 
 """""""
 " Movement / motion
