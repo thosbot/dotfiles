@@ -198,6 +198,13 @@ set list
 set listchars=trail:. " Replace trailing whitespace chars with '.'
 nmap <leader>l :set list!<CR>
 
+" Remove trailing whitespace
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+endfunction
+nmap <leader>t :call TrimWhiteSpace()<CR>
+
 " Softwrapping - linebreak won't split words, but doesn't work with list
 command! -nargs=* Wrap set wrap linebreak nolist
 
