@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+    <menu id="root-menu" label="Openbox 3">
+        <item label="_Xfce Terminal">
+            <action name="Execute">
+                <execute>xfce4-terminal</execute>
+            </action>
+        </item>
+        <item label="_Thunar">
+            <action name="Execute"><execute>thunar</execute></action>
+        </item>
+
+        <separator />
+
+        <item label="_Chromium" icon="/usr/share/icons/hicolor/16x16/apps/google-chrome.png">
+            <action name="Execute"><execute>google-chrome</execute></action>
+        </item>
+        <item label="_Firefox" icon="/usr/share/icons/hicolor/16x16/apps/firefox.png">
+            <action name="Execute"><execute>firefox</execute></action>
+        </item>
+
+        <separator />
+
+        <item label="_Qalculate">
+            <action name="Execute"><execute>qalculate</execute></action>
+        </item>
+        <item label="File_zilla" icon="/usr/share/icons/hicolor/16x16/apps/filezilla.png">
+            <action name="Execute"><execute>filezilla</execute></action>
+        </item>
+
+        <separator />
+
+        <item label="Spotif_y">
+            <action name="Execute"><execute>spotify</execute></action>
+        </item>
+        <item label="_VLC">
+            <action name="Execute"><execute>vlc</execute></action>
+        </item>
+        <item label="_Keybase">
+            <action name="Execute"><execute>run_keybase</execute></action>
+        </item>
+        <item label="Si_gnal">
+            <action name="Execute"><execute>signal-desktop</execute></action>
+        </item>
+
+        <separator />
+
+        <item label="ObConf">
+            <action name="Execute"><execute>obconf</execute></action>
+        </item>
+        <item label="Reconfigure">
+            <action name="Reconfigure" />
+        </item>
+        <item label="Restart">
+            <action name="Restart" />
+        </item>
+
+        <separator />
+
+        <item label="Exit">
+            <action name="Exit" />
+        </item>
+    </menu>
+</openbox_menu>
