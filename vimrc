@@ -229,6 +229,9 @@ noremap <leader>bg :call ToggleBG()<CR>
 " Fuzzy file match
 nnoremap <C-p> :<C-u>FZF<CR>
 
+let g:fzf_preview_window = 'right:50%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  } }
+
 " set filetypes (setf)
 autocmd vimrc BufNewFile,BufRead *.ck set filetype=ck         " ChucK (audio prog. language)
 autocmd vimrc BufNewFile,BufRead *.tt set filetype=tt2html    " Perl Template Toolkit + HTML
