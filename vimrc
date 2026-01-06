@@ -194,32 +194,42 @@ vnoremap <Leader>a= :Tabularize /=<CR>
 " set termguicolors
 colorscheme monokai-phoenix
 syntax on
+
 highlight comment cterm=italic ctermfg=darkgray
+highlight todo cterm=italic ctermfg=yellow
 highlight Search cterm=NONE ctermbg=darkgray ctermfg=white
 highlight MatchParen ctermbg=blue
 highlight LineNr ctermfg=darkgray " line numbers
+
 highlight GitGutterAdd ctermbg=black ctermfg=darkgray
-highlight Normal ctermbg=None
+highlight SignColumn guibg=black
+highlight Normal guibg=black
 
 " Toggle color column
 highlight ColorColumn ctermbg=darkgray
 command! ToggleCC :let &cc = &cc == '' ? '80' : ''
 nnoremap <F2> :let &cc = &cc == '' ? '80' : ''<CR>
 
-" Highlight the line of cursor -- will make screen redrawing slower
 set cursorline
-highlight CursorLine term=bold cterm=bold guibg=Grey40
+highlight CursorLine term=bold cterm=bold
 
-" set list
-set listchars=trail:.,eol:¶
+set listchars=tab:>-,trail:•,nbsp:␣,eol:⏎
 nmap <leader>l :set list!<CR>
 
-" Remove trailing whitespace
-function TrimWhiteSpace()
-  %s/\s*$//
-  ''
+function TrimTrailingWhitespace()
+    " Save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+
+    " Trim trailing whitespace
+    %s/\s\+$//e
+
+    " Restore previous search history and cursor position
+    let @/=_s
+    call cursor(l, c)
 endfunction
-nmap <leader>t :call TrimWhiteSpace()<CR>
+nmap <leader>t :call TrimTrailingWhitespace()<CR>
 
 " Softwrapping - linebreak won't split words, but doesn't work with list
 command! -nargs=* Wrap set wrap linebreak nolist
