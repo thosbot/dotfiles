@@ -71,7 +71,7 @@ ${alignc}${execi 30 xmllint --xpath '//current_observation/weather/text()' ~/.ca
 ${alignc}${color slate grey}${execi 30 xmllint --xpath '//current_observation/location/text()' ~/.cache/nws.xml}
 ${alignc}${color slate grey}${execi 30 xmllint --xpath '//current_observation/station_id/text()' ~/.cache/nws.xml} ${execi 30 xmllint --xpath '//current_observation/latitude/text()' ~/.cache/nws.xml}°N ${execi 30 xmllint --xpath '//current_observation/longitude/text()' ~/.cache/nws.xml | grep -P -o "\d+\.\d+"}°W${color}
 Windchill${alignr}${execi 30 xmllint --xpath '//current_observation/windchill_f/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°F / ${execi 30 xmllint --xpath '//current_observation/windchill_c/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°C
-Heat Idx${alignr}${execi 30 xmllint --xpath '//current_observation/heat_index_f/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°F / ${execi 30 xmllint --xpath '//current_observation/heat_index_c/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°C
+# Heat Idx${alignr}${execi 30 xmllint --xpath '//current_observation/heat_index_f/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°F / ${execi 30 xmllint --xpath '//current_observation/heat_index_c/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^-?\d+"}°C
 Dewpoint${alignr}${execi 30 xmllint --xpath '//current_observation/dewpoint_f/text()' ~/.cache/nws.xml | grep -P -o "^\d+"}°F / ${execi 30 xmllint --xpath '//current_observation/dewpoint_c/text()' ~/.cache/nws.xml | grep -P -o "^-?\d+"}°C
 Humidity${alignr}${execi 30 xmllint --xpath '//current_observation/relative_humidity/text()' ~/.cache/nws.xml}%
 Wind${alignr}${execi 30 xmllint --xpath '//current_observation/wind_dir/text()' ~/.cache/nws.xml} ${execi 30 xmllint --xpath '//current_observation/wind_mph/text()' ~/.cache/nws.xml 2>/dev/null | grep -P -o "^\d+\.\d"} MPH
@@ -79,6 +79,6 @@ Gust${alignr}${execi 30 xmllint --xpath '//current_observation/wind_gust_mph/tex
 
 # Sun and moon
 ${color slate grey}Astro ${goto 208}Rise${goto 272}Set${color}
-Sun${goto 59}len: ${execi 3600 cat ~/.cache/astro.json | jq -r '.daylength'}${goto 208}${execi 3600 cat ~/.cache/astro.json | jq -r '.sunrise'}${goto 272}${execi 3600 cat ~/.cache/astro.json | jq -r '.sunset'}
-Moon${goto 59}${execi 3600 cat ~/.cache/astro.json | jq -r '.moonphase'}${goto 208}${execi 3600 cat ~/.cache/astro.json | jq -r '.moonrise'}${goto 272}${execi 3600 cat ~/.cache/astro.json | jq -r '.moonset'}
+Sun${goto 59}len: ${exec cat ~/.cache/astro.json | jq -r '.daylength'}${goto 208}${exec cat ~/.cache/astro.json | jq -r '.sunrise'}${goto 272}${exec cat ~/.cache/astro.json | jq -r '.sunset'}
+Moon${goto 59}${exec cat ~/.cache/astro.json | jq -r '.moonphase'}${goto 208}${exec cat ~/.cache/astro.json | jq -r '.moonrise'}${goto 272}${exec cat ~/.cache/astro.json | jq -r '.moonset'}
 ]]
