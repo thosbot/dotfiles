@@ -43,8 +43,8 @@
 
         <separator />
 
-        <item label="XCa_lc">
-            <action name="Execute"><execute>xcalc</execute></action>
+        <item label="_Qalculate">
+            <action name="Execute"><execute>qalculate</execute></action>
         </item>
         <item label="Libre_Office" icon="/usr/share/icons/hicolor/16x16/apps/libreoffice-base.png">
             <action name="Execute"><execute>libreoffice</execute></action>
@@ -58,6 +58,9 @@
 
         <separator />
 
+        <item label="Sp_otify">
+            <action name="Execute"><execute>spotify</execute></action>
+        </item>
         <item label="_VLC">
             <action name="Execute"><execute>vlc</execute></action>
         </item>
