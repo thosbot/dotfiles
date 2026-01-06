@@ -38,22 +38,22 @@ xterm*trimSelection: true
 
 ! Font
 XTerm*faceName: Noto Mono for Powerline
-XTerm*faceSize: 21
+XTerm*faceSize: 18
 xterm*renderFont: true
 
 ! Font size
 ! Unreadable
-XTerm*faceSize1: 11
+XTerm*faceSize1: 9
 ! Tiny
-XTerm*faceSize2: 12
+XTerm*faceSize2: 11
 ! Small
-XTerm*faceSize3: 16
+XTerm*faceSize3: 14
 ! Medium
-XTerm*faceSize4: 18
+XTerm*faceSize4: 16
 ! Large
-XTerm*faceSize5: 24
+XTerm*faceSize5: 18
 ! Huge
-XTerm*faceSize6: 36
+XTerm*faceSize6: 21
 
 ! Increase / decrease the font-size, ctrl-click to open files and URLs
 XTerm.VT100.translations: #override \
