@@ -33,7 +33,6 @@ Plug 'scrooloose/nerdtree'    " Filesystem explorer
 Plug 'bling/vim-airline'      " Airline statusline
 Plug 'tpope/vim-unimpaired'   " Mapping pairs for ex, linewise, opts, enc/dec
 Plug 'tpope/vim-characterize' " Unicode character metadata
-Plug 'junegunn/vim-emoji'
 
 " Behaviour Plugins
 
@@ -54,6 +53,7 @@ Plug 'tyru/current-func-info.vim'
 
 Plug 'ludovicchabant/vim-gutentags' " CTags
 Plug 'junegunn/fzf'                 " Fuzzy filenames
+Plug 'lervag/file-line'             " Open files using file:linenum syntax
 Plug 'tpope/vim-fugitive'           " Git wrapper
 
 " Browse the tags of the current file and get an overview of its structure
@@ -61,20 +61,25 @@ Plug 'tpope/vim-fugitive'           " Git wrapper
 " ordered by their scope.
 Plug 'majutsushi/tagbar'
 
+" Language-specific syntax and development plugins
+
+Plug 'dense-analysis/ale'   " Asynchronous Lint Engine
+
 " Code autocompletion
 Plug 'Shougo/deoplete.nvim'
 Plug 'roxma/nvim-yarp'
 Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'juliosueiras/vim-terraform-completion'
 
-" Language-specific
-Plug 'fatih/vim-go'         " Go Vim IDE
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'vim-scripts/ck.vim'   " Chuck audio programming language
 Plug 'vim-perl/vim-perl'
 Plug 'tpope/vim-ragtag'     " HTML/XML mappings
 Plug 'othree/html5.vim'
 Plug 'wgwoods/vim-systemd-syntax'
-Plug 'vim-latex/vim-latex'
-Plug 'dense-analysis/ale'   " Asynchronous Lint Engine
+Plug 'hashivim/vim-terraform'
+Plug 'ekalinin/dockerfile.vim'
+Plug 'tbastos/vim-lua'
 
 Plug 'jtratner/vim-flavored-markdown' " GitHub Flavored Markdown
 Plug 'amiorin/vim-fenced-code-blocks'
@@ -88,6 +93,8 @@ Plug 'leafOfTree/vim-vue-plugin'
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
 " works in much the same way as the MatchParen plugin.
 Plug 'gregsexton/MatchTag'
+
+Plug 'https://gitlab.com/gi1242/vim-emoji-ab'
 
 call plug#end()
 
