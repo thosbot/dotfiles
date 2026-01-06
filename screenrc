@@ -50,11 +50,11 @@ nonblock on
 
 # Not sure what all these do, most came default I think
 # Remove some stupid/dangerous key bindings
-bind k
+bind k  # kill window
 bind ^k
 bind .
 bind ^\
-bind \\
+bind \\ # kill all windows
 bind ^h
 bind h
 
@@ -86,3 +86,5 @@ caption always "%{= kw}%-w%{=b kR}(%{= kW}%n %t%{=b kR})%{= kw}%+w %-= %{W} %M %
 
 # Scrolling -- enables use of shift-PgUp and shift-PgDn
 termcapinfo xterm* ti@:te@
+
+bind y eval "writebuf" "exec sh -c 'exec xsel -b --display :0 -i </tmp/screen-exchange'"
