@@ -6,7 +6,6 @@
 set encoding=utf8
 set nocompatible " non vi-compatible
 
-
 """""""
 " Plugins
 "
@@ -97,7 +96,6 @@ Plug 'kajamite/vim-monokai2'
 Plug 'elvessousa/elf-monokai-pro'
 
 call plug#end()
-
 
 """""""
 " Builtin behaviors
@@ -243,7 +241,6 @@ function! ToggleBG()
 endfunction
 noremap <leader>bg :call ToggleBG()<CR>
 
-
 """""""
 " Files & buffers
 "
@@ -313,7 +310,6 @@ let g:ale_sign_error = 'X'
 let g:ale_sign_warning = '.'
 let g:airline#extensions#ale#enabled = 1
 
-
 """""""
 " Movement / motion
 "
@@ -331,7 +327,6 @@ nnoremap <C-k> gk
 nnoremap <C-4> g$
 nnoremap <C-6> g^
 nnoremap <C-0> g^
-
 
 """""""
 " Searching
@@ -372,7 +367,6 @@ function! HLNext (blinktime)
     redraw
 endfunction
 
-
 """""""
 " Folding
 "
@@ -392,7 +386,6 @@ function! MyFoldText()
     " return repeat(' ', spaces) . '•••'
     return '  •••'
 endfunction
-
 
 """""""
 " Environment
@@ -427,7 +420,6 @@ function! s:ToggleBlame()
     endif
 endfunction
 nnoremap <leader>gb :call <SID>ToggleBlame()<CR>
-
 
 """""""
 " spf-13-vim : http://vim.spf13.com/
