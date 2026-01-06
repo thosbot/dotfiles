@@ -7,8 +7,14 @@
         <item label="_Xfce Terminal">
             <action name="Execute"><execute>xfce4-terminal</execute></action>
         </item>
+        <item label="O_bsidian">
+            <action name="Execute"><execute>obsidian</execute></action>
+        </item>
         <item label="Spotif_y">
             <action name="Execute"><execute>spotify.sh</execute></action>
+        </item>
+        <item label="_Zotero">
+            <action name="Execute"><execute>zotero</execute></action>
         </item>
         <item label="_Thunar">
             <action name="Execute"><execute>thunar</execute></action>
