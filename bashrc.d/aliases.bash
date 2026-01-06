@@ -39,6 +39,6 @@ alias aud='mpv --vid=no'
 #   > command word following the alias is also checked for alias expansion.
 alias sudo='sudo '
 
-alias pretty='python -m json.tool | pager'
+alias pretty='jq . | pager'
 
 alias youtube-dl='youtube-dl --add-metadata'
