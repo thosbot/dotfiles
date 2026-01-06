@@ -61,7 +61,7 @@ Plug 'dense-analysis/ale'   " Asynchronous Lint Engine / ALE (LSP)
 " Code autocompletion
 Plug 'juliosueiras/vim-terraform-completion'
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'charlespascoe/vim-go-syntax'
 Plug 'vim-perl/vim-perl'
 Plug 'tpope/vim-ragtag'     " HTML/XML mappings
 Plug 'othree/html5.vim'
