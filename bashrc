@@ -4,12 +4,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# Append to the history file, don't overwrite it
-shopt -s histappend
-
-# Save multi-line commands as one command
-shopt -s cmdhist
-
+shopt -s histappend     # Append to the history file, don't overwrite it
+shopt -s cmdhist        # Save multi-line commands as one command
 shopt -s cdable_vars
 
 export EDITOR='vim'
