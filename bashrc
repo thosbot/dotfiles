@@ -46,7 +46,7 @@ case $TERM in
 xterm*)
     #PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"'
     ;;
-screen*)
+screen|tmux*)
     SESSIONNAME=`echo $STY | sed "s/^[0-9]\+.//g"`
     PROMPT_COMMAND='echo -ne "\033]0;${SESSIONNAME}\007"'
     ;;

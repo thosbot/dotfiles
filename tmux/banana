@@ -1,0 +1,15 @@
+SESSION=banana
+
+new-session -s $SESSION -n alsamixer
+send-keys -t $SESSION:1 alsamixer C-m
+
+new-window -t $SESSION
+new-window -t $SESSION
+new-window -t $SESSION
+new-window -t $SESSION
+new-window -t $SESSION -n grrr
+new-window -t $SESSION -n bin
+new-window -t $SESSION
+new-window -t $SESSION
+
+select-window -t $SESSION:2
