@@ -256,12 +256,12 @@ DestroyFunc FvwmWindowScreenshot
 AddToFunc   FvwmWindowScreenshot
 + I ThisWindow (!Shaded !Iconic Iconifiable) \
   Exec import -window $[w.id] -quality 100 \
-  "~/media/images/screenshots/screenshot-`date +%F[%R]`.$[w.id].png"
+  "~/pictures/screenshots/screenshot-`date +%F[%R]`.$[w.id].png"
 
 DestroyFunc FvwmDesktopScreenshot
 AddToFunc   FvwmDesktopScreenshot
 + I Exec sleep $0; import -window root -quality 100 \
-  "~/media/images/screenshots/screenshot-`date +%F[%R]`.png"
+  "~/pictures/screenshots/screenshot-`date +%F[%R]`.png"
 
 # Program functions
 DestroyFunc FvwmXTerm
