@@ -27,7 +27,6 @@ Plug 'tpope/vim-unimpaired'   " Mapping pairs for ex, linewise, opts, enc/dec
 Plug 'tpope/vim-characterize' " Unicode character metadata
 
 " Behaviour Plugins
-
 Plug 'tpope/vim-commentary' " Commenting out lines of code
 Plug 'tpope/vim-surround'   " Surround with quotes, parens, HTML/XML elements, etc.
 Plug 'jiangmiao/auto-pairs' " Insert or delete brackets, parens, quotes in pairs
@@ -71,8 +70,6 @@ Plug 'wgwoods/vim-systemd-syntax'
 Plug 'hashivim/vim-terraform'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'tbastos/vim-lua'
-
-" JavaScript, et al.
 Plug 'pangloss/vim-javascript'
 
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
@@ -163,7 +160,6 @@ function! EnableGutter()
     set invnumber
 endfunction
 
-
 """""""
 " Indentation / tab stops / holy war
 "
@@ -199,7 +195,7 @@ highlight LineNr ctermfg=darkgray " line numbers
 highlight GitGutterAdd ctermbg=black ctermfg=darkgray
 highlight Normal ctermbg=None
 
-" Toggle color column via command or F2
+" Toggle color column
 highlight ColorColumn ctermbg=darkgray
 command! ToggleCC :let &cc = &cc == '' ? '80' : ''
 nnoremap <F2> :let &cc = &cc == '' ? '80' : ''<CR>
@@ -222,8 +218,10 @@ nmap <leader>t :call TrimWhiteSpace()<CR>
 " Softwrapping - linebreak won't split words, but doesn't work with list
 command! -nargs=* Wrap set wrap linebreak nolist
 
-" TODO:  Mess with cursor color per vim docs
+" TODO: Mess with cursor color per vim docs
 " http://vim.wikia.com/wiki/Configuring_the_cursor
+
+" TODO: Add a keymap to close help window :helpclose
 
 " GitHub Flavored Markdown (GFM): fencepost (```) syntax highlighting
 let g:markdown_fenced_languages = [ 'css', 'go', 'html', 'javascript', 'js=javascript', 'json=javascript', 'perl', 'sh', 'sql', 'vim', 'xml', 'yaml', 'yml=yaml' ]
@@ -286,6 +284,8 @@ set clipboard=unnamed
 if has('unnamedplus')
     set clipboard=unnamed,unnamedplus
 endif
+
+" Allow backspace to delete indentation and inserted text
 set backspace=indent,eol,start
 
 " Spellcheck mimics MS Word F7
@@ -322,7 +322,6 @@ let g:ale_set_balloons=1
 let g:ale_floating_preview=1
 let g:ale_cursor_detail=1
 let g:ale_echo_delay=100
-" Only show lint errors at cursor
 let g:ale_virtualtext_cursor='current'
 
 let g:ale_set_signs=1
@@ -366,9 +365,6 @@ nnoremap <C-0> g^
 " Highlighting for searches - turn off with spacebar
 set hlsearch
 noremap <Leader> <Space> :silent noh<Bar>echo<CR>
-" noincsearch - don't immediately begin searching (reverse w/ set incsearch),
-" ignorecase  - case insensitive searching
-" smartcase   - turn off ignorecase when search term includes uppercase char
 set noincsearch ignorecase smartcase
 
 if executable("ack")
