@@ -2,7 +2,6 @@
 " Perl
 "
 """""""
-" TODO: Move to language-specific file
 " My perl includes pod
 let perl_include_pod=1
 
