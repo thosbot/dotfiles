@@ -235,6 +235,7 @@ autocmd vimrc BufNewFile,BufRead *.ck set filetype=ck         " ChucK (audio pro
 autocmd vimrc BufNewFile,BufRead *.tt set filetype=tt2html    " Perl Template Toolkit + HTML
 autocmd vimrc BufNewFile,BufRead *.caml set filetype=html.mustache
 autocmd vimrc BufNewFile,BufRead *.md set filetype=markdown
+autocmd vimrc BufNewFile,BufRead Jenkinsfile setf groovy
 
 " Allow bkgd of curr buffer w/o writing to disk, restore marks, and undo hist
 set hidden
