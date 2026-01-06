@@ -285,11 +285,14 @@ DestroyMenu FvwmRootMenu
 AddToMenu   FvwmRootMenu "Root Menu" Title
 + "&XTerm%menu/terminal.png%" FvwmXTerm
 + "&Thunar%menu/folder.png%" Exec exec thunar
-+ "" Nop
-+ "&Chromium%menu/google-chrome.png%" Exec exec chromium --force-device-scale-factor=1.5
 + "XCa&lc%menu/xcalc.png%" Exec exec xcalc
 + "" Nop
++ "&Chromium%menu/google-chrome.png%" Exec exec chromium --force-device-scale-factor=1.5
++ "Si&gnal" Exec exec signal-desktop --no-sandbox
++ "&Keybase" Exec exec run_keybase
++ "" Nop
 + "&VLC%/usr/share/icons/hicolor/16x16/apps/vlc.png%" Exec exec vlc
++ "&Spotify" Exec exec spotify
 + "" Nop
 + "Hydrogen%/usr/share/hydrogen/data/img/gray/icon16.png%" Exec exec hydrogen
 + "Ardour%/usr/share/ardour2/icons/ardour_icon_16px.png%" Exec exec ardour2
