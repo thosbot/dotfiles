@@ -1,2 +1,2 @@
 " Two space tabstops in YAML files
-setlocal shiftwidth=2 tabstop=2
+setlocal tabstop=2 sts=2 shiftwidth=2 expandtab
