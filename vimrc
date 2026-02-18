@@ -130,10 +130,10 @@ endif
 "       go files slow down terribly when auto (and prob old) engine is set.
 " set regexpengine=2
 
-set wildmenu                " file/command tab completion -- show all opts
-set wildmode=list:longest   " tab complete to ambiguity
+set wildmenu                   " Enhanced command-line tab completion
+set wildmode=list:longest,full " Complete to longest possible match, then tab through list
 if exists("+wildignorecase")
-    set wildignorecase      " tab completions should ignore case
+    set wildignorecase         " Tab completions should ignore case
 endif
 
 " set mouse=a                 " Automatically enable mouse usage
