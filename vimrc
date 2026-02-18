@@ -113,6 +113,12 @@ set nojoinspaces        " Prevents inserting two spaces after punctuation on a j
 set virtualedit=onemore " Allow for cursor beyond last character
 set number              " line numbers w/ toggle
 
+" Show as much of the last line as will fit
+set display+=lastline
+if has('patch-7.4.2109')
+    set display+=truncate
+endif
+
 " Make the escape key more responsive by decreasing the wait time for an
 " escape sequence (e.g., arrow keys)
 if !has('nvim') && &ttimeoutlen == -1
