@@ -176,6 +176,17 @@ function! EnableGutter()
     set invnumber
 endfunction
 
+function! ToggleRelativeNumber()
+  if(&nu == 1)
+    set nu!
+    set rnu
+  else
+    set nornu
+    set nu
+  endif
+endfunction
+nnoremap <C-n> :call ToggleRelativeNumber()<CR>
+
 """""""
 " Indentation / tab stops / holy war
 "
