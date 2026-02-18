@@ -57,7 +57,6 @@ Plug 'preservim/tagbar'
 
 " Language-specific syntax and development plugins
 Plug 'dense-analysis/ale'   " Asynchronous Lint Engine / ALE (LSP)
-Plug 'github/copilot.vim'
 
 Plug 'charlespascoe/vim-go-syntax'
 Plug 'vim-perl/vim-perl'
@@ -389,32 +388,6 @@ function ALELSPMappings()
 endfunction
 autocmd BufRead,FileType * call ALELSPMappings()
 
-"""""""
-" Copilot
-"
-"""""""
-
-let b:copilot_enabled=0
-
-function! ToggleCopilot()
-    if copilot#Enabled()
-        Copilot disable
-        let b:copilot_enabled=0
-        let b:ale_completion_enabled=1
-        ALEEnable
-    else
-        ALEDisable
-        let b:ale_completion_enabled=0
-        let b:copilot_enabled=1
-        Copilot enable
-    endif
-
-    Copilot status
-    sleep 750m
-endfunction
-
-inoremap <F12> <Esc>:call ToggleCopilot()<CR>a
-nnoremap <F12> :call ToggleCopilot()<CR>
 
 """""""
 " Movement / motion
