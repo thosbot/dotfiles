@@ -346,11 +346,15 @@ highlight Pmenu ctermbg=238 gui=bold
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
 nmap <F9> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=0
+let NERDTreeIgnore=['\~$', '\.swo$', '\.swp$']
+
 nmap <F10> :TagbarToggle<CR><C-w>l
 
 """""""
@@ -370,7 +374,7 @@ let g:ale_set_highlights=0
 let g:ale_set_balloons=0
 let g:ale_floating_preview=1
 let g:ale_cursor_detail=0
-let g:ale_echo_delay=100
+let g:ale_echo_delay=250
 let g:ale_virtualtext_cursor='current'
 
 let g:ale_set_signs=1
@@ -395,10 +399,12 @@ function ALELSPMappings()
 
     if (l:lsp_found)
         nnoremap <buffer> K :ALEDocumentation<cr>
-        nnoremap <buffer> <C-]> :ALEGoToDefinition<CR>
         nnoremap <buffer> <C-^> :ALEFindReferences<CR>
+        nnoremap <buffer> <C-]> :ALEGoToDefinition<CR>
         nnoremap <buffer> <C-h> :ALEHover<cr>
         nnoremap <buffer> <C-i> :ALEGoToImplementation<CR>
+        " C-e collides with pagination
+        " nnoremap <buffer> <C-e> :ALEDetail<CR>
 
         nnoremap <buffer> gr :ALEFindReferences<cr>
         nnoremap <buffer> gd :ALEGoToDefinition<cr>
