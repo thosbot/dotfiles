@@ -296,6 +296,9 @@ endif
 " Fuzzy file match
 nnoremap <C-p> :<C-u>FZF<CR>
 
+" Reuse an existing window/split if the target file is already open
+set switchbuf=useopen,usetab
+
 let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  } }
 
