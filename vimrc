@@ -49,6 +49,7 @@ Plug 'airblade/vim-gitgutter'       " Show git diff in sign column
 
 " Fuzzy filename search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Browse the tags of the current file and get an overview of its structure
 " via sidebar that displays the ctags-generated tags of the current file
@@ -68,6 +69,7 @@ Plug 'juliosueiras/vim-terraform-completion'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'tbastos/vim-lua'
 Plug 'pangloss/vim-javascript'
+Plug 'amadeus/vim-mjml'
 
 " Highlights the matching HTML tag when the cursor is positioned on a tag. It
 " works in much the same way as the MatchParen plugin.
@@ -79,6 +81,9 @@ Plug 'ryanoasis/vim-devicons'
 " Colorschemes
 Plug 'Reewr/vim-monokai-phoenix'
 Plug 'tomasiser/vim-code-dark'
+
+" https://editorconfig.org
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
