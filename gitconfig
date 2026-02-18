@@ -1,3 +1,6 @@
+[include]
+    path = ~/.config/git/delta-themes.gitconfig
+
 [push]
     default = simple
 
@@ -28,6 +31,7 @@
     blamex = !sh -c \"git blame --date=short \\\"$1\\\"  | sed -e 's, [^(]*, ,' -e 's, [^ ]*\\( *[0-9]*)\\), \\1,'\"
 
 [core]
+    pager = delta
     autocrlf = input
 
 [color]
@@ -41,11 +45,16 @@
 [color "status"]
     branch = green
 
+[delta]
+    features = "arctic-fox"
+    dark = true
+
 [merge]
     renamelimit = 20000
 
 [diff]
     tool = vimdiff
+    colorMoved = default
 
 [includeIf "gitdir:~/proj/"]
     path = ~/.config/git/thosbot.gitconfig
