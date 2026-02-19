@@ -27,9 +27,6 @@
     # List local branches whose upstream is gone
     deadbranch = !sh -c \"git remote prune origin && git branch -vv | grep ': gone]' | awk '{print \\$1}'\" -
 
-    # Attempt a pretty blame
-    blamex = !sh -c \"git blame --date=short \\\"$1\\\"  | sed -e 's, [^(]*, ,' -e 's, [^ ]*\\( *[0-9]*)\\), \\1,'\"
-
 [core]
     pager = delta
     autocrlf = input
