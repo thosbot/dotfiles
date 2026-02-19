@@ -160,20 +160,22 @@ nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Line number and sign column toggling
-nnoremap ]g :call DisableGutter()<CR>
+nnoremap [g :call DisableGutter()<CR>
 function! DisableGutter()
     set signcolumn=no
     let b:signcolumn_on=0
-    let gitgutter_enabled=0
-    set invnumber
+    GitGutterSignsDisable
+    let g:ale_set_signs=0
+    set nonumber
 endfunction
 
-nnoremap [g :call EnableGutter()<CR>
+nnoremap ]g :call EnableGutter()<CR>
 function! EnableGutter()
     set signcolumn=yes
     let b:signcolumn_on=1
-    let gitgutter_enabled=1
-    set invnumber
+    GitGutterSignsEnable
+    let g:ale_set_signs=1
+    set number
 endfunction
 
 function! ToggleRelativeNumber()
