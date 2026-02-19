@@ -22,7 +22,7 @@
     dump = cat-file -p
 
     svnshow = !sh -c \"git log --grep=\\\"@$1\\$\\\" -p\" -
-    codegrep = !sh -c 'git grep "$1" $( git rev-list --all )'
+    codegrep = "!f() { GREPDIFF_REGEX=\"$1\" git -c diff.external=pickaxe-diff log -p --ext-diff -S \"$@\"; }; f"
 
     # List local branches whose upstream is gone
     deadbranch = !sh -c \"git remote prune origin && git branch -vv | grep ': gone]' | awk '{print \\$1}'\" -
